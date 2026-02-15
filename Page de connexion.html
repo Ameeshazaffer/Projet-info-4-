@@ -2,10 +2,26 @@
 <html lang="fr">
 <head>
   <title>CONNEXION</title>
-  <lnk rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  
-</body>
+  <body>
+    <form action="proce.php" method="post">
+      <table>
+        <tr>
+          <td><label for="email">Email :</label></td>
+          <td><input type="text" id="email" name="email"></td>
+        </tr>
+
+        <tr>
+          <td><label for="mdp">Mot de Passe :</label></td>
+          <td><input type="password" id="mdp" name="mdp"></td>
+        </tr>
+
+        <tr>
+          <td><input type="submit" value="Se connecter"></td>
+       </tr>
+     </table>
+    </form> 
+  </body>
 </html>
 

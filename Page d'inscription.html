@@ -1,0 +1,46 @@
+/*Page d’inscription avec un formulaire (nom, prénom, adresse,
+numéro de téléphone, informations complémentaires, …)*/
+
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Inscription</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+  <body>
+    <form action="proce.php" method="post">
+      <table>
+        <tr>
+          <td><label for="nom">Nom:</label></td>
+          <td><input type="text" id="nom" name="nom"></td>
+        </tr>
+
+        <tr>
+          <td><label for="prenom">Prenom :</label></td>
+          <td><input type="text" id="prenom" name="prenom"></td>
+        </tr>
+
+         <tr>
+          <td><label for="telephone">Téléphone :</label></td>
+          <td><input type="tel" id="telephone" name="telephone"></td>
+        </tr>
+
+
+         <tr>
+          <td><label for="email">Email :</label></td>
+          <td><input type="text" id="email" name="email"></td>
+        </tr>
+
+        <tr>
+          <td><label for="mdp">Mot de Passe :</label></td>
+          <td><input type="password" id="mdp" name="mdp"></td>
+        </tr>
+
+        <tr>
+          <td><input type="submit" value="S'inscire"></td>
+       </tr>
+     </table>
+    </form> 
+  </body>
+</html>

@@ -1,1 +1,528 @@
+// STYLE CSS AVEC MODIFICATION 
 
+
+
+@font-face {
+    font-family: 'Arian';
+    src: local('Arial Black'), local('Impact'), local('Arial');
+    font-weight: 900;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --beige: #C9B896;
+    --sombre: #1a1a1a;
+    --creme: #F5F0E8;
+    --or: #D4AF37;
+}
+
+body {
+    display:flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: "Montserrat", sans-serif;
+    color: var(--sombre);
+    background: var(--creme);
+    overflow-x: hidden;
+    padding-top: 120px;
+}
+
+/* Barre de navigation */
+nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(201, 184, 150, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 5%;
+    transition: all 0.3s ease;
+}
+
+.conteneur-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.logo-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.texte-logo-nav {
+    font-family: 'Arian', 'Arial Black', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 6px;
+    color: var(--sombre);
+}
+
+.paris-logo-nav {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 3px;
+    color: var(--sombre);
+    margin-top: -2px;
+}
+
+.liens-nav {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+    align-items: center;
+}
+
+.liens-nav a {
+    color: var(--sombre);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.liens-nav a:after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--sombre);
+    transition: width 0.3s ease;
+}
+
+.liens-nav a:hover:after {
+    width: 100%;
+}
+
+.liens-nav img {
+    width: 20px;
+    height: 20px;
+}
+
+.bouton-connexion, .bouton-inscription {
+    padding: 0.6rem 1.5rem;
+    border: 2px solid var(--sombre);
+    background: transparent;
+    color: var(--sombre);
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.bouton-connexion:hover, .bouton-inscription:hover {
+    transform: translateY(-2px);
+}
+
+
+/* Section principale */
+.section-principale {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background: linear-gradient(135deg, var(--beige) 0%, #D4C5A9 100%);
+    padding: 8rem 5% 4rem;
+}
+
+.logo-principal {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: apparitionEchelle 1.5s ease;
+}
+
+.texte-logo-principal {
+    font-family: 'Arian', 'Arial Black', sans-serif;
+    font-size: 7rem;
+    font-weight: 900;
+    letter-spacing: 20px;
+    color: var(--sombre);
+}
+
+.paris-logo-principal {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 10px;
+    color: var(--sombre);
+    font-weight: 600;
+    margin-top: -5px;
+    margin-bottom: 1.5rem;
+}
+
+.slogan-logo-principal {
+    font-family: 'Parisienne', cursive;
+    font-size: 2.5rem;
+    color: var(--sombre);
+}
+
+/* Espace administrateur */
+.form-container{
+    font-family: "Cormorant Garamond", serif;
+    font-size: 12.5px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 500;
+    display:flex;
+    margin: 30px auto;
+    flex-direction:column; 
+    align-items: center;
+    text-align:center; 
+    justify-content: center;
+    background-color: rgba(197, 171, 116, 0.2);
+    border: 1px solid rgba(197, 171, 116, 0.45);
+    padding-block :10px;
+    padding-inline:10px;
+    height: 100px;
+    width : 500px;
+    border-radius:16px;
+}
+.select-container{
+    font-family: "Cormorant Garamond", serif;
+    margin : 20px auto;
+    display:flex;
+    justify-content: center;
+    position :relative;
+    width : 250px;
+    height : 50px; 
+}
+.select-box{
+    padding : 0 30px 0 15px;
+    color:white; 
+    background:#C9B896;
+    font-size : 20px;
+}
+.icon-container i{
+    font-size : 30px;
+    color : white;
+}
+.icon-container img{
+    width : 22px;
+    height: 22px;
+    color : white;
+}
+.table table{
+  font-family: "Cormorant Garamond", serif; 
+  background-color: rgba(197, 171, 116, 0.2); 
+  border: 1px solid rgba(197, 171, 116, 0.45); 
+  padding-block :20px; 
+  padding-inline:20px; 
+  height: 150px; 
+  width : 600px; 
+  border-radius:16px; 
+  margin : 30px auto; 
+  border-collapse: collapse; 
+  text-align:center; 
+  overflow: hidden; 
+  border: 1px solid rgba(197, 171, 116, 0.45);
+}
+.table th,.table td {
+    padding: 18px 25px; 
+}
+.table tr {
+    height: 60px;
+}
+/* Section de recherche */
+.section-recherche {
+    width: 100%;
+    max-width: 700px;
+    margin: 3rem auto;
+    animation: apparitionHaut 1.5s ease 0.3s both;
+}
+
+.boite-recherche {
+    position: relative;
+    width: 100%;
+}
+
+.champ-recherche {
+    width: 100%;
+    padding: 1.5rem 4rem 1.5rem 2rem;
+    border: 3px solid var(--sombre);
+    background: var(--creme);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.champ-recherche:focus {
+    outline: none;
+    background: #fff;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.bouton-recherche {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.bouton-recherche:hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Section du menu */
+.section-menu {
+    padding: 4rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-categorie {
+    margin-bottom: 5rem;
+}
+
+.titre-categorie {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: var(--sombre);
+    font-weight: 300;
+    letter-spacing: 5px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.sous-titre-categorie {
+    font-family: 'Parisienne', cursive;
+    font-size: 2rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Grille des plats */
+.grille-plats {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+.carte-plat {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.carte-plat:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.conteneur-image-plat {
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(135deg, var(--beige) 0%, #D4C5A9 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.badge-plat {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--or);
+    color: white;
+    padding: 0.5rem 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 20px;
+}
+
+.infos-plat {
+    padding: 1.5rem;
+}
+
+.nom-plat {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--sombre);
+    font-weight: 600;
+}
+
+.description-plat {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.pied-plat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.prix-plat {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    color: var(--sombre);
+    font-weight: 700;
+}
+
+.bouton-ajouter-panier {
+    padding: 0.8rem 1.5rem;
+    background: var(--sombre);
+    color: var(--creme);
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.bouton-ajouter-panier:hover {
+    background: #000;
+    transform: translateY(-2px);
+}
+
+/* Pied de page */
+footer {
+    background: var(--sombre);
+    color: var(--creme);
+    padding: 3rem 5%;
+    text-align: center;
+    margin-top: auto;
+}
+
+.logo-pied-page {
+    margin-bottom: 2rem;
+}
+
+.texte-logo-pied-page {
+    font-family: 'Arian', 'Arial Black', sans-serif;
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 8px;
+    color: var(--beige);
+}
+
+.paris-logo-pied-page {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    color: var(--beige);
+    margin-top: -3px;
+    margin-bottom: 1rem;
+}
+
+.slogan-logo-pied-page {
+    font-family: 'Parisienne', cursive;
+    font-size: 1.3rem;
+    color: var(--beige);
+}
+
+.infos-pied-page {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+    text-align: left;
+}
+
+.section-pied-page h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    color: var(--beige);
+}
+
+.section-pied-page p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--creme);
+}
+
+/* Animations */
+@keyframes apparitionEchelle {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes apparitionHaut {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .texte-logo-principal {
+        font-size: 3.5rem;
+        letter-spacing: 10px;
+    }
+
+    .slogan-logo-principal {
+        font-size: 1.8rem;
+    }
+
+    .paris-logo-principal {
+        font-size: 0.9rem;
+        letter-spacing: 5px;
+    }
+
+    .liens-nav {
+        gap: 1rem;
+    }
+
+    .liens-nav a {
+        font-size: 0.85rem;
+    }
+
+    .grille-plats {
+        grid-template-columns: 1fr;
+    }
+
+    .titre-categorie {
+        font-size: 2rem;
+    }
+}

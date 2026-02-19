@@ -522,6 +522,87 @@ footer {
     }
 }
 
+table {
+    margin: 0 auto; 
+    border: 1.5px solid black; 
+   background-color: #C9B896;
+}
+
+td {
+    padding:3px;
+    border: 1.5px solid black; 
+    
+}
+
+th {
+    padding:3px;
+    border: 1.5px solid black; 
+}
+
+
+.att button[type="button"] {
+    padding: 3px;
+}
+
+.enl button[type="button"] {
+    padding: 3px;
+}
+
+.liv button[type="button"] {
+    padding: 3px;
+}
+
+
+.att {
+    width: 1000px;              
+    margin: 50px auto;        
+    padding: 40px;             
+    border: 5px solid black;    
+    border-radius: 20px;       
+    background: white;         
+    text-align: center; 
+}
+.enl {
+    width: 1000px;              
+    margin: 50px auto;        
+    padding: 40px;             
+    border: 5px solid black;    
+    border-radius: 20px;       
+    background: white;         
+    text-align: center; 
+
+}
+
+.liv {
+    width: 1000px;              
+    margin: 50px auto;        
+    padding: 40px;             
+    border: 5px solid black;    
+    border-radius: 20px;       
+    background: white;         
+    text-align: center; 
+
+}
+
+
+.liv h1 {
+    margin-bottom:15px;
+    font-family: 'Parisienne', cursive;
+    font-size: 2rem;
+}
+
+
+.att h1 {
+    margin-bottom:15px;
+    font-family: 'Parisienne', cursive;
+    font-size: 2rem;
+}
+
+.enl h1 {
+    margin-bottom:15px;
+    font-family: 'Parisienne', cursive;
+    font-size: 2rem;
+}
 
 
 
@@ -533,7 +614,7 @@ footer {
     border: 5px solid black;    
     border-radius: 20px;       
     background: white;         
-    text-align: center;        
+    text-align: center;       
 }
 
 
@@ -624,4 +705,8 @@ footer {
 	margin-top:15px;
 }
 
+
+#e5 + label{
+	border-radius: 100%;
+}
 

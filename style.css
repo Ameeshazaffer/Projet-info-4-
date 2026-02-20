@@ -382,7 +382,7 @@ footer {
     text-align: center;	
 }
 
-// Espace administrateur //
+/* Espace administrateur */
 
 .form-container{
     font-family: "Cormorant Garamond", serif;
@@ -450,7 +450,7 @@ footer {
     height: 60px;
 }
 
-// Profil //
+/* Profil */
 
 .table-profil{
   background-color: rgba(197, 171, 116, 0.2); 
@@ -472,7 +472,7 @@ footer {
     cursor: pointer;
 }
 
-// Notation //
+/* Notation */
 .form-container-radio{
     display: flex;
     justify-content: center;

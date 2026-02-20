@@ -18,6 +18,9 @@ body {
     color: #1a1a1a;
     margin: 0;
     padding-top: 120px; 
+	//flex-direction: column;
+    //min-height: 100vh;
+    //display: flex;
 }
 
 
@@ -138,7 +141,8 @@ footer {
     color: #F5F0E8;             
     padding: 1rem 5%;
     text-align: center;
-    font-family: 'Montserrat', sans-serif;  
+    font-family: 'Montserrat', sans-serif;
+	// margin-top : auto; 
 }
 
 

@@ -3,10 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <title>EVEIL Paris Restaurant</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Montserrat:wght@300;400;500;600;700&family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@300;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Barre de navigation -->
+   <!-- Barre de navigation -->
     <nav id="barre-navigation">
         <div class="conteneur-nav">
             <div class="logo-nav">
@@ -24,14 +31,16 @@
         </div>
     </nav>
     <!-- NOTATION -->
-    <div class="form-container">
-        <h1>Mon avis</h1>
-    </div>
+    
+    <div class="ins">
+         <h1>Mon avis</h1>
 
-    <form action="merci.html" method="get">
-        <div class="form-container">
-            <p><b>Livraison</b></p>
+  
+        <form action="merci.html" method="get" class="connexion">
+            <div class="section-notation">
+            <h2>Livraison</h2>
             <p>Pour une meilleure expèrience, mettez une note sur 5 de votre livraison !</p>
+
             <select name="note_livraison">
                 <option value="1">⭐</option>
                 <option value="2">⭐⭐</option>
@@ -39,11 +48,12 @@
                 <option value="4">⭐⭐⭐⭐</option>
                 <option value="5">⭐⭐⭐⭐⭐ </option>
             </select>
-        </div>
+            </div>
 
-        <div class="form-container">
-            <p><b>Produits reçus</b></p>
+            <div class="section-notation">
+            <h2>Produits reçus</h2>
             <p>Pour une meilleure expèrience, mettez une note sur 5 des produits reçus !</p>
+
             <select name="note_produits">
                 <option value="1">⭐</option>
                 <option value="2">⭐⭐</option>
@@ -52,11 +62,10 @@
                 <option value="5">⭐⭐⭐⭐⭐ </option>
             </select>
         </div>
-        <div class="form-container">
-            <input type="submit" value="Envoyer"></td>
-        </div>
-    </form>
 
+            <input type="submit" value="Envoyer"></td>
+        </form>
+    </div>
     <!-- Pied de page -->
     <footer>
         <div class="logo-pied-page">

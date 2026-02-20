@@ -208,7 +208,7 @@ nav {
 }
 .pied-plat {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start; 
     align-items: center;
     margin-top: 1rem;
 }
@@ -218,18 +218,6 @@ nav {
     color: #1a1a1a;
     font-weight: 700;
 }
-.bouton-ajouter-panier {
-    padding: 0.8rem 1.5rem;
-    background: #1a1a1a;
-    color: #E2D9BB;
-    border: none;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    letter-spacing: 1px;
-    cursor: pointer;
-    border-radius: 5px;
-}
-.bouton-ajouter-panier:hover { background: #000; }
 
 /* FOOTER */
 footer {
@@ -419,5 +407,4 @@ footer {
 .zone-produits .nom-plat { font-size: 1.2rem; }
 .zone-produits .description-plat { font-size: 0.9rem; }
 .zone-produits .prix-plat { font-size: 1.5rem; }
-.zone-produits .bouton-ajouter-panier { font-size: 0.85rem; padding: 0.7rem 1.2rem; }
 

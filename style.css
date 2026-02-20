@@ -43,7 +43,6 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: all 0.3s ease;
 }
 
 .texte-logo-nav {
@@ -74,47 +73,23 @@ nav {
     font-size: 1rem;
     font-weight: 500;
     letter-spacing: 1px;
-    transition: all 0.3s ease;
     position: relative;
     font-family: 'Montserrat', sans-serif;
 }
 
-.liens-nav a:after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: #1a1a1a;
-    transition: width 0.3s ease;
+
+
+.liens-nav a:hover{
+    text-decoration: underline;
 }
 
-.liens-nav a:hover:after {
-    width: 100%;
-}
 
-.liens-nav img {
-    width: 20px;
-    height: 20px;
-}
-
-.bouton-connexion, {
+.bouton-connexion {
     padding: 0.6rem 1.5rem;
     border: 2px solid #1a1a1a;
-    background: transparent;
-    color: #1a1a1a;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
-    letter-spacing: 1px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-decoration: none;
 }
 
-.bouton-connexion:hover,  {
-    transform: translateY(-2px);
-}
+
 
 
 
@@ -353,8 +328,17 @@ footer {
     text-align: center;
 }
 
+.redirection a {
+    color: #1a1a1a;      
+    font-weight: bold;
+    text-decoration: none;
+}
 
 
+.redirection a:hover {
+	text-decoration: underline;
+      
+}
 
 .co {
     max-width: 500px;              
@@ -397,5 +381,6 @@ footer {
     font-size: 2rem;
     text-align: center;	
 }
+
 
 

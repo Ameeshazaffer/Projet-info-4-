@@ -382,5 +382,100 @@ footer {
     text-align: center;	
 }
 
+// Espace administrateur //
 
+.form-container{
+    font-family: "Cormorant Garamond", serif;
+    font-size: 12.5px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-weight: 500;
+    display:flex;
+    margin: 30px auto;
+    flex-direction:column; 
+    align-items: center;
+    text-align:center; 
+    justify-content: center;
+    background-color: rgba(197, 171, 116, 0.2);
+    border: 1px solid rgba(197, 171, 116, 0.45);
+    padding-block :10px;
+    padding-inline:10px;
+    height: 100px;
+    width : 500px;
+    border-radius:16px;
+}
+.select-container{
+    font-family: "Cormorant Garamond", serif;
+    margin : 20px auto;
+    display:flex;
+    justify-content: center;
+    position :relative;
+    width : 250px;
+    height : 50px; 
+}
+.select-box{
+    padding : 0 30px 0 15px;
+    color:white; 
+    background:#C9B896;
+    font-size : 20px;
+}
+.icon-container i{
+    font-size : 30px;
+    color : white;
+}
+.icon-container img{
+    width : 22px;
+    height: 22px;
+    color : white;
+}
+.table table{
+  font-family: "Cormorant Garamond", serif; 
+  background-color: rgba(197, 171, 116, 0.2); 
+  border: 1px solid rgba(197, 171, 116, 0.45); 
+  padding-block :20px; 
+  padding-inline:20px; 
+  height: 150px; 
+  width : 600px; 
+  border-radius:16px; 
+  margin : 30px auto; 
+  border-collapse: collapse; 
+  text-align:center; 
+  overflow: hidden; 
+  border: 1px solid rgba(197, 171, 116, 0.45);
+}
+.table th,.table td {
+    padding: 18px 25px; 
+}
+.table tr {
+    height: 60px;
+}
 
+// Profil //
+
+.table-profil{
+  background-color: rgba(197, 171, 116, 0.2); 
+  padding-block :10px; 
+  padding-inline:20px; 
+  height: 100px; 
+  width : 200px; 
+  border-radius:16px; 
+  margin : 15px auto; 
+  border-collapse: collapse; 
+  text-align:center; 
+  overflow: hidden; 
+}
+
+.profil-image {
+    font-size: 14px;
+    margin-left: 10px;
+    text-align:left;
+    cursor: pointer;
+}
+
+// Notation //
+.form-container-radio{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}

@@ -502,3 +502,30 @@ footer {
   border:1px solid black;
   padding: 10px;
 }
+.att{
+    max-width: 800px;
+    margin: 5% auto;
+    padding: 30px;
+    border: 2px solid black;
+    border-radius: 20px;
+    background-color: #C9B896; 
+    text-align: center;
+    font-family: "Cinzel", Sans-serif;
+}
+
+.att h1{
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.att table{
+    width: 100%;
+    margin-top: 15px;
+}
+
+.att th, .att td{
+    border: 1px solid black;
+    padding: 10px;
+    font-size: 1rem;
+
+}

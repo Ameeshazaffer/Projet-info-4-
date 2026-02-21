@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -416,11 +417,13 @@ footer {
 .zone-produits .description-plat { font-size: 0.9rem; }
 .zone-produits .prix-plat { font-size: 1.5rem; }
 
-/* Livraison / Commandes */
+/* Livraison et Commandes version ordinateur/tablette  */
 
-.liv,
-.att,
-.enl {
+.liv-commande {
+    display: none;
+}
+
+.liv, .att, .enl {
     max-width: 1000px;
     margin: 140px auto 5% auto;
     padding: 30px;
@@ -431,37 +434,25 @@ footer {
     font-family: 'Montserrat', sans-serif;
 }
 
-.att h1,
-.enl h1,
-.liv h1 {
+.att h1, .enl h1, .liv h1 {
     font-size: 2rem;
     margin-bottom: 20px;
     letter-spacing: 2px;
 }
 
-.att table,
-.enl table,
-.liv table {
+.att table, .enl table, .liv table {
     width: 100%;
     margin-top: 15px;
 }
 
-.att th,
-.att td,
-.enl th,
-.enl td,
-.liv th,
-.liv td {
+.att th, .att td, .enl th, .enl td, .liv th, .liv td {
     border: 1px solid #1a1a1a;
     padding: 12px;
     font-size: 1rem;
 }
 
-/* Boutons cohérents avec le site */
 
-.att button,
-.enl button,
-.liv button {
+.att button, .enl button, .liv button {
     background-color: #1a1a1a;
     color: #E2D9BB;
     border: none;
@@ -473,14 +464,12 @@ footer {
     transition: background 0.3s ease;
 }
 
-.att button:hover,
-.enl button:hover,
-.liv button:hover {
+.att button:hover, .enl button:hover, .liv button:hover {
     background-color: #000000;
 }
 
 
-/* inscription */
+/* Inscription */
 
 .ins {
     max-width: 800px;
@@ -499,8 +488,7 @@ footer {
     flex-wrap: wrap;
 }
 
-.infos-perso,
-.infos-liv {
+.infos-perso, .infos-liv {
     display: flex;
     flex-direction: column;
     max-width: 350px;
@@ -509,8 +497,7 @@ footer {
     background-color: #E2D9BB;
 }
 
-.inscription input,
-.inscription textarea {
+.inscription input, .inscription textarea {
     width: 100%;
     padding: 15px;
     border: 2px solid #1a1a1a;
@@ -611,6 +598,70 @@ footer {
     letter-spacing: 2px;
 }
 
+
+/* Espace administrateur */
+
+
+.form-container {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
+    font-weight: 500;
+    display: flex;
+    margin: 30px auto;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    width: 500px;
+}
+
+.select-container {
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    width: 250px;
+    height: 50px;
+}
+
+.select-box {
+    padding: 0 15px;
+    background-color: #C9B896;
+    font-size: 1rem;
+    color: #1a1a1a;
+    border: 2px solid #1a1a1a;
+}
+
+.table table {
+    font-family: Georgia, serif;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    margin: 30px auto;
+    text-align: center;
+    width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
+.table th, .table td {
+    padding: 15px;
+    border: 1px solid #1a1a1a;
+}
+
+
+/* Profil */
+
+.table-profil {
+    background-color: #FFFFFF;
+    padding: 20px;
+    width: 300px;
+    border-radius: 12px;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+
 .profil-image {
     font-size: 14px;
     margin-left: 10px;
@@ -626,9 +677,71 @@ footer {
     text-decoration: underline;
 }
 
+/* Notation */
+
 .form-container-radio {
     display: flex;
     justify-content: center;
     gap: 15px;
     margin-top: 10px;
 }
+
+/*Livraison version mobile*/
+
+@media (max-width: 768px) {
+    .liv table, nav, footer {
+        display: none;
+    }
+
+    .liv-commande {
+        display: block;
+        background-color: #E2D9BB;
+        border: 2px solid #1a1a1a;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 20px;
+        text-align: left;
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    .liv-commande p {
+        margin: 8px 0;
+    }
+
+    .liv-commande button {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        margin-top: 10px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        border-radius: 8px;
+        background-color: #1a1a1a;
+        color: #E2D9BB;
+        border: none;
+        font-size: 1rem;
+        transition: background 0.3s ease;
+    }
+
+    .liv-commande button:hover {
+        background-color: #000000;
+    }
+
+    .liv-commande a {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        text-align: center;
+        background-color: #333;
+        color: #E2D9BB;
+        border-radius: 8px;
+        text-decoration: none;
+        margin: 10px 0;
+    }
+
+    .liv-commande a:hover {
+        background-color: #000;
+    }
+}
+
+

@@ -2,10 +2,10 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EVEIL - Nos Produits</title>
+    <title>EVEIL - Livraison </title>
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
 
@@ -18,13 +18,15 @@
             </div>
             <ul class="liens-nav">
                 <li><a href="index.html">ACCUEIL</a></li>
-                <li><a href="index.html" class="bouton-inscription">DECONNEXION</a></li>
+                <li><a href="connexion.html" class="bouton-inscription">CONNEXION</a></li>
             </ul>
         </div>
-   </nav>
+    </nav>
 
 <div class="liv">
   <h1>COMMANDES À LIVRER</h1>
+  
+  <!-- Version administrateur -->
   <table>
     <thead>
       <tr>
@@ -37,7 +39,6 @@
         <th>Action</th>
       </tr>
     </thead>
-
     <tbody>
       <tr>
         <td>#12345</td>
@@ -46,11 +47,8 @@
         <td>5ème étage</td>
         <td>Laisser la commande devant la porte si absent.</td>
         <td>06 73 18 54 22</td>
-        <td>
-          <button type="button">Livrée</button>
-        </td>
+        <td><button type="button">Livrée</button></td>
       </tr>
-
       <tr>
         <td>#67891</td>
         <td class="adresse">13 rue des Lilas, 75020 Paris</td>
@@ -58,16 +56,37 @@
         <td>2ème étage</td>
         <td>Merci d’appeler en arrivant.</td>
         <td>06 73 18 54 23</td>
-        <td>
-          <button type="button">Livrée</button>
-        </td>
+        <td><button type="button">Livrée</button></td>
       </tr>
     </tbody>
   </table>
+
+  <!-- Version mobile -->
+  <div class="liv-commande">
+    <p><strong>Numéro de commande :</strong> #12345</p>
+    <p><strong>Adresse :</strong> 12 rue des Lilas, 75020 Paris</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=12+rue+des+Lilas,+75020+Paris" target="_blank">Ouvrir dans Maps</a>
+    <p><strong>Code interphone :</strong> B4827</p>
+    <p><strong>Étage :</strong> 5ème étage</p>
+    <p><strong>Commentaires :</strong> Laisser la commande devant la porte si absent.</p>
+    <p><strong>Téléphone :</strong> <a href="tel:+33673185422">06 73 18 54 22</a></p>
+    <button>Livrée</button>
+  </div>
+
+  <div class="liv-commande">
+    <p><strong>Numéro de commande :</strong> #67891</p>
+    <p><strong>Adresse :</strong> 13 rue des Lilas, 75020 Paris</p>
+    <a href="https://www.google.com/maps/search/?api=1&query=13+rue+des+Lilas,+75020+Paris" target="_blank">Ouvrir dans Maps</a>
+    <p><strong>Code interphone :</strong> B4828</p>
+    <p><strong>Étage :</strong> 2ème étage</p>
+    <p><strong>Commentaires :</strong> Merci d’appeler en arrivant.</p>
+    <p><strong>Téléphone :</strong> <a href="tel:+33673185423">06 73 18 54 23</a></p>
+    <button>Livrée</button>
+  </div>
 </div>
 
- 
-<!-- FOOTER -->
+
+    <!-- FOOTER -->
     <footer>
         <div class="logo-pied-page">
             <div class="texte-logo-pied-page">✧ÉVEIL✧</div>

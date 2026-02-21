@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>EVEIL - Nos Produits</title>
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav id="barre-navigation">
+        <div class="conteneur-nav">
+            <div class="logo-nav">
+                <div class="texte-logo-nav">✦ÉVEIL✦</div>
+                <div class="paris-logo-nav">PARIS</div>
+            </div>
+            <ul class="liens-nav">
+                <li><a href="index.html">ACCUEIL</a></li>
+                <li><a href="connexion.html" class="bouton-inscription">CONNEXION</a></li>
+            </ul>
+        </div>
+    </nav>
+
+<div class="ins">
+<form action="proce.php" method="post" class="inscription">
+  <h1>CREER UN COMPTE</h1>
+
+  <div class="infos">
+    <div class="infos-perso">
+      <h2>Informations personnelles</h2>
+      <input type="text" name="nom" placeholder="Nom">
+      <input type="text" name="prenom" placeholder="Prénom">
+      <input type="tel" name="telephone" placeholder="Téléphone">
+      <input type="email" name="email" placeholder="Email">
+      <input type="password" name="mdp" placeholder="Mot de passe">
+    </div>
+
+    <div class="infos-liv">
+      <h2>Informations de livraison</h2>
+      <input type="text" name="adresse" placeholder="Adresse complète">
+      <input type="text" name="etage" placeholder="Étage / numéro d’appartement">
+      <input type="text" name="code_interphone" placeholder="Code interphone">
+      <textarea name="commentaires" id="commentaires" placeholder="Commentaires ou instructions pour la livraison" rows="4"></textarea>
+    </div>
+  </div>
+
+  <div class="bouton">
+    <input type="submit" value="S'inscrire">
+  </div>
+
+  <div class="redirection">
+    Déjà client ? <a href="connexion.html">Se connecter</a>
+  </div>
+</form>
+</div>
+
+
+<!-- FOOTER -->
+    <footer>
+        <div class="logo-pied-page">
+            <div class="texte-logo-pied-page">✧ÉVEIL✧</div>
+            <div class="paris-logo-pied-page">PARIS</div>
+            <div class="slogan-logo-pied-page">Éveillez vos papilles gustatives.</div>
+        </div>
+        <div class="infos-pied-page">
+            <div class="section-pied-page">
+                <h3>ADRESSE</h3>
+                <p>123 Avenue des Champs-Élysées<br>75008 Paris, France</p>
+            </div>
+            <div class="section-pied-page">
+                <h3>HORAIRES</h3>
+                <p>Mardi - Samedi<br>12h00 - 14h30 | 19h00 - 22h30<br>Fermé Dimanche & Lundi</p>
+            </div>
+            <div class="section-pied-page">
+                <h3>CONTACT</h3>
+                <p>Tél: +33 1 23 45 67 89<br>Email: contact@eveilparis.fr</p>
+            </div>
+        </div>
+        <p style="margin-top:2rem;color:#C9B896;">© 2026 EVEIL Paris. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>
+

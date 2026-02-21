@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>EVEIL - Nos Produits</title>
+    <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- NAV -->
+    <nav>
+        <div class="conteneur-nav">
+            <div class="logo-nav">
+                <div class="texte-logo-nav">✦ÉVEIL✦</div>
+                <div class="paris-logo-nav">PARIS</div>
+            </div>
+            <ul class="liens-nav">
+                <li><a href="index.html">ACCUEIL</a></li>
+                <li><a href="connexion.html" class="bouton-inscription">CONNEXION</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+        <h1>Nos Produits</h1>
+        <p>Découvrez notre carte gastronomique</p>
+        <div class="zone-recherche">
+            <input type="text" class="champ-recherche" placeholder="Rechercher un plat, un ingrédient...">
+        </div>
+    </div>
+
+    <!-- CONTENU -->
+    <div class="conteneur-principal">
+
+        <!-- SIDEBAR -->
+        <aside class="sidebar">
+
+            <div class="bloc-filtre">
+                <h3>Catégories</h3>
+                <label class="option-filtre">
+                    <input type="checkbox"> <span>Entrées</span>
+                </label>
+                <label class="option-filtre">
+                    <input type="checkbox"> <span>Plats</span>
+                </label>
+                <label class="option-filtre">
+                    <input type="checkbox"> <span>Desserts</span>
+                </label>
+            </div>
+
+            <div class="bloc-filtre">
+                <h3>Type de plat</h3>
+                <label class="option-filtre">
+                    <input type="checkbox"> <span>Viande</span>
+                </label>
+                <label class="option-filtre">
+                    <input type="checkbox"> <span>Poisson</span>
+                </label>
+                <label class="option-filtre">
+                    <input type="checkbox"> <span>Végétarien</span>
+                </label>
+                <label class="option-filtre">
+                    <input type="checkbox"> <span>Vegan</span>
+                </label>
+            </div>
+
+            <div class="bloc-filtre">
+                <h3>Allergènes</h3>
+                <label class="option-filtre">
+                    <input type="checkbox"> <span>Sans gluten</span>
+                </label>
+                <label class="option-filtre">
+                    <input type="checkbox"> <span>Sans lactose</span>
+                </label>
+                <label class="option-filtre">
+                    <input type="checkbox"> <span>Sans fruits à coque</span>
+                </label>
+                <label class="option-filtre">
+                    <input type="checkbox"> <span>Sans œuf</span>
+                </label>
+            </div>
+
+        </aside>
+
+        <!-- PRODUITS -->
+        <div class="zone-produits">
+            <div class="barre-resultats">
+                <span class="compteur">16 plats trouvés</span>
+                <div class="zone-tri">
+                    <label for="tri">Trier par :</label>
+                    <select class="select-tri" id="tri">
+                        <option>Pertinence</option>
+                        <option>Prix croissant</option>
+                        <option>Prix décroissant</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="grille-plats">
+
+                <!-- ENTRÉES -->
+                <div class="carte-plat">
+                    <div class="conteneur-image-plat">
+                        <img src="https://www.finedininglovers.fr/sites/default/files/styles/1_1_768x768/public/2025-02/soupe-vge-paul-bocuse-credit-aurelio-rodriguez.png.webp?itok=RJ8QrYsA" alt="Soupe VGE">
+                        <div class="badge-plat">SIGNATURE</div>
+                    </div>
+                    <div class="infos-plat">
+                        <h3 class="nom-plat">Soupe VGE</h3>
+                        <p class="description-plat">Soupe aux truffes noires, signature de Paul Bocuse. Créée pour le président Valéry Giscard d'Estaing.</p>
+                        <div class="pied-plat">
+                            <span class="prix-plat">45€</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-plat">
+                    <div class="conteneur-image-plat">
+                        <img src="https://www.mangeonsbien.com/wp-content/uploads/2017/03/carpaccio-boeuf.jpg" alt="Carpaccio de Bœuf Cipriani">
+                    </div>
+                    <div class="infos-plat">
+                        <h3 class="nom-plat">Carpaccio de Bœuf Cipriani</h3>
+                        <p class="description-plat">Création légendaire de Giuseppe Cipriani, fines tranches de bœuf avec sa sauce signature.</p>
+                        <div class="pied-plat">
+                            <span class="prix-plat">38€</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-plat">
+                    <div class="conteneur-image-plat">
+                        <img src="https://caviarspherika.com/cdn/shop/articles/Spherika-caviar-esturion-ostras-espuma_16x9_5ecd563d-31a8-4f49-9943-5ec87edc8623.jpg?v=1764665370&width=1500" alt="Huîtres et Perles de Tapioca">
+                    </div>
+                    <div class="infos-plat">
+                        <h3 class="nom-plat">Huîtres et Perles de Tapioca</h3>
+                        <p class="description-plat">Huîtres et perles de tapioca au caviar, création raffinée d'Anne-Sophie Pic.</p>
+                        <div class="pied-plat">
+                            <span class="prix-plat">52€</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-plat">
+                    <div class="conteneur-image-plat">
+                        <img src="https://cdn.prod.website-files.com/6578d4b10e69595f1123cd57/67efa64beb71a42ef524f05a_ham%20blue.jpg" alt="Salade Gourmande Noma">
+                    </div>
+                    <div class="infos-plat">
+                        <h3 class="nom-plat">Salade Gourmande Noma</h3>
+                        <p class="description-plat">Salade gourmande façon Noma, par René Redzepi. Légumes du jardin et herbes sauvages.</p>
+                        <div class="pied-plat">
+                            <span class="prix-plat">42€</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-plat">
+                    <div class="conteneur-image-plat">
+                        <img src="https://www.carrefour.be/on/demandware.static/-/Sites-carrefour-be-recipes/default/dw688162a6/content/dam/carrefour/recettes/2019-11/RAVIOLES-DE-LANGOUSTINE.jpg" alt="Ravioli Langoustine & Foie Gras">
+                    </div>
+                    <div class="infos-plat">
+                        <h3 class="nom-plat">Ravioli Langoustine & Foie Gras</h3>
+                        <p class="description-plat">Ravioli ouvert langoustine et foie gras, signature de Yannick Alléno.</p>
+                        <div class="pied-plat">
+                            <span class="prix-plat">58€</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PLATS -->
+                <div class="carte-plat">
+                    <div class="conteneur-image-plat">
+                        <img src="https://www.certifiedangusbeef.com/_next/image?q=75&url=https%3A%2F%2Fappetizing-cactus-7139e93734.media.strapiapp.com%2FUltimate_Beef_Wellington_1bad1b820f.jpeg&w=1920" alt="Beef Wellington">
+                        <div class="badge-plat">PLAT DU JOUR</div>
+                    </div>
+                    <div class="infos-plat">
+                        <h3 class="nom-plat">Beef Wellington</h3>
+                        <p class="description-plat">Signature de Gordon Ramsay. Filet de bœuf en croûte de champignons et pâte feuilletée.</p>
+                        <div class="pied-plat">
+                            <span class="prix-plat">68€</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-plat">
+                    <div class="conteneur-image-plat">
+                        <img src="https://www.arts-et-gastronomie.com/wp-content/webp-express/webp-images/uploads/2020/12/10_AG_HIVER102-600x600.jpg.webp" alt="Poularde de Bresse en Vessie">
+                        <div class="badge-plat">POPULAIRE</div>
+                    </div>
+                    <div class="infos-plat">
+                        <h3 class="nom-plat">Poularde de Bresse en Vessie</h3>
+                        <p class="description-plat">Par Georges Blanc. Poularde tendre cuite à la vapeur dans sa vessie, tradition lyonnaise.</p>
+                        <div class="pied-plat">
+                            <span class="prix-plat">75€</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-plat">
+                    <div class="conteneur-image-plat">
+                        <img src="https://epicime.com/img/cms/Recettes/Le%20risotto%20milanais%20au%20safran.jpg" alt="Risotto au Safran">
+                    </div>
+                    <div class="infos-plat">
+                        <h3 class="nom-plat">Risotto au Safran</h3>
+                        <p class="description-plat">Risotto à la milanaise par Massimo Bottura. Riz Carnaroli, safran et parmesan.</p>
+                        <div class="pied-plat">
+                            <span class="prix-plat">48€</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-plat">
+                    <div class="conteneur-image-plat">
+                        <img src="https://media.houra.fr/images/widget/recette/gd_recette_2_FAV_homard_beurre_blanc.jpg" alt="Homard Rôti Beurre Blanc">
+                    </div>
+                    <div class="infos-plat">
+                        <h3 class="nom-plat">Homard Rôti Beurre Blanc</h3>
+                        <p class="description-plat">Par Alain Ducasse. Homard rôti à la perfection, beurre blanc onctueux.</p>
+                        <div class="pied-plat">
+                            <span class="prix-plat">85€</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-plat">
+                    <div class="conteneur-image-plat">
+                        <img src="https://nouvellesgastronomiques.com/wp-content/uploads/2019/07/Recette-Canard-Laqu%C3%A9-Tha%C3%AF-sign%C3%A9-par-Nathalie-Nguyen.png" alt="Canard Laqué Gastronomique">
+                    </div>
+                    <div class="infos-plat">
+                        <h3 class="nom-plat">Canard Laqué Gastronomique</h3>
+                        <p class="description-plat">Version modernisée par Heston Blumenthal. Peau croustillante, chair fondante.</p>
+                        <div class="pied-plat">
+                            <span class="prix-plat">62€</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-plat">
+                    <div class="conteneur-image-plat">
+                        <img src="https://cache.marieclaire.fr/data/photo/w1000_ci/1bk/turbot-sauce-hollandaise-et-puree-aux-truffes.jpg" alt="Turbot Sauce Hollandaise">
+                    </div>
+                    <div class="infos-plat">
+                        <h3 class="nom-plat">Turbot Sauce Hollandaise</h3>
+                        <p class="description-plat">Par Joël Robuchon. Turbot sauvage, sauce hollandaise moderne, légumes de saison.</p>
+                        <div class="pied-plat">
+                            <span class="prix-plat">78€</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- DESSERTS -->
+                <div class="carte-plat">
+                    <div class="conteneur-image-plat">
+                        <img src="https://www.baladeenroulotte.com/blog/wp-content/uploads/2014/05/dome-chocolat1-e1554137302190.jpg" alt="Sphère Chocolat Cœur Coulant">
+                    </div>
+                    <div class="infos-plat">
+                        <h3 class="nom-plat">Sphère Chocolat Cœur Coulant</h3>
+                        <p class="description-plat">Par Cédric Grolet. Sphère de chocolat qui révèle un cœur coulant intense.</p>
+                        <div class="pied-plat">
+                            <span class="prix-plat">22€</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-plat">
+                    <div class="conteneur-image-plat">
+                        <img src="https://sucredorgeetpaindepices.fr/wp-content/uploads/2014/03/27-cuisine-Grand-Marnier-Souffl%C3%A9-Sucredorgeetpaindepices.over-blog.com-32.jpg" alt="Soufflé au Grand Marnier">
+                    </div>
+                    <div class="infos-plat">
+                        <h3 class="nom-plat">Soufflé au Grand Marnier</h3>
+                        <p class="description-plat">Par Raymond Blanc. Soufflé aérien à l'orange, servi à la minute.</p>
+                        <div class="pied-plat">
+                            <span class="prix-plat">18€</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-plat">
+                    <div class="conteneur-image-plat">
+                        <img src="https://odelices.ouest-france.fr/images/recettes/2013/tarte_au_citron_meringuee_pate_brisee.jpg.webp" alt="Tarte Citron Meringuée">
+                    </div>
+                    <div class="infos-plat">
+                        <h3 class="nom-plat">Tarte Citron Meringuée</h3>
+                        <p class="description-plat">Par Pierre Hermé. Citron de Menton, meringue italienne, sablé breton.</p>
+                        <div class="pied-plat">
+                            <span class="prix-plat">20€</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-plat">
+                    <div class="conteneur-image-plat">
+                        <img src="https://www.auxdelicesdupalais.net/wp-content/uploads/2024/04/panna-cotta-vanille-fraise-5.jpg" alt="Panna Cotta Vanille Fraise">
+                    </div>
+                    <div class="infos-plat">
+                        <h3 class="nom-plat">Panna Cotta Vanille Fraise</h3>
+                        <p class="description-plat">Par Alain Ducasse. Douceur crémeuse à la vanille, coulis de fraises fraîches.</p>
+                        <div class="pied-plat">
+                            <span class="prix-plat">19€</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carte-plat">
+                    <div class="conteneur-image-plat">
+                        <img src="https://cedric-grolet.com/opera/5389-product_laptop2x/fleur-vanille-indiv22.jpg" alt="Fleur Vanille">
+                    </div>
+                    <div class="infos-plat">
+                        <h3 class="nom-plat">Fleur Vanille</h3>
+                        <p class="description-plat">Par Cédric Grolet. Création florale délicate, vanille de Madagascar, notes subtiles et raffinées.</p>
+                        <div class="pied-plat">
+                            <span class="prix-plat">24€</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="logo-pied-page">
+            <div class="texte-logo-pied-page">✧ÉVEIL✧</div>
+            <div class="paris-logo-pied-page">PARIS</div>
+            <div class="slogan-logo-pied-page">Éveillez vos papilles gustatives.</div>
+        </div>
+        <div class="infos-pied-page">
+            <div class="section-pied-page">
+                <h3>ADRESSE</h3>
+                <p>123 Avenue des Champs-Élysées<br>75008 Paris, France</p>
+            </div>
+            <div class="section-pied-page">
+                <h3>HORAIRES</h3>
+                <p>Mardi - Samedi<br>12h00 - 14h30 | 19h00 - 22h30<br>Fermé Dimanche & Lundi</p>
+            </div>
+            <div class="section-pied-page">
+                <h3>CONTACT</h3>
+                <p>Tél: +33 1 23 45 67 89<br>Email: contact@eveilparis.fr</p>
+            </div>
+        </div>
+        <p style="margin-top:2rem;color:#C9B896;">© 2026 EVEIL Paris. Tous droits réservés.</p>
+    </footer>
+
+</body>
+</html>

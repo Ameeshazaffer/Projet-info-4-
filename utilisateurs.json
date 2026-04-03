@@ -1,0 +1,52 @@
+{
+    "utilisateurs": [
+        {
+            "nom": "Ameesha",
+            "prenom": "Sankavi",
+            "telephone": "0755126480",
+            "email": "sankavi.kumanan@gmail.com",
+            "mdp": "abcd1234",
+            "adresse": "10 rue de la bastide",
+            "etage": "2",
+            "code_interphone": "22",
+            "role": "client",
+            "date_inscription": "2026-04-03"
+        },
+        {
+            "nom": "AHhhhh",
+            "prenom": "Sankavi",
+            "telephone": "0755126480",
+            "email": "sankavi.kumanan@gmail.com",
+            "mdp": "abcd1234",
+            "adresse": "10 rue de la bastide",
+            "etage": "2",
+            "code_interphone": "22",
+            "role": "client",
+            "date_inscription": "2026-04-03"
+        },
+        {
+            "nom": "AHhhhh",
+            "prenom": "Sankavi",
+            "telephone": "0755126480",
+            "email": "sankavi.kumanan@gmail.com",
+            "mdp": "abcd1234",
+            "adresse": "10 rue de la bastide",
+            "etage": "2",
+            "code_interphone": "22",
+            "role": "client",
+            "date_inscription": "2026-04-03"
+        },
+        {
+            "nom": "AHhhhh",
+            "prenom": "Sankavi",
+            "telephone": "0755126480",
+            "email": "sankavi.kumanan@gmail.com",
+            "mdp": "abcd1234",
+            "adresse": "10 rue de la bastide",
+            "etage": "2",
+            "code_interphone": "22",
+            "role": "client",
+            "date_inscription": "2026-04-03"
+        }
+    ]
+}

@@ -3,8 +3,8 @@ if (!isset($_GET["commande"]) || !isset($_GET["client"])) {
     die("Les informations ne sont pas complètes.");
 }
 
-$commandeId = $_GET["commande"];
-$clientEmail = $_GET["client"];
+$identifiant = $_GET["commande"];
+$email = $_GET["client"];
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -33,8 +33,8 @@ $clientEmail = $_GET["client"];
         <h1>MON AVIS</h1>
 
         <form action="traitement-de-notation.php" method="post" class="connexion">
-            <input type="hidden" name="commande_id" value="<?php echo htmlspecialchars($commandeId); ?>">
-            <input type="hidden" name="client_email" value="<?php echo htmlspecialchars($clientEmail); ?>">
+            <input type="hidden" name="commande_id" value="<?php echo htmlspecialchars($identifiant); ?>">
+            <input type="hidden" name="client_email" value="<?php echo htmlspecialchars($email); ?>">
 
             <div class="section-notation">
                 <h2>Livraison</h2>

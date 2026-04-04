@@ -16,12 +16,12 @@ if (isset($donnees["commandes"])) {
 
     foreach ($donnees["commandes"] as $index => $commande) { // parcourt le tableau de commande avec l'aide de l'index et donc la position de la commande dans le tableau 
 
-        // Vérifier si on est sur la bonne commande
+        // vérifie si on est sur la bonne commande
         if (isset($commande["id"]) && $commande["id"] == $id) {
 
             
             if ($action == "Livrée") { // si l'action envoyé est livrée ça modifie le statut dans le json
-                $donnees["commandes"][$index]["statut"] = "Livrée";
+                $donnees["commandes"][$index]["statut"] = "Livrée"; // va sur les données des commandes et sur la position du tbaleau et ensuite vers le statut de cette commande
             }
             else { // pareil pour l'action abandonné
                 if ($action == "Abandonnée") {

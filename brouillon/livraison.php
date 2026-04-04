@@ -56,9 +56,9 @@ if (isset($donnees["commandes"])) {
 
                     $Commande = true; // montre que la commande à afficher a été trouvée
 
-                    $idCommande = ""; // on regarde si existe et on renomme pour que ce soit plus facile pour afficher les données après dans le tableau 
+                    $identifiant = ""; // on regarde si existe et on renomme pour que ce soit plus facile pour afficher les données après dans le tableau 
                     if (isset($commande["id"])) {
-                        $idCommande = $commande["id"];
+                        $identifiant = $commande["id"];
                     }
 
                     $email = "";
@@ -94,20 +94,20 @@ if (isset($donnees["commandes"])) {
                 
                     ?>
                     <tr> <!-- met chaque valeur de la commande dans le tableau -->
-                        <td><?php echo htmlspecialchars($idCommande); ?></td>
+                        <td><?php echo htmlspecialchars($identifiant); ?></td>
                         <td><?php echo htmlspecialchars($email); ?></td>
                         <td><?php echo htmlspecialchars($date); ?></td>
                         <td><?php echo $listeProduits; ?></td>
                         <td><?php echo htmlspecialchars($prixTotal); ?> €</td>
                         <td>
                             <form action="traitement-de-livraison.php" method="POST">
-                                <input type="hidden" name="id" value="<?php echo htmlspecialchars($idCommande); ?>">
+                                <input type="hidden" name="id" value="<?php echo htmlspecialchars($identifiant); ?>">
                                 <input type="hidden" name="action" value="Livrée">
                                 <button type="submit">Livrée</button>
                             </form>
 
                             <form action="traitement-de-livraison.php" method="POST">
-                                <input type="hidden" name="id" value="<?php echo htmlspecialchars($idCommande); ?>">
+                                <input type="hidden" name="id" value="<?php echo htmlspecialchars($identifiant); ?>">
                                 <input type="hidden" name="action" value="Abandonnée">
                                 <button type="submit">Abandonnée</button>
                             </form>

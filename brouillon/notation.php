@@ -1,5 +1,5 @@
 <?php
-if (!isset($_GET["commande"]) || !isset($_GET["client"])) { // permet de voir si les deux champs que on doit mettre sont bien prises en compte et arrête le programme si ce n'est pas le cas
+if (!isset($_GET["commande"]) || !isset($_GET["client"])) { // permet de prendre la valeur de l'URL et voir si existe et si existe pas fait arrêter le programme
     die("Commande ou client manquant.");
 }
 

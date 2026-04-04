@@ -11,13 +11,13 @@ if (!isset($_GET["id"])) { // regarde si l'index qui est dans l'URL de l'utilisa
     die("Aucun utilisateur sélectionné.");
 }
 
-$id = $_GET["id"];
+$identifiant = $_GET["id"];
 
-if (!isset($utilisateurs[$id])) {
+if (!isset($utilisateurs[$identifiant])) {
     die("Utilisateur introuvable.");
 }
 
-$user = $utilisateurs[$id]; // on nomme chaque éléments du tableau pour que plus simple lorsque on veut afficher les éléments dans le tableau 
+$user = $utilisateurs[$identifiant]; // on nomme chaque éléments du tableau pour que plus simple lorsque on veut afficher les éléments dans le tableau 
 
 if (isset($user["nom"])) { 
     $nom = $user["nom"];

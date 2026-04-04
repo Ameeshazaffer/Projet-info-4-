@@ -3,8 +3,8 @@ if (!isset($_GET["commande"]) || !isset($_GET["client"])) { // permet de prendre
     die("Commande ou client manquant.");
 }
 
-$commandeId = $_GET["commande"];
-$clientEmail = $_GET["client"];
+$commandeidentifiee = $_GET["commande"];
+$mailduclient = $_GET["client"];
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -35,8 +35,8 @@ $clientEmail = $_GET["client"];
         <h1>MON AVIS</h1>
 
         <form action="traitement_notation.php" method="post" class="connexion">
-            <input type="hidden" name="commande_id" value="<?php echo htmlspecialchars($commandeId); ?>">
-            <input type="hidden" name="client_email" value="<?php echo htmlspecialchars($clientEmail); ?>">
+            <input type="hidden" name="commande_id" value="<?php echo htmlspecialchars($commandeidentifiee); ?>">
+            <input type="hidden" name="client_email" value="<?php echo htmlspecialchars($mailduclient); ?>">
 
             <div class="section-notation">
                 <h2>Livraison</h2>

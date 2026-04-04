@@ -1,17 +1,18 @@
 <?php
 
-$contenu = file_get_contents("utilisateurs.json");
-$donnees = json_decode($contenu, true);
+$contenu = file_get_contents("utilisateurs.json"); // il lit le fichier utilisateurs.json en entier
+$donnees = json_decode($contenu, true); // tranforme le langage json en php sous forme de tableau
 
-$utilisateurs = array();
-if (isset($donnees["utilisateurs"])) {
-  $utilisateurs = $donnees["utilisateurs"];
+$utilisateurs = array();// on cré un tableau vide pour stocker les utilisateurs dedans
+if (isset($donnees["utilisateurs"])) { // on regarde si les utilisateurs sont bien dans le tableau
+    $utilisateurs = $donnees["utilisateurs"]; // on renomme le tableau en $utilisateurs
 }
 
-$roleapresfiltrage = "tous";
-if (isset($_GET["role"]) && $_GET["role"] != "") {
-  $roleapresfiltrage = $_GET["role"];
+$roleapresfiltrage = "tous"; // le select est mis directement en tous
+if (isset($_GET["role"]) && $_GET["role"] != "") { // on prend la valeur envoyer par le select dans la barre de recherche ( existe et non vide)
+    $roleapresfiltrage = $_GET["role"]; // on renomme la valeur prise dans la barre par roleapresfiltrage
 }
+  
 ?>
   
 <!DOCTYPE html>
@@ -23,7 +24,6 @@ if (isset($_GET["role"]) && $_GET["role"] != "") {
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
 
 <nav id="barre-navigation">
     <div class="conteneur-nav">
@@ -37,39 +37,36 @@ if (isset($_GET["role"]) && $_GET["role"] != "") {
     </div>
 </nav>
 
-
 <div class="att">
     <h1>ESPACE ADMINISTRATEUR</h1>
     <h2>Gestion des utilisateurs du site</h2>
 
-
     <div class="select-container">
         <form method="GET" action="administrateur.php">
             <select name="role" class="select-box"  >
-                <option value="tous" >Tous</option> <!-- permet donc de prendre le role apres le filtrage et comparer avec celui de la selection et donc si oui, le marque comme celui selectionner  -->
-                <option value="client" >Clients</option>
-                <option value="admin" >Administrateurs</option>
-                <option value="livreur" >Livreurs</option>
-                <option value="restaurateur" >Restaurateurs</option>
+                <option value="tous" <?php if ($roleapresfiltrage == "tous") echo "selected"; ?>>Tous</option>
+                <option value="client" <?php if ($roleapresfiltrage == "client") echo "selected"; ?>>Clients</option>
+                <option value="admin" <?php if ($roleapresfiltrage == "admin") echo "selected"; ?>>Administrateurs</option>
+                <option value="livreur" <?php if ($roleapresfiltrage == "livreur") echo "selected"; ?>>Livreurs</option>
+                <option value="restaurateur" <?php if ($roleapresfiltrage == "restaurateur") echo "selected"; ?>>Restaurateurs</option>
             </select>
             <button type="submit">Filtrer</button>
         </form>
+
     </div>
-
-
-          <div class="liv">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Nom</th>
-                        <th>Prénom</th>
-                        <th>Rôle</th>
-                        <th>Action</th>
-                    </tr>
-                </thead>
-                </tbody>
-            </table>
-        </div>
+    <div class="liv">
+      <table>
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Rôle</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+</tbody>
+       </table>
+     </div>
     </div>
 <footer>
     <div class="logo-pied-page">

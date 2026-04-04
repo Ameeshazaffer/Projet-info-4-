@@ -5,7 +5,7 @@ if (!isset($_POST["id"]) || !isset($_POST["action"])) { // on regarde si les don
 }
 
 
-$id = $_POST["id"]; // on renomme les données du form 
+$identifiant = $_POST["id"]; // on renomme les données du form 
 $action = $_POST["action"];
 
 $contenu = file_get_contents("commandes.json");
@@ -17,7 +17,7 @@ if (isset($donnees["commandes"])) {
     foreach ($donnees["commandes"] as $index => $commande) { // parcourt le tableau de commande avec l'aide de l'index et donc la position de la commande dans le tableau 
 
         // vérifie si on est sur la bonne commande
-        if (isset($commande["id"]) && $commande["id"] == $id) {
+        if (isset($commande["id"]) && $commande["id"] == $identifiant) {
 
             
             if ($action == "Livrée") { // si l'action envoyé est livrée ça modifie le statut dans le json

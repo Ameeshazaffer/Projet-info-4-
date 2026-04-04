@@ -32,7 +32,7 @@ $clientEmail = $_GET["client"];
     <div class="ins">
         <h1>MON AVIS</h1>
 
-        <form action="traitement_notation.php" method="post" class="connexion">
+        <form action="traitement-de-notation.php" method="post" class="connexion">
             <input type="hidden" name="commande_id" value="<?php echo htmlspecialchars($commandeId); ?>">
             <input type="hidden" name="client_email" value="<?php echo htmlspecialchars($clientEmail); ?>">
 

@@ -100,13 +100,13 @@ if (isset($donnees["commandes"])) {
                         <td><?php echo $listeProduits; ?></td>
                         <td><?php echo htmlspecialchars($prixTotal); ?> €</td>
                         <td>
-                            <form action="traitement_livraison.php" method="POST">
+                            <form action="traitement-de-livraison.php" method="POST">
                                 <input type="hidden" name="id" value="<?php echo htmlspecialchars($idCommande); ?>">
                                 <input type="hidden" name="action" value="Livrée">
                                 <button type="submit">Livrée</button>
                             </form>
 
-                            <form action="traitement_livraison.php" method="POST">
+                            <form action="traitement-de-livraison.php" method="POST">
                                 <input type="hidden" name="id" value="<?php echo htmlspecialchars($idCommande); ?>">
                                 <input type="hidden" name="action" value="Abandonnée">
                                 <button type="submit">Abandonnée</button>

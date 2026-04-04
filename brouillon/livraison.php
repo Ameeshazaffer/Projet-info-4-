@@ -1,4 +1,4 @@
-<?php
+<?php 
 $contenu = file_get_contents("commandes.json");
 $donnees = json_decode($contenu, true);
 

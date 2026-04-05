@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'restaurateur') {
-    header("Location: connexion.html");
+    header("Location: connexion.php");
     exit;
 }
 

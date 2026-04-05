@@ -98,7 +98,7 @@ session_start();
 
             <div class="grille-plats">
 
-                <!-- ===== ENTRÉES ===== -->
+                <!--  ENTRÉES  -->
                 <div class="carte-plat">
                     <div class="conteneur-image-plat">
                         <img src="https://www.finedininglovers.fr/sites/default/files/styles/1_1_768x768/public/2025-02/soupe-vge-paul-bocuse-credit-aurelio-rodriguez.png.webp?itok=RJ8QrYsA" alt="Soupe VGE">
@@ -190,7 +190,7 @@ session_start();
                     </div>
                 </div>
 
-                <!-- ===== PLATS ===== -->
+                <!--  PLATS  -->
                 <div class="carte-plat">
                     <div class="conteneur-image-plat">
                         <img src="https://www.certifiedangusbeef.com/_next/image?q=75&url=https%3A%2F%2Fappetizing-cactus-7139e93734.media.strapiapp.com%2FUltimate_Beef_Wellington_1bad1b820f.jpeg&w=1920" alt="Beef Wellington">
@@ -301,7 +301,7 @@ session_start();
                     </div>
                 </div>
 
-                <!-- ===== DESSERTS ===== -->
+                <!--  DESSERTS  -->
                 <div class="carte-plat">
                     <div class="conteneur-image-plat">
                         <img src="https://www.baladeenroulotte.com/blog/wp-content/uploads/2014/05/dome-chocolat1-e1554137302190.jpg" alt="Sphère Chocolat Cœur Coulant">

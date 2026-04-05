@@ -1,89 +1,101 @@
-
+/* Supprime les marges et espaces par défaut du navigateur */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
 body {
     font-family: Georgia, serif;
-    color: #1a1a1a;
-    background: #E2D9BB;
+    color: #1a1a1a;          /* Couleur du texte : presque noir */
+    background: #E2D9BB;     /* Fond beige */
 }
 
 /* NAVIGATION */
+
 nav {
-    position: fixed;
+    position: fixed;         /* La barre reste en haut même en scrollant */
     width: 100%;
     top: 0;
-    z-index: 1000;
     background: #C9B896;
     padding: 1rem 5%;
     border: 1px solid black;
+    z-index: 1000;           /* La nav s'affiche au-dessus de tout */
 }
+
+/* Conteneur interne de la nav */
 .conteneur-nav {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between;  /* Logo à gauche, liens à droite */
     align-items: center;
     max-width: 1400px;
     margin: 0 auto;
 }
+
+/* Logo dans la nav */
 .logo-nav {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
+
 .texte-logo-nav {
     font-family: Verdana, sans-serif;
     font-size: 1.8rem;
     font-weight: 900;
     letter-spacing: 6px;
-    color: #1a1a1a;
 }
+
 .paris-logo-nav {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.6rem;
     letter-spacing: 3px;
-    color: #1a1a1a;
     margin-top: -2px;
 }
+
+/* Liste des liens de navigation */
 .liens-nav {
+    font-family: 'Montserrat', sans-serif;
     display: flex;
-    gap: 2.5rem;
+    gap: 2.5rem;             /* Espace entre chaque lien */
     list-style: none;
     align-items: center;
 }
+
 .liens-nav a {
     color: #1a1a1a;
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
     letter-spacing: 1px;
-    font-family: 'Montserrat', sans-serif;
 }
 
-.liens-nav a:hover { 
-text-decoration: underline; 
+.liens-nav a:hover {
+    text-decoration: underline;
 }
 
+/* Bouton "S'inscrire" dans la nav */
 .bouton-inscription {
     padding: 0.6rem 1.5rem;
     border: 2px solid #1a1a1a;
     background: transparent;
     color: #1a1a1a;
-    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     letter-spacing: 1px;
     text-decoration: none;
 }
+
 .bouton-inscription:hover {
     background: #1a1a1a;
     color: #E2D9BB;
 }
 
-/* SECTION PRINCIPALE d'accueil */
+
+/* PAGE D'ACCUEIL */
+
 .section-principale {
-    min-height: 100vh;
+    min-height: 100vh;       /* Prend toute la hauteur de l'écran */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -92,8 +104,9 @@ text-decoration: underline;
     padding: 8rem 5% 4rem;
 }
 
-.logo-principal { 
-text-align: center; margin-bottom: 3rem; 
+.logo-principal {
+    text-align: center;
+    margin-bottom: 3rem;
 }
 
 .texte-logo-principal {
@@ -101,25 +114,24 @@ text-align: center; margin-bottom: 3rem;
     font-size: 7rem;
     font-weight: 900;
     letter-spacing: 20px;
-    color: #1a1a1a;
 }
+
 .paris-logo-principal {
-    font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
     letter-spacing: 10px;
-    color: #1a1a1a;
     font-weight: 600;
     margin-top: -5px;
     margin-bottom: 1.5rem;
 }
+
 .slogan-logo-principal {
     font-family: 'Parisienne', cursive;
     font-size: 2.5rem;
-    color: #1a1a1a;
 }
 
-.zone-bouton { 
-margin-top: 3rem; 
+/* Bouton "Découvrir" */
+.zone-bouton {
+    margin-top: 3rem;
 }
 
 .bouton-decouvrir {
@@ -128,31 +140,40 @@ margin-top: 3rem;
     background: #1a1a1a;
     color: #E2D9BB;
     text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
     font-weight: 600;
     letter-spacing: 2px;
     border-radius: 5px;
 }
-.bouton-decouvrir:hover { background: #000; }
 
-/* SECTION MENU */
+.bouton-decouvrir:hover {
+    background: #000;
+}
+
+
+/* SECTION MENU  */
+
 .section-menu {
     padding: 4rem 5%;
     max-width: 1400px;
     margin: 0 auto;
 }
-.section-categorie { margin-bottom: 5rem; }
+
+.section-categorie {
+    margin-bottom: 5rem;
+}
+
+/* Titre principal d'une catégorie (ex : "Entrées") */
 .titre-categorie {
-    font-family: 'Montserrat', sans-serif;
     font-size: 3rem;
-    margin-bottom: 1rem;
-    color: #1a1a1a;
     font-weight: 300;
     letter-spacing: 5px;
     text-align: center;
     text-transform: uppercase;
+    margin-bottom: 1rem;
 }
+
+/* Sous-titre en écriture cursive */
 .sous-titre-categorie {
     font-family: 'Parisienne', cursive;
     font-size: 2rem;
@@ -161,13 +182,18 @@ margin-top: 3rem;
     margin-bottom: 3rem;
 }
 
-/* GRILLE & CARTES */
+
+/*CARTES DE PLATS */
+
+/* Grille automatique qui s'adapte à la largeur */
 .grille-plats {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 2.5rem;
     margin-top: 2rem;
 }
+
+/* Carte individuelle */
 .carte-plat {
     background: white;
     border-radius: 10px;
@@ -175,22 +201,28 @@ margin-top: 3rem;
     box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     transition: box-shadow 0.3s ease, transform 0.2s ease;
 }
+
 .carte-plat:hover {
     box-shadow: 0 15px 40px rgba(0,0,0,0.15);
-    transform: translateY(-3px);
+    transform: translateY(-3px);  /* Légère élévation au survol */
 }
+
+/* Image du plat */
 .conteneur-image-plat {
     width: 100%;
     height: 250px;
     background: #C9B896;
-    position: relative;
     overflow: hidden;
+    position: relative;
 }
+
 .conteneur-image-plat img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover;    /* L'image remplit le cadre sans se déformer */
 }
+
+/* Badge (ex : "Nouveau", "Populaire") */
 .badge-plat {
     position: absolute;
     top: 1rem;
@@ -198,40 +230,64 @@ margin-top: 3rem;
     background: #D4AF37;
     color: white;
     padding: 0.5rem 1rem;
-    font-family: 'Montserrat', sans-serif;
     font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 1px;
     border-radius: 20px;
 }
-.infos-plat { padding: 1.5rem; }
+
+/* Contenu texte de la carte */
+.infos-plat {
+    padding: 1.5rem;
+}
+
 .nom-plat {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-    color: #1a1a1a;
     font-weight: 600;
+    margin-bottom: 0.5rem;
 }
+
 .description-plat {
     font-size: 1rem;
     line-height: 1.6;
     color: #666;
     margin-bottom: 1rem;
 }
+
+/* Ligne prix + bouton */
 .pied-plat {
     display: flex;
-    justify-content: flex-start; 
+    justify-content: space-between;
     align-items: center;
     margin-top: 1rem;
 }
+
 .prix-plat {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.8rem;
-    color: #1a1a1a;
     font-weight: 700;
 }
 
-/* FOOTER */
+/* Bouton "Ajouter au panier" */
+.bouton-ajouter-panier {
+    padding: 0.8rem 1.5rem;
+    background: #1a1a1a;
+    color: #E2D9BB;
+    border: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.bouton-ajouter-panier:hover {
+    background: #000;
+}
+
+
+/*FOOTER*/
+
 footer {
     background: #1a1a1a;
     color: #E2D9BB;
@@ -239,85 +295,98 @@ footer {
     text-align: center;
     margin-top: 4rem;
 }
-.logo-pied-page { margin-bottom: 2rem; }
+
+.logo-pied-page {
+    margin-bottom: 2rem;
+}
+
 .texte-logo-pied-page {
-    font-family: Verdana, sans-serif;
     font-size: 2.5rem;
     font-weight: 900;
     letter-spacing: 8px;
     color: #C9B896;
 }
+
 .paris-logo-pied-page {
-    font-family: 'Montserrat', sans-serif;
     font-size: 0.8rem;
     letter-spacing: 4px;
     color: #C9B896;
     margin-top: -3px;
     margin-bottom: 1rem;
 }
+
 .slogan-logo-pied-page {
     font-family: 'Parisienne', cursive;
     font-size: 1.3rem;
     color: #C9B896;
 }
+
+/* Grille d'informations dans le footer */
 .infos-pied-page {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 2rem;
     margin: 2rem 0;
-    text-align: center;
 }
+
 .section-pied-page h3 {
-    font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
     margin-bottom: 1rem;
     letter-spacing: 2px;
     color: #C9B896;
 }
+
 .section-pied-page p {
     font-size: 1rem;
     line-height: 1.8;
     color: #E2D9BB;
 }
 
+
 /*PAGE PRODUITS*/
+
+/* Bandeau en haut de la page produits */
 .hero {
     background: #C9B896;
     padding: 8rem 5% 4rem;
     text-align: center;
 }
+
 .hero h1 {
-    font-family: 'Montserrat', sans-serif;
     font-size: 4rem;
     font-weight: 700;
     letter-spacing: 8px;
     text-transform: uppercase;
-    color: #1a1a1a;
     margin-bottom: 0.8rem;
 }
+
 .hero p {
     font-family: 'Parisienne', cursive;
     font-size: 2rem;
-    color: #1a1a1a;
     margin-bottom: 2.5rem;
 }
+
+/* Barre de recherche */
 .zone-recherche {
     max-width: 780px;
     margin: 0 auto;
 }
+
 .champ-recherche {
     width: 100%;
     padding: 1.1rem 1.5rem;
     border: 2px solid #1a1a1a;
     background: #E2D9BB;
-    font-family: Georgia, serif;
     font-size: 1rem;
-    color: #1a1a1a;
     outline: none;
-    letter-spacing: 0.5px;
 }
-.champ-recherche::placeholder { color: #aaa; font-style: italic; }
 
+.champ-recherche::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Mise en page principale : sidebar + produits côte à côte */
 .conteneur-principal {
     max-width: 1400px;
     margin: 0 auto;
@@ -327,52 +396,56 @@ footer {
     align-items: flex-start;
 }
 
-/* SIDEBAR */
+/* Colonne de filtres à gauche */
 .sidebar {
     width: 260px;
-    flex-shrink: 0;
+    flex-shrink: 0;           /* La sidebar ne rétrécit pas */
     display: flex;
     flex-direction: column;
     gap: 1.2rem;
 }
+
 .bloc-filtre {
     background: white;
     border-radius: 12px;
     padding: 1.8rem;
     box-shadow: 0 2px 12px rgba(0,0,0,0.06);
 }
+
 .bloc-filtre h3 {
-    font-family: 'Montserrat', sans-serif;
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: #1a1a1a;
     margin-bottom: 1.2rem;
 }
+
+/* Ligne : case à cocher + label */
 .option-filtre {
     display: flex;
     align-items: center;
     gap: 0.7rem;
     margin-bottom: 0.8rem;
 }
-.option-filtre:last-child { margin-bottom: 0; }
+
 .option-filtre input[type="checkbox"] {
     width: 18px;
     height: 18px;
-    border: 2px solid #C9B896;
-    border-radius: 3px;
     accent-color: #1a1a1a;
-    flex-shrink: 0;
 }
+
 .option-filtre span {
-    font-family: Georgia, serif;
     font-size: 0.95rem;
     color: #444;
 }
 
-/*ZONE PRODUITS*/
-.zone-produits { flex: 1; min-width: 0; }
+/* Zone d'affichage des produits */
+.zone-produits {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Barre au-dessus des produits (compteur + tri) */
 .barre-resultats {
     display: flex;
     justify-content: space-between;
@@ -381,48 +454,52 @@ footer {
     flex-wrap: wrap;
     gap: 1rem;
 }
+
 .compteur {
-    font-family: Georgia, serif;
     font-size: 1rem;
     color: #666;
 }
+
 .zone-tri {
     display: flex;
     align-items: center;
     gap: 0.8rem;
 }
+
 .zone-tri label {
-    font-family: Georgia, serif;
     font-size: 0.95rem;
     color: #444;
 }
+
 .select-tri {
     padding: 0.6rem 1rem;
     border: 2px solid #1a1a1a;
     background: white;
-    font-family: Georgia, serif;
     font-size: 0.95rem;
-    color: #1a1a1a;
     outline: none;
     min-width: 160px;
 }
 
-/* Surcharge grille pour produits (cartes plus petites) */
+/* Ajustements de la grille sur la page produits */
 .zone-produits .grille-plats {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 2rem;
 }
+
 .zone-produits .conteneur-image-plat { height: 220px; }
-.zone-produits .nom-plat { font-size: 1.2rem; }
-.zone-produits .description-plat { font-size: 0.9rem; }
-.zone-produits .prix-plat { font-size: 1.5rem; }
+.zone-produits .nom-plat            { font-size: 1.2rem; }
+.zone-produits .description-plat    { font-size: 0.9rem; }
+.zone-produits .prix-plat           { font-size: 1.5rem; }
 
-/* Livraison et Commandes version ordinateur/tablette  */
 
+/* PAGES LIVRAISON & COMMANDES */
+
+/* Version mobile uniquement (cachée par défaut) */
 .liv-commande {
     display: none;
 }
 
+/* Style commun aux blocs livraison, attente, enlèvement */
 .liv, .att, .enl {
     max-width: 1000px;
     margin: 140px auto 5% auto;
@@ -440,24 +517,26 @@ footer {
     letter-spacing: 2px;
 }
 
+/* Tableaux */
 .att table, .enl table, .liv table {
     width: 100%;
     margin-top: 15px;
 }
 
-.att th, .att td, .enl th, .enl td, .liv th, .liv td {
+.att th, .att td,
+.enl th, .enl td,
+.liv th, .liv td {
     border: 1px solid #1a1a1a;
     padding: 12px;
     font-size: 1rem;
 }
 
-
+/* Boutons dans ces pages */
 .att button, .enl button, .liv button {
     background-color: #1a1a1a;
     color: #E2D9BB;
     border: none;
     padding: 12px 20px;
-    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
     letter-spacing: 1px;
     border-radius: 8px;
@@ -465,11 +544,21 @@ footer {
 }
 
 .att button:hover, .enl button:hover, .liv button:hover {
-    background-color: #000000;
+    background-color: #000;
+}
+
+.att a {
+    color: #1a1a1a;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.att a:hover {
+    text-decoration: underline;
 }
 
 
-/* Inscription */
+/* PAGE INSCRIPTION */
 
 .ins {
     max-width: 800px;
@@ -481,6 +570,19 @@ footer {
     text-align: center;
     font-family: 'Montserrat', sans-serif;
 }
+
+.ins h1 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.ins h2 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Deux colonnes d'infos côte à côte */
 .ins .infos {
     display: flex;
     gap: 20px;
@@ -497,7 +599,9 @@ footer {
     background-color: #E2D9BB;
 }
 
-.inscription input, .inscription textarea {
+/* Champs du formulaire d'inscription */
+.inscription input,
+.inscription textarea {
     width: 100%;
     padding: 15px;
     border: 2px solid #1a1a1a;
@@ -505,15 +609,14 @@ footer {
     font-size: 1rem;
     margin-top: 15px;
     background-color: #E2D9BB;
-    font-family: Georgia, serif;
 }
 
+/* Bouton "Envoyer" */
 .inscription input[type="submit"] {
     background-color: #1a1a1a;
     color: #E2D9BB;
     border: none;
     font-weight: 600;
-    font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     width: 50%;
     max-width: 200px;
@@ -522,18 +625,7 @@ footer {
 }
 
 .inscription input[type="submit"]:hover {
-    background-color: #000000;
-}
-
-.ins h1 {
-    margin-bottom: 15px;
-    font-size: 2rem;
-    letter-spacing: 2px;
-}
-
-.ins h2 {
-    font-size: 1.2rem;
-    margin-top: 10px;
+    background-color: #000;
 }
 
 .redirection {
@@ -551,17 +643,23 @@ footer {
     text-decoration: underline;
 }
 
-/* Connexion */
+
+/* PAGE CONNEXION*/
 
 .co {
     max-width: 500px;
-    margin: 140px auto 5% auto; 
+    margin: 140px auto 5% auto;
     padding: 40px;
     border: 2px solid #1a1a1a;
     border-radius: 16px;
     background-color: #C9B896;
     text-align: center;
-    font-family: 'Montserrat', sans-serif;
+}
+
+.co h1 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
 }
 
 .connexion input {
@@ -572,7 +670,6 @@ footer {
     font-size: 1rem;
     margin-top: 15px;
     background-color: #E2D9BB;
-    font-family: Georgia, serif;
 }
 
 .connexion input[type="submit"] {
@@ -580,7 +677,6 @@ footer {
     color: #E2D9BB;
     border: none;
     font-weight: 600;
-    font-family: 'Montserrat', sans-serif;
     font-size: 1rem;
     width: 50%;
     max-width: 200px;
@@ -589,59 +685,50 @@ footer {
 }
 
 .connexion input[type="submit"]:hover {
-    background-color: #000000;
-}
-
-.co h1 {
-    margin-bottom: 15px;
-    font-size: 2rem;
-    letter-spacing: 2px;
+    background-color: #000;
 }
 
 
-/* Espace administrateur */
+/* ESPACE ADMINISTRATEUR */
 
-
+/* Formulaire centré */
 .form-container {
-    font-family: 'Montserrat', sans-serif;
-    letter-spacing: 2px;
-    font-weight: 500;
     display: flex;
-    margin: 30px auto;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #FFFFFF;
+    background-color: white;
     border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     padding: 20px;
     width: 500px;
+    margin: 30px auto;
 }
 
+/* Menu déroulant */
 .select-container {
-    margin: 20px auto;
     display: flex;
     justify-content: center;
     width: 250px;
     height: 50px;
+    margin: 20px auto;
 }
 
 .select-box {
     padding: 0 15px;
     background-color: #C9B896;
     font-size: 1rem;
-    color: #1a1a1a;
     border: 2px solid #1a1a1a;
 }
 
+/* Tableau d'administration */
 .table table {
-    font-family: Georgia, serif;
-    background-color: #FFFFFF;
+    background-color: white;
     border-radius: 12px;
     margin: 30px auto;
     text-align: center;
     width: 600px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
 }
 
 .table th, .table td {
@@ -650,16 +737,16 @@ footer {
 }
 
 
-/* Profil */
+/*PAGE PROFIL */
 
 .table-profil {
-    background-color: #FFFFFF;
+    background-color: white;
     padding: 20px;
     width: 300px;
     border-radius: 12px;
     margin: 20px auto;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
 }
 
 .profil-image {
@@ -667,80 +754,13 @@ footer {
     margin-left: 10px;
 }
 
-.att a {
-    color: #1a1a1a;
-    font-weight: 600;
-    text-decoration: none;
-}
 
-.att a:hover {
-    text-decoration: underline;
-}
-
-/* Notation */
+/*SYSTÈME DE NOTATION*/
 
 .form-container-radio {
     display: flex;
     justify-content: center;
     gap: 15px;
     margin-top: 10px;
-}
-
-/*Livraison version mobile*/
-
-@media (max-width: 768px) {
-    .liv table, nav, footer {
-        display: none;
-    }
-
-    .liv-commande {
-        display: block;
-        background-color: #E2D9BB;
-        border: 2px solid #1a1a1a;
-        border-radius: 12px;
-        padding: 20px;
-        margin-bottom: 20px;
-        text-align: left;
-        font-family: 'Montserrat', sans-serif;
-    }
-
-    .liv-commande p {
-        margin: 8px 0;
-    }
-
-    .liv-commande button {
-        display: block;
-        width: 100%;
-        padding: 15px;
-        margin-top: 10px;
-        font-weight: 600;
-        letter-spacing: 1px;
-        border-radius: 8px;
-        background-color: #1a1a1a;
-        color: #E2D9BB;
-        border: none;
-        font-size: 1rem;
-        transition: background 0.3s ease;
-    }
-
-    .liv-commande button:hover {
-        background-color: #000000;
-    }
-
-    .liv-commande a {
-        display: block;
-        width: 100%;
-        padding: 12px;
-        text-align: center;
-        background-color: #333;
-        color: #E2D9BB;
-        border-radius: 8px;
-        text-decoration: none;
-        margin: 10px 0;
-    }
-
-    .liv-commande a:hover {
-        background-color: #000;
-    }
 }
 

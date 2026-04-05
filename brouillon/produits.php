@@ -1,5 +1,4 @@
 <?php
-// On démarre la session pour pouvoir lire $_SESSION['user'] plus tard
 session_start();
 ?>
 <!DOCTYPE html>
@@ -21,18 +20,31 @@ session_start();
             </div>
             <ul class="liens-nav">
                 <li><a href="index.html">ACCUEIL</a></li>
-
-                <?php
-                // Si l'utilisateur est connecté, on affiche "PROFIL", sinon "CONNEXION"
-                if (isset($_SESSION['user'])) {
-                    echo '<li><a href="profil.php" class="bouton-inscription">PROFIL</a></li>';
-                } else {
-                    echo '<li><a href="connexion.html" class="bouton-inscription">CONNEXION</a></li>';
-                }
-                ?>
+                <?php if (isset($_SESSION['user'])): ?>
+                    <li><a href="profil.php" class="bouton-inscription">PROFIL</a></li>
+                    <?php if (!empty($_SESSION['panier'])): ?>
+                        <li>
+                            <form action="commande.php" method="post">
+                                <button type="submit" class="bouton-inscription">
+                                    VALIDER MA COMMANDE (<?= count($_SESSION['panier']) ?> plat<?= count($_SESSION['panier']) > 1 ? 's' : '' ?>)
+                                </button>
+                            </form>
+                        </li>
+                    <?php endif; ?>
+                <?php else: ?>
+                    <li><a href="connexion.html" class="bouton-inscription">CONNEXION</a></li>
+                <?php endif; ?>
             </ul>
         </div>
     </nav>
+
+    <!-- Message ajout au panier -->
+    <?php if (!empty($_SESSION['message'])): ?>
+        <p style="text-align:center; font-family:'Montserrat',sans-serif; padding:1rem; color:green;">
+            <?= htmlspecialchars($_SESSION['message']) ?>
+        </p>
+        <?php unset($_SESSION['message']); ?>
+    <?php endif; ?>
 
     <!-- HERO -->
     <div class="hero">
@@ -48,52 +60,26 @@ session_start();
 
         <!-- SIDEBAR -->
         <aside class="sidebar">
-
             <div class="bloc-filtre">
                 <h3>Catégories</h3>
-                <label class="option-filtre">
-                    <input type="checkbox"> <span>Entrées</span>
-                </label>
-                <label class="option-filtre">
-                    <input type="checkbox"> <span>Plats</span>
-                </label>
-                <label class="option-filtre">
-                    <input type="checkbox"> <span>Desserts</span>
-                </label>
+                <label class="option-filtre"><input type="checkbox"> <span>Entrées</span></label>
+                <label class="option-filtre"><input type="checkbox"> <span>Plats</span></label>
+                <label class="option-filtre"><input type="checkbox"> <span>Desserts</span></label>
             </div>
-
             <div class="bloc-filtre">
                 <h3>Type de plat</h3>
-                <label class="option-filtre">
-                    <input type="checkbox"> <span>Viande</span>
-                </label>
-                <label class="option-filtre">
-                    <input type="checkbox"> <span>Poisson</span>
-                </label>
-                <label class="option-filtre">
-                    <input type="checkbox"> <span>Végétarien</span>
-                </label>
-                <label class="option-filtre">
-                    <input type="checkbox"> <span>Vegan</span>
-                </label>
+                <label class="option-filtre"><input type="checkbox"> <span>Viande</span></label>
+                <label class="option-filtre"><input type="checkbox"> <span>Poisson</span></label>
+                <label class="option-filtre"><input type="checkbox"> <span>Végétarien</span></label>
+                <label class="option-filtre"><input type="checkbox"> <span>Vegan</span></label>
             </div>
-
             <div class="bloc-filtre">
                 <h3>Allergènes</h3>
-                <label class="option-filtre">
-                    <input type="checkbox"> <span>Sans gluten</span>
-                </label>
-                <label class="option-filtre">
-                    <input type="checkbox"> <span>Sans lactose</span>
-                </label>
-                <label class="option-filtre">
-                    <input type="checkbox"> <span>Sans fruits à coque</span>
-                </label>
-                <label class="option-filtre">
-                    <input type="checkbox"> <span>Sans œuf</span>
-                </label>
+                <label class="option-filtre"><input type="checkbox"> <span>Sans gluten</span></label>
+                <label class="option-filtre"><input type="checkbox"> <span>Sans lactose</span></label>
+                <label class="option-filtre"><input type="checkbox"> <span>Sans fruits à coque</span></label>
+                <label class="option-filtre"><input type="checkbox"> <span>Sans œuf</span></label>
             </div>
-
         </aside>
 
         <!-- PRODUITS -->
@@ -113,7 +99,6 @@ session_start();
             <div class="grille-plats">
 
                 <!-- ===== ENTRÉES ===== -->
-
                 <div class="carte-plat">
                     <div class="conteneur-image-plat">
                         <img src="https://www.finedininglovers.fr/sites/default/files/styles/1_1_768x768/public/2025-02/soupe-vge-paul-bocuse-credit-aurelio-rodriguez.png.webp?itok=RJ8QrYsA" alt="Soupe VGE">
@@ -124,7 +109,6 @@ session_start();
                         <p class="description-plat">Soupe aux truffes noires, signature de Paul Bocuse. Créée pour le président Valéry Giscard d'Estaing.</p>
                         <div class="pied-plat">
                             <span class="prix-plat">45€</span>
-                            <!-- Formulaire qui envoie les infos du plat vers commander.php -->
                             <form action="commander.php" method="post">
                                 <input type="hidden" name="nom_plat" value="Soupe VGE">
                                 <input type="hidden" name="prix" value="45">
@@ -207,7 +191,6 @@ session_start();
                 </div>
 
                 <!-- ===== PLATS ===== -->
-
                 <div class="carte-plat">
                     <div class="conteneur-image-plat">
                         <img src="https://www.certifiedangusbeef.com/_next/image?q=75&url=https%3A%2F%2Fappetizing-cactus-7139e93734.media.strapiapp.com%2FUltimate_Beef_Wellington_1bad1b820f.jpeg&w=1920" alt="Beef Wellington">
@@ -319,7 +302,6 @@ session_start();
                 </div>
 
                 <!-- ===== DESSERTS ===== -->
-
                 <div class="carte-plat">
                     <div class="conteneur-image-plat">
                         <img src="https://www.baladeenroulotte.com/blog/wp-content/uploads/2014/05/dome-chocolat1-e1554137302190.jpg" alt="Sphère Chocolat Cœur Coulant">

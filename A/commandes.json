@@ -1,0 +1,62 @@
+{
+    "commandes": [
+        {
+            "id": "101",
+            "client_id": "660eb345m4n5o",
+            "date": "2023-10-25",
+            "heure": "12:30",
+            "statut": "en attente",
+            "commentaires": "Allergie aux noix",
+            "paiement": "Payé",
+            "prix": 24.5,
+            "plats": [
+                {
+                    "nom": "Burger Éveil",
+                    "prix": 18
+                },
+                {
+                    "nom": "Limonade Maison",
+                    "prix": 6.5
+                }
+            ]
+        },
+        {
+            "id": "102",
+            "client_id": "69d24d37ad6a9",
+            "date": "2023-10-25",
+            "heure": "13:00",
+            "statut": "en livraison",
+            "commentaires": "Portail code 1234",
+            "paiement": "À régler",
+            "prix": 32,
+            "plats": [
+                {
+                    "nom": "Salade César Luxe",
+                    "prix": 22
+                },
+                {
+                    "nom": "Verre de Chardonnay",
+                    "prix": 10
+                }
+            ],
+            "livreur_id": "660eb678p7q8r"
+        },
+        {
+            "id": "103",
+            "client_id": "660eb345m4n5o",
+            "livreur_id": "660eb678p7q8r",
+            "date": "2023-10-25",
+            "heure": "11:45",
+            "statut": "en préparation",
+            "commentaires": "Appeler en arrivant",
+            "paiement": "Payé",
+            "prix": 15.5,
+            "plats": [
+                {
+                    "nom": "Croque-Monsieur Truffe",
+                    "prix": 15.5
+                }
+            ]
+        }
+    ]
+}

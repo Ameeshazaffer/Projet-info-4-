@@ -16,7 +16,7 @@
                 <div class="paris-logo-nav">PARIS</div>
             </div>
             <ul class="liens-nav">
-                <li><a href="index.html">ACCUEIL</a></li>
+                <li><a href="index.php">ACCUEIL</a></li>
                 <li><a href="profil.php">PROFIL</a></li>
                 <li><a href="deconnexion.php" class="bouton-inscription">DECONNEXION</a></li>
             </ul>

@@ -1,0 +1,100 @@
+{
+    "utilisateurs": [
+        {
+            "nom": "Zaffersatik",
+            "prenom": "Ameesha",
+            "telephone": "0744645232",
+            "email": "ameesha.zaffer@gmail.com",
+            "mdp": "1234",
+            "adresse": "5 rue de la bastide",
+            "etage": "3",
+            "code_interphone": "32",
+            "role": "administrateur",
+            "date_inscription": "2026-05-03"
+        },
+        {
+            "nom": "Dromas",
+            "prenom": "Mia",
+            "telephone": "0745126480",
+            "email": "dromas.mia@gmail.com",
+            "mdp": "4585",
+            "adresse": "10 rue de l'Eglantier",
+            "etage": "2",
+            "code_interphone": "12",
+            "role": "administrateur",
+            "date_inscription": "2026-07-03"
+        },
+        {
+            "nom": "Ewing",
+            "prenom": "Clover",
+            "telephone": "095324120",
+            "email": "ewing.clover@gmail.com",
+            "mdp": "totallyspies1",
+            "adresse": "10 rue de l'Abondance",
+            "etage": "2",
+            "code_interphone": "22",
+            "role": "client",
+            "date_inscription": "2026-06-18"
+        },
+        {
+            "nom": "Simpson",
+            "prenom": "Samantha",
+            "telephone": "0767449288",
+            "email": "simpson.samantha@gmail.com",
+            "mdp": "totallyspies2",
+            "adresse": "4 rue de l'Abondance",
+            "etage": "2",
+            "code_interphone": "22",
+            "role": "client",
+            "date_inscription": "2026-05-02"
+        },
+        {
+            "nom": "Vasquez",
+            "prenom": "Alexandra",
+            "telephone": "0666847508",
+            "email": "alexandra.vasquez@gmail.com",
+            "mdp": "totallyspies3",
+            "adresse": "6 rue de l'Abondance",
+            "etage": "2",
+            "code_interphone": "22",
+            "role": "livreur",
+            "date_inscription": "2026-10-02"
+        },
+        {
+            "nom": "Kumanan",
+            "prenom": "Sankavi",
+            "telephone": "0755126480",
+            "email": "sankavi.kumanan@gmail.com",
+            "mdp": "abcd1234",
+            "adresse": "10 rue de la bastide",
+            "etage": "2",
+            "code_interphone": "22",
+            "role": "client",
+            "date_inscription": "2026-04-03"
+        },
+        {
+            "nom": "Muhammad",
+            "prenom": "Nafisa",
+            "telephone": "0645454545",
+            "email": "nafisa.muhammad@hotmail.com",
+            "mdp": "1234",
+            "adresse": "1234",
+            "etage": "1234",
+            "code_interphone": "1234",
+            "role": "client",
+            "date_inscription": "2026-04-04"
+        },
+        {
+            "nom": "Gaston",
+            "prenom": "Chef",
+            "telephone": "0611223344",
+            "email": "chef@eveil.fr",
+            "mdp": "chef1234",
+            "adresse": "123 Avenue des Champs-Élysées",
+            "etage": "",
+            "code_interphone": "",
+            "role": "restaurateur",
+            "date_inscription": "2026-04-05"
+        }
+    ]
+}

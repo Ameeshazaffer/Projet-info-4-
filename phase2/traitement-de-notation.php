@@ -28,7 +28,7 @@ $donnees["notes"][] = $Note;
 
 file_put_contents("note.json", json_encode($donnees, JSON_PRETTY_PRINT));
 
-header("Location: merci.html");
+header("Location: merci.php");
 exit;
 
 ?>

@@ -24,7 +24,8 @@ $email = $_GET["client"];
             </div>
             <ul class="liens-nav">
                 <li><a href="index.php">ACCUEIL</a></li>
-                <li><a href="connexion.html" class="bouton-inscription">CONNEXION</a></li>
+                <li><a href="profil.php">PROFIL</a></li>
+                <li><a href="deconnexion.html" class="bouton-inscription">DECONNEXION</a></li>
             </ul>
         </div>
    </nav>

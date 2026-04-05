@@ -3,7 +3,7 @@ session_start();
 
 //  Si non connecté, redirection 
 if (!isset($_SESSION['user'])) {
-    header("Location: connexion.html");
+    header("Location: connexion.php");
     exit;
 }
 

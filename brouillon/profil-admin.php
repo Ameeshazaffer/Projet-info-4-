@@ -1,54 +1,3 @@
-<?php 
-$contenu = file_get_contents("utilisateurs.json"); // lit le fichier json
-$donnees = json_decode($contenu, true); // met en tableau php
-
-$utilisateurs = array(); // cré tableau vide 
-if (isset($donnees["utilisateurs"])) {
-    $utilisateurs = $donnees["utilisateurs"];
-}
-
-if (!isset($_GET["id"])) { // regarde si l'index qui est dans l'URL de l'utilisateur existe ( et qui est le positionnement de l'utilsateur dans le tableau)
-    die("Aucun utilisateur sélectionné.");
-}
-
-$identifiant = $_GET["id"];
-
-if (!isset($utilisateurs[$identifiant])) {
-    die("Utilisateur introuvable.");
-}
-
-$user = $utilisateurs[$identifiant]; // on nomme chaque éléments du tableau pour que plus simple lorsque on veut afficher les éléments dans le tableau 
-
-if (isset($user["nom"])) { 
-    $nom = $user["nom"];
-} else {
-    $nom = "";
-}
-
-if (isset($user["prenom"])) {
-    $prenom = $user["prenom"];
-} else {
-    $prenom = "";
-}
-
-if (isset($user["telephone"])) {
-    $telephone = $user["telephone"];
-} else {
-    $telephone = "";
-}
-
-if (isset($user["email"])) {
-    $email = $user["email"];
-} else {
-    $email = "";
-}
-
-if (isset($user["role"])) {
-    $role = $user["role"];
-} else {
-    $role = "client";
-}
-?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -67,6 +16,7 @@ if (isset($user["role"])) {
             </div>
             <ul class="liens-nav">
                 <li><a href="index.php">ACCUEIL</a></li>
+                <li><a href="deconnexion.php">DECONNEXION</a></li>
             </ul>
         </div>
    </nav>

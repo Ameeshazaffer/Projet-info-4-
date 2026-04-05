@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 if (!isset($_POST["id"]) || !isset($_POST["action"])) { // on regarde si les données reçues par le form existent 
     die("Les données ne sont pas complètes.");

@@ -27,8 +27,7 @@ if (isset($donnees["commandes"])) {
             </div>
             <ul class="liens-nav">
                 <li><a href="index.php">ACCUEIL</a></li>
-                <li><a href="livraison.php">ESPACE</a></li>
-                <li><a href="deconnexion.html" class="bouton-inscription">DECONNEXION</a></li>
+                <li><a href="connexion.html" class="bouton-inscription">CONNEXION</a></li>
             </ul>
         </div>
     </nav>
@@ -113,14 +112,14 @@ if (isset($donnees["commandes"])) {
                         <td><?php echo $listeProduits; ?></td>
                         <td><?php echo htmlspecialchars($prixTotal); ?> €</td>
                         <td>
-                            <form action="traitement-livraison.php" method="POST">
+                            <form action="traitement-de-livraison.php" method="POST">
                                 <input type="hidden" name="id" value="<?php echo htmlspecialchars($idCommande); ?>">
                                 <input type="hidden" name="action" value="Livrée">
                                 <button type="submit">Livrée</button>
                             </form>
 
 
-                            <form action="traitement-livraison.php" method="POST">
+                            <form action="traitement-de-livraison.php" method="POST">
                                 <input type="hidden" name="id" value="<?php echo htmlspecialchars($idCommande); ?>">
                                 <input type="hidden" name="action" value="Abandonnée">
                                 <button type="submit">Abandonnée</button>
@@ -170,5 +169,8 @@ if (isset($donnees["commandes"])) {
 
 </body>
 </html>
+
+
+
 
 

@@ -76,7 +76,7 @@ require('getapikey.php');
 $vendeur     = 'MI-3_B'; 
 $transaction = 'EVEIL' . str_pad($commande['id'], 6, '0', STR_PAD_LEFT) . 'PARIS';
 $montant     = number_format($commande['prix_total'], 2, '.', '');
-$retour      = 'http://localhost/eveil/phase1/retour_paiement.php?commande_id=' . $commande['id'];
+$retour = 'http://localhost' . dirname($_SERVER['PHP_SELF']) . '/retour-paiement.php?commande_id=' . $commande['id'];
 $api_key     = getAPIKey($vendeur);
 $control     = md5($api_key . "#" . $transaction . "#" . $montant . "#" . $vendeur . "#" . $retour . "#");
 ?>

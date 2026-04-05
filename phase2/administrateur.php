@@ -40,7 +40,7 @@ if (isset($_GET["role"]) && $_GET["role"] != "") { // on prend la valeur envoyer
         <ul class="liens-nav">
             <li><a href="index.php">ACCUEIL</a></li>
             <li><a href="administrateur.php">ESPACE</a></li>
-            <li><a href="deconnexion.html" class="bouton-inscription">DECONNEXION</a></li>
+            <li><a href="deconnexion.php" class="bouton-inscription">DECONNEXION</a></li>
         </ul>
     </div>
 </nav>

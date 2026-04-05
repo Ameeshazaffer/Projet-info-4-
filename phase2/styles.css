@@ -1,0 +1,770 @@
+/* Supprime les marges et espaces par défaut du navigateur */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Georgia, serif;
+    color: #1a1a1a;          /* Couleur du texte : presque noir */
+    background: #E2D9BB;     /* Fond beige */
+}
+
+/* NAVIGATION */
+
+nav {
+    position: fixed;         /* La barre reste en haut même en scrollant */
+    width: 100%;
+    top: 0;
+    background: #C9B896;
+    padding: 1rem 5%;
+    border: 1px solid black;
+    z-index: 1000;           /* La nav s'affiche au-dessus de tout */
+}
+
+/* Conteneur interne de la nav */
+.conteneur-nav {
+    display: flex;
+    justify-content: space-between;  /* Logo à gauche, liens à droite */
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Logo dans la nav */
+.logo-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.texte-logo-nav {
+    font-family: Verdana, sans-serif;
+    font-size: 1.8rem;
+    font-weight: 900;
+    letter-spacing: 6px;
+}
+
+.paris-logo-nav {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 3px;
+    margin-top: -2px;
+}
+
+/* Liste des liens de navigation */
+.liens-nav {
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    gap: 2.5rem;             /* Espace entre chaque lien */
+    list-style: none;
+    align-items: center;
+}
+
+.liens-nav a {
+    color: #1a1a1a;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+}
+
+.liens-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Bouton "S'inscrire" dans la nav */
+.bouton-inscription {
+    padding: 0.6rem 1.5rem;
+    border: 2px solid #1a1a1a;
+    background: transparent;
+    color: #1a1a1a;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+
+.bouton-inscription:hover {
+    background: #1a1a1a;
+    color: #E2D9BB;
+}
+
+
+/* PAGE D'ACCUEIL */
+
+.section-principale {
+    min-height: 100vh;       /* Prend toute la hauteur de l'écran */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #C9B896;
+    padding: 8rem 5% 4rem;
+}
+
+.logo-principal {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.texte-logo-principal {
+    font-family: Verdana, sans-serif;
+    font-size: 7rem;
+    font-weight: 900;
+    letter-spacing: 20px;
+}
+
+.paris-logo-principal {
+    font-size: 1.2rem;
+    letter-spacing: 10px;
+    font-weight: 600;
+    margin-top: -5px;
+    margin-bottom: 1.5rem;
+}
+
+.slogan-logo-principal {
+    font-family: 'Parisienne', cursive;
+    font-size: 2.5rem;
+}
+
+/* Bouton "Découvrir" */
+.zone-bouton {
+    margin-top: 3rem;
+}
+
+.bouton-decouvrir {
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    background: #1a1a1a;
+    color: #E2D9BB;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border-radius: 5px;
+}
+
+.bouton-decouvrir:hover {
+    background: #000;
+}
+
+
+/* SECTION MENU  */
+
+.section-menu {
+    padding: 4rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-categorie {
+    margin-bottom: 5rem;
+}
+
+/* Titre principal d'une catégorie (ex : "Entrées") */
+.titre-categorie {
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 5px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+/* Sous-titre en écriture cursive */
+.sous-titre-categorie {
+    font-family: 'Parisienne', cursive;
+    font-size: 2rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+
+/*CARTES DE PLATS */
+
+/* Grille automatique qui s'adapte à la largeur */
+.grille-plats {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+
+/* Carte individuelle */
+.carte-plat {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.carte-plat:hover {
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    transform: translateY(-3px);  /* Légère élévation au survol */
+}
+
+/* Image du plat */
+.conteneur-image-plat {
+    width: 100%;
+    height: 250px;
+    background: #C9B896;
+    overflow: hidden;
+    position: relative;
+}
+
+.conteneur-image-plat img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    /* L'image remplit le cadre sans se déformer */
+}
+
+/* Badge (ex : "Nouveau", "Populaire") */
+.badge-plat {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #D4AF37;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 20px;
+}
+
+/* Contenu texte de la carte */
+.infos-plat {
+    padding: 1.5rem;
+}
+
+.nom-plat {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.description-plat {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+/* Ligne prix + bouton */
+.pied-plat {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.prix-plat {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+/* Bouton "Ajouter au panier" */
+.bouton-ajouter-panier {
+    padding: 0.8rem 1.5rem;
+    background: #1a1a1a;
+    color: #E2D9BB;
+    border: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.bouton-ajouter-panier:hover {
+    background: #000;
+}
+
+
+/*FOOTER*/
+
+footer {
+    background: #1a1a1a;
+    color: #E2D9BB;
+    padding: 3rem 5%;
+    text-align: center;
+    margin-top: 4rem;
+}
+
+.logo-pied-page {
+    margin-bottom: 2rem;
+}
+
+.texte-logo-pied-page {
+    font-size: 2.5rem;
+    font-weight: 900;
+    letter-spacing: 8px;
+    color: #C9B896;
+}
+
+.paris-logo-pied-page {
+    font-size: 0.8rem;
+    letter-spacing: 4px;
+    color: #C9B896;
+    margin-top: -3px;
+    margin-bottom: 1rem;
+}
+
+.slogan-logo-pied-page {
+    font-family: 'Parisienne', cursive;
+    font-size: 1.3rem;
+    color: #C9B896;
+}
+
+/* Grille d'informations dans le footer */
+.infos-pied-page {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.section-pied-page h3 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 2px;
+    color: #C9B896;
+}
+
+.section-pied-page p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #E2D9BB;
+}
+
+
+/*PAGE PRODUITS*/
+
+/* Bandeau en haut de la page produits */
+.hero {
+    background: #C9B896;
+    padding: 8rem 5% 4rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    margin-bottom: 0.8rem;
+}
+
+.hero p {
+    font-family: 'Parisienne', cursive;
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+/* Barre de recherche */
+.zone-recherche {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.champ-recherche {
+    width: 100%;
+    padding: 1.1rem 1.5rem;
+    border: 2px solid #1a1a1a;
+    background: #E2D9BB;
+    font-size: 1rem;
+    outline: none;
+}
+
+.champ-recherche::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Mise en page principale : sidebar + produits côte à côte */
+.conteneur-principal {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 3rem 5%;
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+}
+
+/* Colonne de filtres à gauche */
+.sidebar {
+    width: 260px;
+    flex-shrink: 0;           /* La sidebar ne rétrécit pas */
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.bloc-filtre {
+    background: white;
+    border-radius: 12px;
+    padding: 1.8rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+
+.bloc-filtre h3 {
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 1.2rem;
+}
+
+/* Ligne : case à cocher + label */
+.option-filtre {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.8rem;
+}
+
+.option-filtre input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #1a1a1a;
+}
+
+.option-filtre span {
+    font-size: 0.95rem;
+    color: #444;
+}
+
+/* Zone d'affichage des produits */
+.zone-produits {
+    flex: 1;
+    min-width: 0;
+}
+
+/* Barre au-dessus des produits (compteur + tri) */
+.barre-resultats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.compteur {
+    font-size: 1rem;
+    color: #666;
+}
+
+.zone-tri {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.zone-tri label {
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.select-tri {
+    padding: 0.6rem 1rem;
+    border: 2px solid #1a1a1a;
+    background: white;
+    font-size: 0.95rem;
+    outline: none;
+    min-width: 160px;
+}
+
+/* Ajustements de la grille sur la page produits */
+.zone-produits .grille-plats {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.zone-produits .conteneur-image-plat { height: 220px; }
+.zone-produits .nom-plat            { font-size: 1.2rem; }
+.zone-produits .description-plat    { font-size: 0.9rem; }
+.zone-produits .prix-plat           { font-size: 1.5rem; }
+
+
+/* PAGES LIVRAISON & COMMANDES */
+
+/* Version mobile uniquement (cachée par défaut) */
+.liv-commande {
+    display: none;
+}
+
+/* Style commun aux blocs livraison, attente, enlèvement */
+.liv, .att, .enl {
+    max-width: 1000px;
+    margin: 140px auto 5% auto;
+    padding: 30px;
+    border: 2px solid #1a1a1a;
+    border-radius: 16px;
+    background-color: #C9B896;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.att h1, .enl h1, .liv h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+}
+
+/* Tableaux */
+.att table, .enl table, .liv table {
+    width: 100%;
+    margin-top: 15px;
+}
+
+.att th, .att td,
+.enl th, .enl td,
+.liv th, .liv td {
+    border: 1px solid #1a1a1a;
+    padding: 12px;
+    font-size: 1rem;
+}
+
+/* Boutons dans ces pages */
+.att button, .enl button, .liv button {
+    background-color: #1a1a1a;
+    color: #E2D9BB;
+    border: none;
+    padding: 12px 20px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.att button:hover, .enl button:hover, .liv button:hover {
+    background-color: #000;
+}
+
+.att a {
+    color: #1a1a1a;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.att a:hover {
+    text-decoration: underline;
+}
+
+
+/* PAGE INSCRIPTION */
+
+.ins {
+    max-width: 800px;
+    margin: 140px auto 5% auto;
+    padding: 40px;
+    border: 2px solid #1a1a1a;
+    border-radius: 16px;
+    background-color: #C9B896;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.ins h1 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.ins h2 {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+/* Deux colonnes d'infos côte à côte */
+.ins .infos {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.infos-perso, .infos-liv {
+    display: flex;
+    flex-direction: column;
+    max-width: 350px;
+    padding: 15px;
+    border: 1px solid #1a1a1a;
+    background-color: #E2D9BB;
+}
+
+/* Champs du formulaire d'inscription */
+.inscription input,
+.inscription textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #1a1a1a;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-top: 15px;
+    background-color: #E2D9BB;
+}
+
+/* Bouton "Envoyer" */
+.inscription input[type="submit"] {
+    background-color: #1a1a1a;
+    color: #E2D9BB;
+    border: none;
+    font-weight: 600;
+    font-size: 1rem;
+    width: 50%;
+    max-width: 200px;
+    margin: 25px auto 0 auto;
+    transition: background 0.3s ease;
+}
+
+.inscription input[type="submit"]:hover {
+    background-color: #000;
+}
+
+.redirection {
+    font-size: 0.85rem;
+    margin-top: 20px;
+}
+
+.redirection a {
+    color: #1a1a1a;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.redirection a:hover {
+    text-decoration: underline;
+}
+
+
+/* PAGE CONNEXION*/
+
+.co {
+    max-width: 500px;
+    margin: 140px auto 5% auto;
+    padding: 40px;
+    border: 2px solid #1a1a1a;
+    border-radius: 16px;
+    background-color: #C9B896;
+    text-align: center;
+}
+
+.co h1 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+.connexion input {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #1a1a1a;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-top: 15px;
+    background-color: #E2D9BB;
+}
+
+.connexion input[type="submit"] {
+    background-color: #1a1a1a;
+    color: #E2D9BB;
+    border: none;
+    font-weight: 600;
+    font-size: 1rem;
+    width: 50%;
+    max-width: 200px;
+    margin: 25px auto 0 auto;
+    transition: background 0.3s ease;
+}
+
+.connexion input[type="submit"]:hover {
+    background-color: #000;
+}
+
+
+/* ESPACE ADMINISTRATEUR */
+
+/* Formulaire centré */
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    padding: 20px;
+    width: 500px;
+    margin: 30px auto;
+}
+
+/* Menu déroulant */
+.select-container {
+    display: flex;
+    justify-content: center;
+    width: 250px;
+    height: 50px;
+    margin: 20px auto;
+}
+
+.select-box {
+    padding: 0 15px;
+    background-color: #C9B896;
+    font-size: 1rem;
+    border: 2px solid #1a1a1a;
+}
+
+/* Tableau d'administration */
+.table table {
+    background-color: white;
+    border-radius: 12px;
+    margin: 30px auto;
+    text-align: center;
+    width: 600px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.table th, .table td {
+    padding: 15px;
+    border: 1px solid #1a1a1a;
+}
+
+
+/*PAGE PROFIL */
+
+.table-profil {
+    background-color: white;
+    padding: 20px;
+    width: 300px;
+    border-radius: 12px;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+.profil-image {
+    font-size: 14px;
+    margin-left: 10px;
+}
+
+
+/*SYSTÈME DE NOTATION*/
+
+.form-container-radio {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+
+
+
+

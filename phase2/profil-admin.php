@@ -1,3 +1,64 @@
+<?php
+$contenu = file_get_contents("utilisateurs.json"); // lit le fichier json
+$donnees = json_decode($contenu, true); // met en tableau php
+
+
+$utilisateurs = array(); // cré tableau vide
+if (isset($donnees["utilisateurs"])) {
+    $utilisateurs = $donnees["utilisateurs"];
+}
+
+
+if (!isset($_GET["id"])) { // regarde si l'index qui est dans l'URL de l'utilisateur existe ( et qui est le positionnement de l'utilsateur dans le tableau)
+    die("Aucun utilisateur sélectionné.");
+}
+
+
+$id = $_GET["id"];
+
+
+if (!isset($utilisateurs[$id])) {
+    die("Utilisateur introuvable.");
+}
+
+
+$user = $utilisateurs[$id]; // on nomme chaque éléments du tableau pour que plus simple lorsque on veut afficher les éléments dans le tableau
+
+
+if (isset($user["nom"])) {
+    $nom = $user["nom"];
+} else {
+    $nom = "";
+}
+
+
+if (isset($user["prenom"])) {
+    $prenom = $user["prenom"];
+} else {
+    $prenom = "";
+}
+
+
+if (isset($user["telephone"])) {
+    $telephone = $user["telephone"];
+} else {
+    $telephone = "";
+}
+
+
+if (isset($user["email"])) {
+    $email = $user["email"];
+} else {
+    $email = "";
+}
+
+
+if (isset($user["role"])) {
+    $role = $user["role"];
+} else {
+    $role = "client";
+}
+?>
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -8,6 +69,7 @@
 </head>
 <body>
 
+
     <nav>
         <div class="conteneur-nav">
             <div class="logo-nav">
@@ -16,13 +78,14 @@
             </div>
             <ul class="liens-nav">
                 <li><a href="index.php">ACCUEIL</a></li>
-                <li><a href="deconnexion.php">DECONNEXION</a></li>
             </ul>
         </div>
    </nav>
 
+
     <div class="att">
         <h1>PROFIL DE L'UTILISATEUR</h1>
+
 
         <table class="liv">
             <tr>
@@ -50,8 +113,10 @@
             </tr>
         </table>
 
+
         <div class="actions-admin">
             <h2>Actions de l'administrateur</h2>
+
 
             <div class="actions-admin-boutons">
                 <button type="button">Bloquer le compte</button> <!-- on met toutes les fonctionnalités de l'administrateur sous forme de bouton ( seulement en affichage pour l'instant ) -->
@@ -62,10 +127,12 @@
             </div>
         </div>
 
+
         <div class="retour-admin">
             <a href="administrateur.php">← Retour à la liste des utilisateurs</a>
         </div>
     </div>
+
 
     <footer>
         <div class="logo-pied-page">
@@ -89,6 +156,7 @@
         </div>
         <p style="margin-top:2rem;color:#C9B896;">© 2026 EVEIL Paris. Tous droits réservés.</p>
     </footer>
+
 
 </body>
 </html>

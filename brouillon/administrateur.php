@@ -1,17 +1,22 @@
 <?php
-$contenu = file_get_contents("utilisateurs.json"); // il lit le fichier utilisateurs.json en entier 
-$donnees = json_decode($contenu, true); // tranforme le langage json en php sous forme de tableau 
+$contenu = file_get_contents("utilisateurs.json"); // il lit le fichier utilisateurs.json en entier
+$donnees = json_decode($contenu, true); // tranforme le langage json en php sous forme de tableau
 
-$utilisateurs = array();// on cré un tableau vide pour stocker les utilisateurs dedans 
+
+$utilisateurs = array();// on cré un tableau vide pour stocker les utilisateurs dedans
 if (isset($donnees["utilisateurs"])) { // on regarde si les utilisateurs sont bien dans le tableau
     $utilisateurs = $donnees["utilisateurs"]; // on renomme le tableau en $utilisateurs
 }
 
 
-$roleapresfiltrage = "tous"; // le select est mis directement en tous 
+
+
+$roleapresfiltrage = "tous"; // le select est mis directement en tous
 if (isset($_GET["role"]) && $_GET["role"] != "") { // on prend la valeur envoyer par le select dans la barre de recherche ( existe et non vide)
     $roleapresfiltrage = $_GET["role"]; // on renomme la valeur prise dans la barre par roleapresfiltrage
 }
+
+
 
 
 ?>
@@ -25,6 +30,7 @@ if (isset($_GET["role"]) && $_GET["role"] != "") { // on prend la valeur envoyer
 </head>
 <body>
 
+
 <nav id="barre-navigation">
     <div class="conteneur-nav">
         <div class="logo-nav">
@@ -33,13 +39,17 @@ if (isset($_GET["role"]) && $_GET["role"] != "") { // on prend la valeur envoyer
         </div>
         <ul class="liens-nav">
             <li><a href="index.php">ACCUEIL</a></li>
+            <li><a href="administrateur.php">ESPACE</a></li>
+            <li><a href="deconnexion.html" class="bouton-inscription">DECONNEXION</a></li>
         </ul>
     </div>
 </nav>
 
+
 <div class="att">
     <h1>ESPACE ADMINISTRATEUR</h1>
     <h2>Gestion des utilisateurs du site</h2>
+
 
     <div class="select-container">
         <form method="GET" action="administrateur.php">
@@ -54,6 +64,7 @@ if (isset($_GET["role"]) && $_GET["role"] != "") { // on prend la valeur envoyer
         </form>
     </div>
 
+
           <div class="liv">
             <table>
                 <thead>
@@ -65,22 +76,29 @@ if (isset($_GET["role"]) && $_GET["role"] != "") { // on prend la valeur envoyer
                     </tr>
                 </thead>
                 <tbody>
-                    <?php // partie permettant de faire fonctionner le tableau avec les utilisateurs 
-                    $utilisateur = false; // aucune personne affichée encore 
+                    <?php // partie permettant de faire fonctionner le tableau avec les utilisateurs
+                    $utilisateur = false; // aucune personne affichée encore
+
+
 
 
                     foreach ($utilisateurs as $index => $user) { // permet de parcourir le tableau des utilisateurs avce l'indice ( ex : indice 0 est le premier utilisateur )
-                        if (isset($user["role"]) && $user["role"] != "") { // définit le rôle de l'utilisateur que l'on parcourt dans cette boucle 
+                        if (isset($user["role"]) && $user["role"] != "") { // définit le rôle de l'utilisateur que l'on parcourt dans cette boucle
                             $role = $user["role"];
                         }
 
 
-                        if ($roleapresfiltrage != "tous" && $role != $roleapresfiltrage) { // on prend seulement les utilisateur qui on le même role que le rôle après le filtrage et donc si pas le même on passe à l'utilisateur suivant 
+
+
+                        if ($roleapresfiltrage != "tous" && $role != $roleapresfiltrage) { // on prend seulement les utilisateur qui on le même role que le rôle après le filtrage et donc si pas le même on passe à l'utilisateur suivant
                             continue;
                         }
 
 
+
+
                         $utilisateur = true; // un utilisateur existe
+
 
                         ?>
                         <tr> <!--  affiche dans le tableau les données donc nom, prenom et le rôle  -->
@@ -88,8 +106,9 @@ if (isset($_GET["role"]) && $_GET["role"] != "") { // on prend la valeur envoyer
                             <td><?php echo htmlspecialchars($user["prenom"]); ?></td>
                             <td><?php echo htmlspecialchars($role); ?></td>
                             <td>
-                               <a href="profil-admin.php?id=<?php echo $index; ?>">Voir le profil</a> <!--pour l'option voir le profil permet d'aller sur la page en question avec le numero d'index pour retrouver l'utilisateur 
+                               <a href="profil-admin.php?id=<?php echo $index; ?>">Voir le profil</a> <!--pour l'option voir le profil permet d'aller sur la page en question avec le numero d'index pour retrouver l'utilisateur
  -->
+
 
                             </td>
                         </tr>
@@ -97,7 +116,9 @@ if (isset($_GET["role"]) && $_GET["role"] != "") { // on prend la valeur envoyer
                     }
 
 
-                    if (!$utilisateur) { // si l'utilisateur n'est pas égal à true ça montre que y en a pas 
+
+
+                    if (!$utilisateur) { // si l'utilisateur n'est pas égal à true ça montre que y en a pas
                         ?>
                         <tr>
                             <td colspan="4">Il n'ya pas d'utilisateur pour le rôle selectionné.</td>
@@ -131,6 +152,12 @@ if (isset($_GET["role"]) && $_GET["role"] != "") { // on prend la valeur envoyer
     </div>
     <p style="margin-top:2rem;color:#C9B896;">© 2026 EVEIL Paris. Tous droits réservés.</p>
 </footer>
+
+
+</body>
+</html>
+
+
 
 </body>
 </html>

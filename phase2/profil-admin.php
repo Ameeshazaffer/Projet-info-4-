@@ -1,4 +1,11 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'administrateur') {
+    header("Location: connexion.php");
+    exit;
+}
+
 $contenu = file_get_contents("utilisateurs.json"); // lit le fichier json
 $donnees = json_decode($contenu, true); // met en tableau php
 

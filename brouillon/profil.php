@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// ── Si non connecté, redirection ──
+//  Si non connecté, redirection 
 if (!isset($_SESSION['user'])) {
     header("Location: connexion.html");
     exit;
@@ -9,7 +9,7 @@ if (!isset($_SESSION['user'])) {
 
 $user = $_SESSION['user'];
 
-// ── Lecture des commandes depuis commandes.json ──
+//  Lecture des commandes depuis commandes.json 
 $commandes = [];
 if (file_exists("commandes.json")) {
     $data = json_decode(file_get_contents("commandes.json"), true);
@@ -54,7 +54,7 @@ if (file_exists("commandes.json")) {
             <?php unset($_SESSION['message']); ?>
         <?php endif; ?>
 
-        <!-- ── Informations personnelles ── -->
+        <!--  Informations personnelles  -->
         <table>
             <tr><th colspan="2">MES INFORMATIONS PERSONNELLES</th></tr>
             <tr><th>Nom</th><td><?= htmlspecialchars($user['nom']) ?></td></tr>
@@ -65,7 +65,7 @@ if (file_exists("commandes.json")) {
             <tr><th>Membre depuis</th><td><?= htmlspecialchars($user['date_inscription'] ?? '—') ?></td></tr>
         </table>
 
-        <!-- ── Historique des commandes ── -->
+        <!-- Historique des commandes -->
         <table>
             <tr><th colspan="5">MES COMMANDES</th></tr>
             <tr>
@@ -91,7 +91,7 @@ if (file_exists("commandes.json")) {
             <?php endif; ?>
         </table>
 
-        <!-- ── Points de fidélité ── -->
+        <!-- Points de fidélité -->
         <table>
             <tr><th colspan="2">MON COMPTE DE FIDÉLITÉ</th></tr>
             <tr><th>Mes points</th><td><?= $user['points'] ?? 0 ?></td></tr>

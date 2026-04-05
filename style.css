@@ -224,6 +224,11 @@ margin-top: 3rem;
     align-items: center;
     margin-top: 1rem;
 }
+.prix-plat {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
 
 /* Bouton "Ajouter au panier" */
 .bouton-ajouter-panier {

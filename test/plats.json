@@ -2,77 +2,77 @@
   "plat":[
     {
       "nom": "Carpaccio de Bœuf Cipriani",
-      "type":entrée,
+      "type":"entrée",
       "prix": 38
     }, 
     {
       "nom": "Ravioli Langoustine & Foie Gras",
-      "type":entrée,
+      "type":"entrée",
       "prix": 58,
     }, 
     {
       "nom": "Soupe VGE",
-      "type":entrée,
+      "type":"entrée",
       "prix": 45
     },
     {
       "nom": "Carpaccio de Bœuf Cipriani",
-      "type":entrée,
+      "type":"entrée",
       "prix": 38
     }, 
     {
       "nom": "Ravioli Langoustine & Foie Gras",
-      "type":entrée,
+      "type":"entrée",
       "prix": 58,
     }, 
     {
       "nom": "Soupe VGE",
-      "type":plat,
+      "type":"plat",
       "prix": 45
     },
     {
       "nom": "Carpaccio de Bœuf Cipriani",
-      "type":plat,
+      "type":"plat",
       "prix": 38
     }, 
     {
       "nom": "Ravioli Langoustine & Foie Gras",
-      "type":plat,
+      "type":"plat",
       "prix": 58,
     }, 
     {
       "nom": "Soupe VGE",
-      "type":plat,
+      "type":"plat",
       "prix": 45
     },
     {
       "nom": "Carpaccio de Bœuf Cipriani",
-      "type":plat,
+      "type":"plat",
       "prix": 38
     }, 
     {
       "nom": "Ravioli Langoustine & Foie Gras",
-      "type":dessert,
+      "type":"dessert",
       "prix": 58,
     }, 
     {
       "nom": "Soupe VGE",
-      "type":dessert,
+      "type":"dessert",
       "prix": 45
     }, 
     {
       "nom": "Carpaccio de Bœuf Cipriani",
-      "type":dessert,
+      "type":"dessert",
       "prix": 38
     }, 
     {
       "nom": "Ravioli Langoustine & Foie Gras",
-      "type":dessert,
+      "type":"dessert",
       "prix": 58,
     }, 
     {
       "nom": "Soupe VGE",
-      "type":dessert,
+      "type":"dessert",
       "prix": 45
     }
   ]

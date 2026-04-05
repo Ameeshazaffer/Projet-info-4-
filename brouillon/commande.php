@@ -8,7 +8,7 @@ if (!isset($_SESSION['user'])) {
 
 $user = $_SESSION['user'];
 
-// ── Création de la commande depuis le panier (POST) ──
+//  Création de la commande depuis le panier 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($_SESSION['panier'])) {
         header("Location: produits.php");
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     exit;
 }
 
-// ── Affichage d'une commande existante (GET) ──
+//  Affichage d'une commande existante 
 $commande_id = intval($_GET['id'] ?? 0);
 
 if ($commande_id === 0) {
@@ -69,6 +69,15 @@ if (!$commande) {
     header("Location: profil.php");
     exit;
 }
+
+// CYBank
+require('getapikey.php');
+$vendeur     = 'MI-3_B'; // vérifie ce code avec ton prof
+$transaction = 'EVEIL' . str_pad($commande['id'], 6, '0', STR_PAD_LEFT) . 'PARIS';
+$montant     = number_format($commande['prix_total'], 2, '.', '');
+$retour      = 'http://localhost/eveil/phase1/retour_paiement.php?commande_id=' . $commande['id'];
+$api_key     = getAPIKey($vendeur);
+$control     = md5($api_key . "#" . $transaction . "#" . $montant . "#" . $vendeur . "#" . $retour . "#");
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -129,9 +138,15 @@ if (!$commande) {
             <a href="profil.php" style="font-family:'Montserrat',sans-serif; color:#1a1a1a; font-weight:600;">
                 ← Retour à mon profil
             </a>
-            <a href="#" class="bouton-inscription">
-                Payer <?= htmlspecialchars($commande['prix_total']) ?>€
-            </a>
+
+            <form action="https://www.plateforme-smc.fr/cybank/index.php" method="POST">
+                <input type="hidden" name="transaction" value="<?= $transaction ?>">
+                <input type="hidden" name="montant"     value="<?= $montant ?>">
+                <input type="hidden" name="vendeur"     value="<?= $vendeur ?>">
+                <input type="hidden" name="retour"      value="<?= $retour ?>">
+                <input type="hidden" name="control"     value="<?= $control ?>">
+                <button type="submit" class="bouton-inscription">Payer <?= $commande['prix_total'] ?>€</button>
+            </form>
         </div>
     </div>
 

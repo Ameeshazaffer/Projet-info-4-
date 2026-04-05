@@ -85,22 +85,7 @@ if (file_exists("commandes.json")) {
                         <td><?= htmlspecialchars($commande['id']) ?></td>
                         <td><?= htmlspecialchars($commande['statut']) ?></td>
                         <td><?= htmlspecialchars($commande['prix_total']) ?>€</td>
-                        <td>
-                        <?php
-                        if (isset($commande["statut"]) && $commande["statut"] == "Livrée") {
-                         ?>
-                        <a href="notation.php?commande=<?php echo $commande['id']; ?>&client=<?php echo $user['email']; ?>">
-                            Noter la commande
-                        </a>
-                        <?php
-                        } 
-                        else {
-                        ?>
-                        <a href="commande.php?id=<?= htmlspecialchars($commande['id']) ?>">Voir ma commande</a></td>
-                        <?php 
-                        } 
-                        ?>
-                    </td>
+                        <td><a href="commande.php?id=<?= htmlspecialchars($commande['id']) ?>">Voir ma commande</a></td>
                     </tr>
                 <?php endforeach; ?>
             <?php endif; ?>

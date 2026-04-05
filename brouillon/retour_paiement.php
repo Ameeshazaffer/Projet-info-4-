@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$statut      = $_GET['statut']      ?? '';
+$statut      = $_GET['status']      ?? '';
 $commande_id = intval($_GET['commande_id'] ?? 0);
 
 // Mettre à jour le statut dans commandes.json

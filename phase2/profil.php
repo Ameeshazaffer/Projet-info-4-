@@ -38,7 +38,7 @@ if (file_exists("commandes.json")) {
                 <div class="paris-logo-nav">PARIS</div>
             </div>
             <ul class="liens-nav">
-                <li><a href="index.html">ACCUEIL</a></li>
+                <li><a href="index.php">ACCUEIL</a></li>
                 <li><a href="profil.php" class="bouton-profil">PROFIL</a></li>
             </ul>
         </div>

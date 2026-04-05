@@ -88,6 +88,44 @@
             "prix_total": 80,
             "date": "05\/04\/2026 13:28",
             "statut": "En attente de paiement"
+        },
+        {
+            "id": 7,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
+                {
+                    "nom": "Risotto au Safran",
+                    "prix": 48,
+                    "quantite": 1
+                },
+                {
+                    "nom": "Huîtres et Perles de Tapioca",
+                    "prix": 52,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 100,
+            "date": "05\/04\/2026 14:31",
+            "statut": "En attente de paiement"
+        },
+        {
+            "id": 8,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
+                {
+                    "nom": "Tarte Citron Meringuée",
+                    "prix": 20,
+                    "quantite": 1
+                },
+                {
+                    "nom": "Ravioli Langoustine & Foie Gras",
+                    "prix": 58,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 78,
+            "date": "05\/04\/2026 14:38",
+            "statut": "En attente de paiement"
         }
     ]
 }

@@ -1,22 +1,22 @@
 {
   "menu":[
     {
-
-
-
-
+      "numero":1,
+      "nom": Découverte,
+      "plats":[1, 6, 10]
+      "prix_total":
     }, 
     {
-
-
-
-
+      "numero":1,
+      "nom":Etudiant,
+      "plats":[2, 7, 11]
+      "prix_total":
     }, 
     {
-
-
-
-
+      "numero":1,
+      "nom":Réconfortant,
+      "plats":[3, 8, 12]
+      "prix_total":
     }
   ]
 }

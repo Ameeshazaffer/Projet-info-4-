@@ -2,135 +2,92 @@
     "commandes": [
         {
             "id": 1,
-            "email": "sankavi.kumanan@gmail.com",
-            "date": "2025-11-01",
-            "statut": "Livrée",
-            "prix_total": 117,
+            "email": "nafisa.muhammad@hotmail.com",
             "produits": [
                 {
-                    "nom": "Soupe VGE",
-                    "quantite": 1,
-                    "prix": 45
-                },
-                {
-                    "nom": "Huîtres et Perles de Tapioca",
-                    "quantite": 1,
-                    "prix": 52
-                },
-                {
-                    "nom": "Tarte Citron Meringuée",
-                    "quantite": 1,
-                    "prix": 20
+                    "nom": "Carpaccio de Bœuf Cipriani",
+                    "prix": 38,
+                    "quantite": 1
                 }
-            ]
+            ],
+            "prix_total": 38,
+            "date": "05\/04\/2026 12:03",
+            "statut": "En attente de paiement"
         },
         {
             "id": 2,
-            "email": "sankavi.kumanan@gmail.com",
-            "date": "2025-12-15",
-            "statut": "Livrée",
-            "prix_total": 117,
+            "email": "nafisa.muhammad@hotmail.com",
             "produits": [
                 {
                     "nom": "Soupe VGE",
-                    "quantite": 1,
-                    "prix": 45
-                },
+                    "prix": 45,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 45,
+            "date": "05\/04\/2026 12:03",
+            "statut": "En attente de paiement"
+        },
+        {
+            "id": 3,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
                 {
                     "nom": "Huîtres et Perles de Tapioca",
-                    "quantite": 1,
-                    "prix": 52
+                    "prix": 52,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 52,
+            "date": "05\/04\/2026 12:05",
+            "statut": "En attente de paiement"
+        },
+        {
+            "id": 4,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
+                {
+                    "nom": "Soupe VGE",
+                    "prix": 45,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 45,
+            "date": "05\/04\/2026 13:14",
+            "statut": "En attente de paiement"
+        },
+        {
+            "id": 5,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
+                {
+                    "nom": "Carpaccio de Bœuf Cipriani",
+                    "prix": 38,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 38,
+            "date": "05\/04\/2026 13:14",
+            "statut": "En attente de paiement"
+        },
+        {
+            "id": 6,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
+                {
+                    "nom": "Ravioli Langoustine & Foie Gras",
+                    "prix": 58,
+                    "quantite": 1
                 },
                 {
-                    "nom": "Tarte Citron Meringuée",
-                    "quantite": 1,
-                    "prix": 20
-                }
-            ]
-        },
-        {
-            "id": "CMD-69d133cb7bf40",
-            "email": "nafisa.muhammad@hotmail.com",
-            "produits": [
-                {
-                    "nom": "Soupe VGE",
-                    "prix": 45,
+                    "nom": "Sphère Chocolat Cœur Coulant",
+                    "prix": 22,
                     "quantite": 1
                 }
             ],
-            "prix_total": 45,
-            "date": "04\/04\/2026 17:52",
-            "statut": "En attente"
-        },
-        {
-            "id": "CMD-69d133fc709a3",
-            "email": "nafisa.muhammad@hotmail.com",
-            "produits": [
-                {
-                    "nom": "Carpaccio de Bœuf Cipriani",
-                    "prix": 38,
-                    "quantite": 1
-                }
-            ],
-            "prix_total": 38,
-            "date": "04\/04\/2026 17:53",
-            "statut": "En attente"
-        },
-        {
-            "id": "CMD-69d134f27101f",
-            "email": "nafisa.muhammad@hotmail.com",
-            "produits": [
-                {
-                    "nom": "Soupe VGE",
-                    "prix": 45,
-                    "quantite": 1
-                }
-            ],
-            "prix_total": 45,
-            "date": "04\/04\/2026 17:57",
-            "statut": "En attente"
-        },
-        {
-            "id": "CMD-69d1372938ecb",
-            "email": "nafisa.muhammad@hotmail.com",
-            "produits": [
-                {
-                    "nom": "Soupe VGE",
-                    "prix": 45,
-                    "quantite": 1
-                }
-            ],
-            "prix_total": 45,
-            "date": "04\/04\/2026 18:07",
-            "statut": "En attente"
-        },
-        {
-            "id": "CMD-69d13b47a2c20",
-            "email": "nafisa.muhammad@hotmail.com",
-            "produits": [
-                {
-                    "nom": "Carpaccio de Bœuf Cipriani",
-                    "prix": 38,
-                    "quantite": 1
-                }
-            ],
-            "prix_total": 38,
-            "date": "04\/04\/2026 18:24",
-            "statut": "En attente"
-        },
-        {
-            "id": "CMD-69d13b58b3cfa",
-            "email": "nafisa.muhammad@hotmail.com",
-            "produits": [
-                {
-                    "nom": "Fleur Vanille",
-                    "prix": 24,
-                    "quantite": 1
-                }
-            ],
-            "prix_total": 24,
-            "date": "04\/04\/2026 18:24",
-            "statut": "En attente"
+            "prix_total": 80,
+            "date": "05\/04\/2026 13:28",
+            "statut": "En attente de paiement"
         }
     ]
 }

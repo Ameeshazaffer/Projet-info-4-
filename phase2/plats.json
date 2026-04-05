@@ -1,0 +1,64 @@
+{
+  "plat":[
+    {
+      "nom": "Carpaccio de Bœuf Cipriani",
+      "prix": 38
+    }, 
+    {
+      "nom": "Ravioli Langoustine & Foie Gras",
+      "prix": 58,
+    }, 
+    {
+      "nom": "Soupe VGE",
+      "prix": 45
+    },
+    {
+      "nom": "Carpaccio de Bœuf Cipriani",
+      "prix": 38
+    }, 
+    {
+      "nom": "Ravioli Langoustine & Foie Gras",
+      "prix": 58,
+    }, 
+    {
+      "nom": "Soupe VGE",
+      "prix": 45
+    },
+    {
+      "nom": "Carpaccio de Bœuf Cipriani",
+      "prix": 38
+    }, 
+    {
+      "nom": "Ravioli Langoustine & Foie Gras",
+      "prix": 58,
+    }, 
+    {
+      "nom": "Soupe VGE",
+      "prix": 45
+    },
+    {
+      "nom": "Carpaccio de Bœuf Cipriani",
+      "prix": 38
+    }, 
+    {
+      "nom": "Ravioli Langoustine & Foie Gras",
+      "prix": 58,
+    }, 
+    {
+      "nom": "Soupe VGE",
+      "prix": 45
+    }, 
+    {
+      "nom": "Carpaccio de Bœuf Cipriani",
+      "prix": 38
+    }, 
+    {
+      "nom": "Ravioli Langoustine & Foie Gras",
+      "prix": 58,
+    }, 
+    {
+      "nom": "Soupe VGE",
+      "prix": 45
+    }
+  ]
+}

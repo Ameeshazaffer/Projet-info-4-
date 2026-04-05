@@ -1,4 +1,12 @@
 <?php
+session_start();
+
+
+if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'client') {
+    header("Location: connexion.php");
+    exit;
+}
+
 if (!isset($_GET["commande"]) || !isset($_GET["client"])) {
     die("Les informations ne sont pas complètes.");
 }

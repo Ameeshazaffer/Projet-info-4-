@@ -78,6 +78,8 @@ if (isset($user["role"])) {
             </div>
             <ul class="liens-nav">
                 <li><a href="index.php">ACCUEIL</a></li>
+                <li><a href="administrateur.php">ESPACE</a></li>
+                <li><a href="deconnexion.php" class="bouton-inscription">DECONNEXION</a></li>
             </ul>
         </div>
    </nav>
@@ -160,3 +162,5 @@ if (isset($user["role"])) {
 
 </body>
 </html>
+
+

@@ -1,21 +1,21 @@
 <?php
 session_start();
 
-// ── Si non connecté, redirection ──
+//  Si non connecté, redirection 
 if (!isset($_SESSION['user'])) {
     header("Location: connexion.html");
     exit;
 }
 
 $user        = $_SESSION['user'];
-$commande_id = $_GET['id'] ?? '';
+$commande_id = intval($_GET['id'] ?? 0);
 
-if ($commande_id === '') {
+if ($commande_id === 0) {
     header("Location: profil.php");
     exit;
 }
 
-// ── Lecture des commandes depuis commandes.json ──
+//  Lecture des commandes depuis commandes.json 
 $commande = null;
 if (file_exists("commandes.json")) {
     $data = json_decode(file_get_contents("commandes.json"), true);
@@ -27,7 +27,6 @@ if (file_exists("commandes.json")) {
     }
 }
 
-// Si commande introuvable ou pas à lui, retour profil
 if (!$commande) {
     header("Location: profil.php");
     exit;
@@ -88,11 +87,16 @@ if (!$commande) {
             </tr>
         </table>
 
-        <p style="margin-top:1.5rem;">
+        <!-- Liens d'action -->
+        <div style="display:flex; gap:2rem; margin-top:2rem; align-items:center; flex-wrap:wrap;">
             <a href="profil.php" style="font-family:'Montserrat',sans-serif; color:#1a1a1a; font-weight:600;">
                 ← Retour à mon profil
             </a>
-        </p>
+            <!--Bouton payer-->
+            <a href="#" class="bouton-inscription">
+                Payer <?= htmlspecialchars($commande['prix_total']) ?>€
+            </a>
+        </div>
     </div>
 
     <!-- FOOTER -->

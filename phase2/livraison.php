@@ -1,4 +1,12 @@
 <?php
+session_start();
+
+// on vérifie que l'utilisateur est connecté et que c'est un livreur
+if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'livreur') {
+    header("Location: connexion.php");
+    exit;
+}
+
 $contenu = file_get_contents("commandes.json");
 $donnees = json_decode($contenu, true);
 

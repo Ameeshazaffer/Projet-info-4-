@@ -1,39 +1,26 @@
 
-@font-face {
-    font-family: 'Arian';
-    src: local('Arial Black'), local('Impact'), local('Arial');
-    font-weight: 900;
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-
 body {
-    font-family: "Montserrat", sans-serif;
-    background: #E2D9BB;
+    font-family: Georgia, serif;
     color: #1a1a1a;
-    margin: 0;
-    padding-top: 120px; 
-	flex-direction: column;
-    min-height: 100vh;
-    display: flex;
+    background: #E2D9BB;
 }
 
-
+/* NAVIGATION */
 nav {
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    background:#C9B896;
+    background: #C9B896;
     padding: 1rem 5%;
     border: 1px solid black;
 }
-
 .conteneur-nav {
     display: flex;
     justify-content: space-between;
@@ -41,21 +28,18 @@ nav {
     max-width: 1400px;
     margin: 0 auto;
 }
-
 .logo-nav {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 .texte-logo-nav {
-    font-family: "Cinzel", Sans-serif;
+    font-family: Verdana, sans-serif;
     font-size: 1.8rem;
     font-weight: 900;
     letter-spacing: 6px;
     color: #1a1a1a;
 }
-
 .paris-logo-nav {
     font-family: 'Montserrat', sans-serif;
     font-size: 0.6rem;
@@ -69,56 +53,56 @@ nav {
     list-style: none;
     align-items: center;
 }
-
 .liens-nav a {
     color: #1a1a1a;
     text-decoration: none;
     font-size: 1rem;
     font-weight: 500;
     letter-spacing: 1px;
-    position: relative;
     font-family: 'Montserrat', sans-serif;
 }
 
-
-
-.liens-nav a:hover{
-    text-decoration: underline;
+.liens-nav a:hover { 
+text-decoration: underline; 
 }
 
-
-.bouton-connexion {
+.bouton-inscription {
     padding: 0.6rem 1.5rem;
     border: 2px solid #1a1a1a;
+    background: transparent;
+    color: #1a1a1a;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+.bouton-inscription:hover {
+    background: #1a1a1a;
+    color: #E2D9BB;
 }
 
-
-
-
-
+/* SECTION PRINCIPALE d'accueil */
 .section-principale {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: relative;
+    background: #C9B896;
     padding: 8rem 5% 4rem;
 }
 
-.logo-principal {
-    text-align: center;
-    margin-bottom: 3rem;
+.logo-principal { 
+text-align: center; margin-bottom: 3rem; 
 }
 
 .texte-logo-principal {
-    font-family: "Cinzel", Sans-serif;
+    font-family: Verdana, sans-serif;
     font-size: 7rem;
     font-weight: 900;
     letter-spacing: 20px;
-    color:#1a1a1a;
+    color: #1a1a1a;
 }
-
 .paris-logo-principal {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
@@ -128,404 +112,644 @@ nav {
     margin-top: -5px;
     margin-bottom: 1.5rem;
 }
-
 .slogan-logo-principal {
     font-family: 'Parisienne', cursive;
     font-size: 2.5rem;
     color: #1a1a1a;
 }
 
+.zone-bouton { 
+margin-top: 3rem; 
+}
 
-footer {
-    background-color: #1a1a1a; 
-    color: #F5F0E8;             
-    padding: 1rem 5%;
-    text-align: center;
+.bouton-decouvrir {
+    display: inline-block;
+    padding: 1.5rem 3rem;
+    background: #1a1a1a;
+    color: #E2D9BB;
+    text-decoration: none;
     font-family: 'Montserrat', sans-serif;
-	margin-top : auto; 
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    border-radius: 5px;
+}
+.bouton-decouvrir:hover { background: #000; }
+
+/* SECTION MENU */
+.section-menu {
+    padding: 4rem 5%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+.section-categorie { margin-bottom: 5rem; }
+.titre-categorie {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    color: #1a1a1a;
+    font-weight: 300;
+    letter-spacing: 5px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.sous-titre-categorie {
+    font-family: 'Parisienne', cursive;
+    font-size: 2rem;
+    color: #666;
+    text-align: center;
+    margin-bottom: 3rem;
 }
 
-
-.logo-pied-page {
+/* GRILLE & CARTES */
+.grille-plats {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2.5rem;
+    margin-top: 2rem;
+}
+.carte-plat {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+.carte-plat:hover {
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    transform: translateY(-3px);
+}
+.conteneur-image-plat {
+    width: 100%;
+    height: 250px;
+    background: #C9B896;
+    position: relative;
+    overflow: hidden;
+}
+.conteneur-image-plat img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.badge-plat {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: #D4AF37;
+    color: white;
+    padding: 0.5rem 1rem;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 20px;
+}
+.infos-plat { padding: 1.5rem; }
+.nom-plat {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #1a1a1a;
+    font-weight: 600;
+}
+.description-plat {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #666;
+    margin-bottom: 1rem;
+}
+.pied-plat {
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
+    margin-top: 1rem;
 }
 
+/* Bouton "Ajouter au panier" */
+.bouton-ajouter-panier {
+    padding: 0.8rem 1.5rem;
+    background: #1a1a1a;
+    color: #E2D9BB;
+    border: none;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.bouton-ajouter-panier:hover {
+    background: #000;
+}
+
+/* FOOTER */
+footer {
+    background: #1a1a1a;
+    color: #E2D9BB;
+    padding: 3rem 5%;
+    text-align: center;
+    margin-top: 4rem;
+}
+.logo-pied-page { margin-bottom: 2rem; }
 .texte-logo-pied-page {
-    font-family: "Cinzel", Sans-serif; 
+    font-family: Verdana, sans-serif;
     font-size: 2.5rem;
     font-weight: 900;
     letter-spacing: 8px;
-    color: #F5F0E8;
+    color: #C9B896;
 }
-
 .paris-logo-pied-page {
-    font-family: 'Montserrat', sans-serif; 
+    font-family: 'Montserrat', sans-serif;
     font-size: 0.8rem;
     letter-spacing: 4px;
     color: #C9B896;
     margin-top: -3px;
     margin-bottom: 1rem;
 }
-
 .slogan-logo-pied-page {
     font-family: 'Parisienne', cursive;
     font-size: 1.3rem;
     color: #C9B896;
-    margin-bottom: 2rem;
 }
-
-
 .infos-pied-page {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 2rem 0;
+    text-align: center;
 }
-
-
-.section-pied-page {
-    display: flex;
-    flex-direction: column;
-    min-width: 180px; 
-}
-
 .section-pied-page h3 {
     font-family: 'Montserrat', sans-serif;
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     color: #C9B896;
 }
-
-.section-pied-page p, .section-pied-page a {
-    font-family: 'Montserrat', sans-serif;
+.section-pied-page p {
     font-size: 1rem;
-    color: #F5F0E8;
-    text-decoration: none;
-    margin-bottom: 0.5rem;
+    line-height: 1.8;
+    color: #E2D9BB;
 }
 
+/*PAGE PRODUITS*/
+.hero {
+    background: #C9B896;
+    padding: 8rem 5% 4rem;
+    text-align: center;
+}
+.hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 4rem;
+    font-weight: 700;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    margin-bottom: 0.8rem;
+}
+.hero p {
+    font-family: 'Parisienne', cursive;
+    font-size: 2rem;
+    color: #1a1a1a;
+    margin-bottom: 2.5rem;
+}
+.zone-recherche {
+    max-width: 780px;
+    margin: 0 auto;
+}
+.champ-recherche {
+    width: 100%;
+    padding: 1.1rem 1.5rem;
+    border: 2px solid #1a1a1a;
+    background: #E2D9BB;
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    color: #1a1a1a;
+    outline: none;
+    letter-spacing: 0.5px;
+}
+.champ-recherche::placeholder { color: #aaa; font-style: italic; }
 
-.liv{
+.conteneur-principal {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 3rem 5%;
+    display: flex;
+    gap: 2.5rem;
+    align-items: flex-start;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 260px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+.bloc-filtre {
+    background: white;
+    border-radius: 12px;
+    padding: 1.8rem;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+.bloc-filtre h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    margin-bottom: 1.2rem;
+}
+.option-filtre {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.8rem;
+}
+.option-filtre:last-child { margin-bottom: 0; }
+.option-filtre input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    border: 2px solid #C9B896;
+    border-radius: 3px;
+    accent-color: #1a1a1a;
+    flex-shrink: 0;
+}
+.option-filtre span {
+    font-family: Georgia, serif;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+/*ZONE PRODUITS*/
+.zone-produits { flex: 1; min-width: 0; }
+.barre-resultats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.compteur {
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    color: #666;
+}
+.zone-tri {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+.zone-tri label {
+    font-family: Georgia, serif;
+    font-size: 0.95rem;
+    color: #444;
+}
+.select-tri {
+    padding: 0.6rem 1rem;
+    border: 2px solid #1a1a1a;
+    background: white;
+    font-family: Georgia, serif;
+    font-size: 0.95rem;
+    color: #1a1a1a;
+    outline: none;
+    min-width: 160px;
+}
+
+/* Surcharge grille pour produits (cartes plus petites) */
+.zone-produits .grille-plats {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+}
+.zone-produits .conteneur-image-plat { height: 220px; }
+.zone-produits .nom-plat { font-size: 1.2rem; }
+.zone-produits .description-plat { font-size: 0.9rem; }
+.zone-produits .prix-plat { font-size: 1.5rem; }
+
+/* Livraison et Commandes version ordinateur/tablette  */
+
+.liv-commande {
+    display: none;
+}
+
+.liv, .att, .enl {
     max-width: 1000px;
-    margin: 5% auto;
+    margin: 140px auto 5% auto;
     padding: 30px;
-    border: 2px solid black;
-    border-radius: 20px;
-    background-color: #C9B896; 
+    border: 2px solid #1a1a1a;
+    border-radius: 16px;
+    background-color: #C9B896;
     text-align: center;
-    font-family: "Cinzel", Sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
-.att, .enl{
-    max-width: 800px;
-    margin: 5% auto;
-    padding: 30px;
-    border: 2px solid black;
-    border-radius: 20px;
-    background-color: #C9B896; 
-    text-align: center;
-    font-family: "Cinzel", Sans-serif;
-}
-
-.att h1, .enl h1, .liv h1{
+.att h1, .enl h1, .liv h1 {
     font-size: 2rem;
     margin-bottom: 20px;
+    letter-spacing: 2px;
 }
 
-.att table, .enl table, .liv table{
+.att table, .enl table, .liv table {
     width: 100%;
     margin-top: 15px;
 }
 
 .att th, .att td, .enl th, .enl td, .liv th, .liv td {
-    border: 1px solid black;
-    padding: 10px;
+    border: 1px solid #1a1a1a;
+    padding: 12px;
     font-size: 1rem;
-
 }
 
-.att button, .enl button, .liv button{
-    background-color: #E2D9BB; 
-    border: 3px solid black;
-    font-family: "Cinzel", Sans-serif;
-    font-weight: bold;
-    padding: 8px 12px;
-    border-radius: 15px;
+
+.att button, .enl button, .liv button {
+    background-color: #1a1a1a;
+    color: #E2D9BB;
+    border: none;
+    padding: 12px 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
 }
 
+.att button:hover, .enl button:hover, .liv button:hover {
+    background-color: #000000;
+}
+
+
+/* Inscription */
 
 .ins {
-    max-width: 800px;              
-    margin: 5% auto;        
-    padding: 40px;             
-    border: 2px solid black;    
-    border-radius: 20px;       
-    background: #C9B896;         
-    text-align: center;       
+    max-width: 800px;
+    margin: 140px auto 5% auto;
+    padding: 40px;
+    border: 2px solid #1a1a1a;
+    border-radius: 16px;
+    background-color: #C9B896;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
 }
-
 .ins .infos {
     display: flex;
     gap: 20px;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .infos-perso, .infos-liv {
     display: flex;
     flex-direction: column;
     max-width: 350px;
-    padding: 10px;
-    border: 1px solid black;
+    padding: 15px;
+    border: 1px solid #1a1a1a;
+    background-color: #E2D9BB;
 }
 
-.inscription input {
-    width: 100%;              
+.inscription input, .inscription textarea {
+    width: 100%;
     padding: 15px;
-    border: 1px solid black;
-    border-radius: 20px;
+    border: 2px solid #1a1a1a;
+    border-radius: 8px;
     font-size: 1rem;
     margin-top: 15px;
-    background-color: #EBE4E4;
+    background-color: #E2D9BB;
+    font-family: Georgia, serif;
 }
 
 .inscription input[type="submit"] {
-    background-color: #E2D9BB;
-    border: 3px solid black;
-    font-weight: bold;
-    font-family: "Cinzel", Sans-serif;
-    font-size: 1.25rem;   
+    background-color: #1a1a1a;
+    color: #E2D9BB;
+    border: none;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
     width: 50%;
     max-width: 200px;
-    margin: 20px auto 0 auto;
+    margin: 25px auto 0 auto;
+    transition: background 0.3s ease;
 }
 
-.inscription textarea {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid black;
-    border-radius: 15px;
-    font-size: 1rem;
-    margin-top: 15px;
-    font-family: "Arial";
-    background-color: #EBE4E4;
+.inscription input[type="submit"]:hover {
+    background-color: #000000;
 }
 
 .ins h1 {
     margin-bottom: 15px;
-    font-family: "Cinzel", Sans-serif;
     font-size: 2rem;
-    text-align: center;	
+    letter-spacing: 2px;
 }
 
 .ins h2 {
-    font-family: "Cinzel", Sans-serif;		
+    font-size: 1.2rem;
+    margin-top: 10px;
 }
 
 .redirection {
-    font-size: 0.75rem;
-    margin-top: 15px;
-    text-align: center;
+    font-size: 0.85rem;
+    margin-top: 20px;
 }
 
 .redirection a {
-    color: #1a1a1a;      
-    font-weight: bold;
+    color: #1a1a1a;
+    font-weight: 600;
     text-decoration: none;
 }
 
-
 .redirection a:hover {
-	text-decoration: underline;
-      
+    text-decoration: underline;
 }
+
+/* Connexion */
 
 .co {
-    max-width: 500px;              
-    margin: 5% auto;        
-    padding: 40px;             
-    border: 2px solid black;    
-    border-radius: 20px;       
-    background: #C9B896;         
-    text-align: center;       
+    max-width: 500px;
+    margin: 140px auto 5% auto; 
+    padding: 40px;
+    border: 2px solid #1a1a1a;
+    border-radius: 16px;
+    background-color: #C9B896;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
 }
-
-
 
 .connexion input {
-    width: 100%;              
+    width: 100%;
     padding: 15px;
-    border: 1px solid black;
-    border-radius: 20px;
+    border: 2px solid #1a1a1a;
+    border-radius: 8px;
     font-size: 1rem;
     margin-top: 15px;
-    background-color: #EBE4E4;
+    background-color: #E2D9BB;
+    font-family: Georgia, serif;
 }
-
 
 .connexion input[type="submit"] {
-    background-color: #E2D9BB;
-    border: 3px solid black;
-    font-weight: bold;
-    font-family: "Cinzel", Sans-serif;
-    font-size: 1.25rem;   
+    background-color: #1a1a1a;
+    color: #E2D9BB;
+    border: none;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
     width: 50%;
     max-width: 200px;
-    margin: 20px auto 0 auto;
+    margin: 25px auto 0 auto;
+    transition: background 0.3s ease;
 }
 
+.connexion input[type="submit"]:hover {
+    background-color: #000000;
+}
 
 .co h1 {
     margin-bottom: 15px;
-    font-family: "Cinzel", Sans-serif;
     font-size: 2rem;
-    text-align: center;	
+    letter-spacing: 2px;
 }
+
 
 /* Espace administrateur */
 
-.form-container{
-    font-family: "Cormorant Garamond", serif;
-    font-size: 12.5px;
-    letter-spacing: 4px;
-    text-transform: uppercase;
+
+.form-container {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 2px;
     font-weight: 500;
-    display:flex;
+    display: flex;
     margin: 30px auto;
-    flex-direction:column; 
+    flex-direction: column;
     align-items: center;
-    text-align:center; 
     justify-content: center;
-    background-color: rgba(197, 171, 116, 0.2);
-    border: 1px solid rgba(197, 171, 116, 0.45);
-    padding-block :10px;
-    padding-inline:10px;
-    height: 100px;
-    width : 500px;
-    border-radius:16px;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    padding: 20px;
+    width: 500px;
 }
-.select-container{
-    font-family: "Cormorant Garamond", serif;
-    margin : 20px auto;
-    display:flex;
+
+.select-container {
+    margin: 20px auto;
+    display: flex;
     justify-content: center;
-    position :relative;
-    width : 250px;
-    height : 50px; 
+    width: 250px;
+    height: 50px;
 }
-.select-box{
-    padding : 0 30px 0 15px;
-    color:white; 
-    background:#C9B896;
-    font-size : 20px;
+
+.select-box {
+    padding: 0 15px;
+    background-color: #C9B896;
+    font-size: 1rem;
+    color: #1a1a1a;
+    border: 2px solid #1a1a1a;
 }
-.icon-container i{
-    font-size : 30px;
-    color : white;
+
+.table table {
+    font-family: Georgia, serif;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    margin: 30px auto;
+    text-align: center;
+    width: 600px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
-.icon-container img{
-    width : 22px;
-    height: 22px;
-    color : white;
+
+.table th, .table td {
+    padding: 15px;
+    border: 1px solid #1a1a1a;
 }
-.table table{
-  font-family: "Cormorant Garamond", serif; 
-  background-color: rgba(197, 171, 116, 0.2); 
-  border: 1px solid rgba(197, 171, 116, 0.45); 
-  padding-block :20px; 
-  padding-inline:20px; 
-  height: 150px; 
-  width : 600px; 
-  border-radius:16px; 
-  margin : 30px auto; 
-  border-collapse: collapse; 
-  text-align:center; 
-  overflow: hidden; 
-  border: 1px solid rgba(197, 171, 116, 0.45);
-}
-.table th,.table td {
-    padding: 18px 25px; 
-}
-.table tr {
-    height: 60px;
-}
+
 
 /* Profil */
 
-.table-profil{
-  background-color: rgba(197, 171, 116, 0.2); 
-  padding-block :10px; 
-  padding-inline:20px; 
-  height: 100px; 
-  width : 200px; 
-  border-radius:16px; 
-  margin : 15px auto; 
-  border-collapse: collapse; 
-  text-align:center; 
-  overflow: hidden; 
+.table-profil {
+    background-color: #FFFFFF;
+    padding: 20px;
+    width: 300px;
+    border-radius: 12px;
+    margin: 20px auto;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 .profil-image {
     font-size: 14px;
     margin-left: 10px;
-    text-align:left;
-    cursor: pointer;
+}
+
+.att a {
+    color: #1a1a1a;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.att a:hover {
+    text-decoration: underline;
 }
 
 /* Notation */
-.form-container-radio{
+
+.form-container-radio {
     display: flex;
     justify-content: center;
     gap: 15px;
     margin-top: 10px;
 }
-.att{
-  max-width: 1000px;
-  margin: 5% auto;
-  padding: 30px;
-  border: 2px solid black;
-  border-radius: 20px;
-  background-color: var(--beige);
-  text-align: center;
-  font-family: 'Montserrat', sans-serif;
-}
-.att table{
-  width:100%;
-  margin-top: 15px;
-  border-collapse: collapse;
-}
-.att th, .att td{
-  border:1px solid black;
-  padding: 10px;
-}
-.att{
-    max-width: 800px;
-    margin: 5% auto;
-    padding: 30px;
-    border: 2px solid black;
-    border-radius: 20px;
-    background-color: #C9B896; 
-    text-align: center;
-    font-family: "Cinzel", Sans-serif;
-}
 
-.att h1{
-    font-size: 2rem;
-    margin-bottom: 20px;
-}
+/*Livraison version mobile*/
 
-.att table{
-    width: 100%;
-    margin-top: 15px;
-}
+@media (max-width: 768px) {
+    .liv table, nav, footer {
+        display: none;
+    }
 
-.att th, .att td{
-    border: 1px solid black;
-    padding: 10px;
-    font-size: 1rem;
+    .liv-commande {
+        display: block;
+        background-color: #E2D9BB;
+        border: 2px solid #1a1a1a;
+        border-radius: 12px;
+        padding: 20px;
+        margin-bottom: 20px;
+        text-align: left;
+        font-family: 'Montserrat', sans-serif;
+    }
 
+    .liv-commande p {
+        margin: 8px 0;
+    }
+
+    .liv-commande button {
+        display: block;
+        width: 100%;
+        padding: 15px;
+        margin-top: 10px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        border-radius: 8px;
+        background-color: #1a1a1a;
+        color: #E2D9BB;
+        border: none;
+        font-size: 1rem;
+        transition: background 0.3s ease;
+    }
+
+    .liv-commande button:hover {
+        background-color: #000000;
+    }
+
+    .liv-commande a {
+        display: block;
+        width: 100%;
+        padding: 12px;
+        text-align: center;
+        background-color: #333;
+        color: #E2D9BB;
+        border-radius: 8px;
+        text-decoration: none;
+        margin: 10px 0;
+    }
+
+    .liv-commande a:hover {
+        background-color: #000;
+    }
 }

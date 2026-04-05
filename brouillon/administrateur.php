@@ -46,7 +46,7 @@ if (isset($_GET["role"]) && $_GET["role"] != "") { // on prend la valeur envoyer
             <select name="role" class="select-box"  >
                 <option value="tous" <?php if ($roleapresfiltrage == "tous") echo "selected"; ?>>Tous</option> <!-- permet donc de prendre le role apres le filtrage et comparer avec celui de la selection et donc si oui, le marque comme celui selectionner  -->
                 <option value="client" <?php if ($roleapresfiltrage == "client") echo "selected"; ?>>Clients</option>
-                <option value="admin" <?php if ($roleapresfiltrage == "admin") echo "selected"; ?>>Administrateurs</option>
+                <option value="admin" <?php if ($roleapresfiltrage == "administrateur") echo "selected"; ?>>Administrateurs</option>
                 <option value="livreur" <?php if ($roleapresfiltrage == "livreur") echo "selected"; ?>>Livreurs</option>
                 <option value="restaurateur" <?php if ($roleapresfiltrage == "restaurateur") echo "selected"; ?>>Restaurateurs</option>
             </select>

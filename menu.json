@@ -2,19 +2,19 @@
   "menu":[
     {
       "numero":1,
-      "nom": Découverte,
+      "nom": "Decouverte",
       "plats":[1, 6, 10]
       "prix_total":
     }, 
     {
       "numero":1,
-      "nom":Etudiant,
+      "nom": "Etudiant",
       "plats":[2, 7, 11]
       "prix_total":
     }, 
     {
       "numero":1,
-      "nom":Réconfortant,
+      "nom": "Réconfortant",
       "plats":[3, 8, 12]
       "prix_total":
     }

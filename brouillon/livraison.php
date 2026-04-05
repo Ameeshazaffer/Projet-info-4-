@@ -50,7 +50,7 @@ if (isset($donnees["commandes"])) {
                 $Commande = false; // pas encore de commande prise en compte et donc pas encore affichée dans le tableau
 
                 foreach ($commandes as $commande) { // parcourt le tableau et donc regarde chaque commande avec le numero de la commande
-                    if (isset($commande["statut"]) && $commande["statut"] != "En attente") { // si le statut de la commande n'est pas "En attente", passer à la commande suivante
+                    if (isset($commande["statut"]) && $commande["statut"] != "Payée") { // si le statut de la commande n'est pas "Payée", passer à la commande suivante
                         continue;
                     }
 

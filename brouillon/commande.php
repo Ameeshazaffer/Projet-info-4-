@@ -1,13 +1,52 @@
 <?php
 session_start();
 
-//  Si non connecté, redirection 
 if (!isset($_SESSION['user'])) {
     header("Location: connexion.html");
     exit;
 }
 
-$user        = $_SESSION['user'];
+$user = $_SESSION['user'];
+
+// ── Création de la commande depuis le panier (POST) ──
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (empty($_SESSION['panier'])) {
+        header("Location: produits.php");
+        exit;
+    }
+
+    $email   = $user['email'];
+    $panier  = $_SESSION['panier'];
+    $total   = array_sum(array_map(fn($i) => $i['prix'] * $i['quantite'], $panier));
+    $fichier = "commandes.json";
+
+    $donnees = file_exists($fichier)
+        ? json_decode(file_get_contents($fichier), true)
+        : ["commandes" => []];
+
+    $prochain_id = 1;
+    foreach ($donnees["commandes"] as $c) {
+        if ($c['id'] >= $prochain_id) $prochain_id = $c['id'] + 1;
+    }
+
+    $donnees["commandes"][] = [
+        "id"         => $prochain_id,
+        "email"      => $email,
+        "produits"   => $panier,
+        "prix_total" => $total,
+        "date"       => date("d/m/Y H:i"),
+        "statut"     => "En attente de paiement"
+    ];
+
+    file_put_contents($fichier, json_encode($donnees, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+
+    unset($_SESSION['panier']);
+
+    header("Location: commande.php?id=" . $prochain_id);
+    exit;
+}
+
+// ── Affichage d'une commande existante (GET) ──
 $commande_id = intval($_GET['id'] ?? 0);
 
 if ($commande_id === 0) {
@@ -15,7 +54,6 @@ if ($commande_id === 0) {
     exit;
 }
 
-//  Lecture des commandes depuis commandes.json 
 $commande = null;
 if (file_exists("commandes.json")) {
     $data = json_decode(file_get_contents("commandes.json"), true);
@@ -87,12 +125,10 @@ if (!$commande) {
             </tr>
         </table>
 
-        <!-- Liens d'action -->
         <div style="display:flex; gap:2rem; margin-top:2rem; align-items:center; flex-wrap:wrap;">
             <a href="profil.php" style="font-family:'Montserrat',sans-serif; color:#1a1a1a; font-weight:600;">
                 ← Retour à mon profil
             </a>
-            <!--Bouton payer-->
             <a href="#" class="bouton-inscription">
                 Payer <?= htmlspecialchars($commande['prix_total']) ?>€
             </a>

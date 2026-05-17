@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'client') {
+    header("Location: connexion.php");
+    exit;
+}
 
 if (!isset($_POST["commande_id"]) ||!isset($_POST["client_email"]) ||!isset($_POST["note_livraison"]) || !isset($_POST["note_produits"])
 ) {
@@ -28,7 +34,8 @@ $donnees["notes"][] = $Note;
 
 file_put_contents("note.json", json_encode($donnees, JSON_PRETTY_PRINT));
 
-header("Location: merci.html");
+header("Location: merci.php");
 exit;
 
 ?>
+

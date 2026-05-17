@@ -1,4 +1,10 @@
 <?php
+session_start();
+
+if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'livreur') {
+    header("Location: connexion.php");
+    exit;
+}
 
 if (!isset($_POST["id"]) || !isset($_POST["action"])) { // on regarde si les données reçues par le form existent 
     die("Les données ne sont pas complètes.");
@@ -39,3 +45,4 @@ file_put_contents("commandes.json", json_encode($donnees, JSON_PRETTY_PRINT)); /
 header("Location: livraison.php");
 exit;
 ?>
+

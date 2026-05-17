@@ -1,11 +1,27 @@
 <?php
-$contenu = file_get_contents("commandes.json");
-$donnees = json_decode($contenu, true);
+session_start();
 
+if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'livreur') {
+    header("Location: connexion.php");
+    exit;
+}
 
-$commandes = array(); // on met commandes car on a appelé les commandes "commandes" dans le fichier commandes.json
+$donnees    = json_decode(file_get_contents("commandes.json"), true);
+$commandes = array();
 if (isset($donnees["commandes"])) {
     $commandes = $donnees["commandes"];
+}
+
+$donnees2     = json_decode(file_get_contents("utilisateurs.json"), true);
+$utilisateurs = array();
+if (isset($donnees2["utilisateurs"])) {
+    $utilisateurs = $donnees2["utilisateurs"];
+}
+
+// on cré un tableau associatif email => utilisateur pour retrouver facilement
+$utilisateurs_par_email = [];
+foreach ($utilisateurs as $u) {
+    $utilisateurs_par_email[$u['email']] = $u;
 }
 ?>
 <!DOCTYPE html>
@@ -18,7 +34,6 @@ if (isset($donnees["commandes"])) {
 </head>
 <body>
 
-
     <nav>
         <div class="conteneur-nav">
             <div class="logo-nav">
@@ -27,101 +42,95 @@ if (isset($donnees["commandes"])) {
             </div>
             <ul class="liens-nav">
                 <li><a href="index.php">ACCUEIL</a></li>
-                <li><a href="livraison.php">ESPACE</a></li>
-                <li><a href="deconnexion.html" class="bouton-inscription">DECONNEXION</a></li>
+                <li><a href="deconnexion.php" class="bouton-inscription">DÉCONNEXION</a></li>
             </ul>
         </div>
     </nav>
 
-
     <div class="liv">
         <h1>COMMANDES À LIVRER</h1>
-
 
         <table>
             <thead>
                 <tr>
-                    <th>Numéro</th>
-                    <th>Email client</th>
-                    <th>Date</th>
-                    <th>Produits</th>
-                    <th>Prix total</th>
+                    <th>N° commande</th>
+                    <th>Adresse</th>
+                    <th>Étage</th>
+                    <th>Code interphone</th>
+                    <th>Téléphone</th>
+                    <th>Commentaires</th>
                     <th>Action</th>
                 </tr>
             </thead>
             <tbody>
                 <?php
+                $trouve = false;
 
-
-                $Commande = false; // pas encore de commande prise en compte et donc pas encore affichée dans le tableau
-
-
-                foreach ($commandes as $commande) { // parcourt le tableau et donc regarde chaque commande avec le numero de la commande
-                    if (isset($commande["statut"]) && $commande["statut"] != "Payée") { // si le statut de la commande n'est pas "En attente", passer à la commande suivante
+                foreach ($commandes as $commande) {
+                    if (!isset($commande["statut"]) || $commande["statut"] != "Payée") {
                         continue;
                     }
 
+                    $trouve = true;
 
-                    $Commande = true; // montre que la commande à afficher a été trouvée
-
-
-                    $idCommande = ""; // on regarde si existe et on renomme pour que ce soit plus facile pour afficher les données après dans le tableau
-                    if (isset($commande["id"])) {
-                        $idCommande = $commande["id"];
+                    // Retrouver le client via son email
+                    if (isset($commande['email'])) {
+                        $email = $commande['email'];
+                    } else {
+                        $email = "";
                     }
 
-
-                    $email = "";
-                    if (isset($commande["email"])) {
-                        $email = $commande["email"];
+                    if (isset($utilisateurs_par_email[$email])) {
+                        $client = $utilisateurs_par_email[$email];
+                    } else {
+                        $client = array();
                     }
 
-
-                    $date = "";
-                    if (isset($commande["date"])) {
-                        $date = $commande["date"];
+                    if (isset($client['adresse'])) {
+                        $adresse = $client['adresse'];
+                    } else {
+                        $adresse = "";
                     }
 
-
-                    $prixTotal = "";
-                    if (isset($commande["prix_total"])) {
-                        $prixTotal = $commande["prix_total"];
+                    if (isset($client['etage'])) {
+                        $etage = $client['etage'];
+                    } else {
+                        $etage = "";
                     }
 
-
-                    $listeProduits = "";
-                    if (isset($commande["produits"])) {
-                           $produits = $commande["produits"];
-                            foreach ($produits as $produit) {// fait la même chose mais pour chaque produit présent dans la catégorie produits
-                                $nom = "";
-                                if (isset($produit["nom"])) {
-                                    $nom = $produit["nom"];
-                                }
-                                $quantite = "";
-                                if (isset($produit["quantite"])) {
-                                    $quantite = $produit["quantite"];
-                                }
-                                $listeProduits = $listeProduits . $nom . " x" . $quantite . "<br>"; // met la liste des produits comandés et la quantités
-                            }
+                    if (isset($client['code_interphone'])) {
+                        $code_interphone = $client['code_interphone'];
+                    } else {
+                        $code_interphone = "";
                     }
-               
+
+                    if (isset($client['telephone'])) {
+                        $telephone = $client['telephone'];
+                    } else {
+                        $telephone = "";
+                    }
+
+                    if (isset($commande['commentaires'])) {
+                        $commentaires = $commande['commentaires'];
+                    } else {
+                        $commentaires = "";
+                    }
                     ?>
-                    <tr> <!-- met chaque valeur de la commande dans le tableau -->
-                        <td><?php echo htmlspecialchars($idCommande); ?></td>
-                        <td><?php echo htmlspecialchars($email); ?></td>
-                        <td><?php echo htmlspecialchars($date); ?></td>
-                        <td><?php echo $listeProduits; ?></td>
-                        <td><?php echo htmlspecialchars($prixTotal); ?> €</td>
+                    <tr>
+                        <td><?= htmlspecialchars($commande['id']) ?></td>
+                        <td><?= htmlspecialchars($adresse) ?></td>
+                        <td><?= htmlspecialchars($etage) ?></td>
+                        <td><?= htmlspecialchars($code_interphone) ?></td>
+                        <td><?= htmlspecialchars($telephone) ?></td>
+                        <td><?= htmlspecialchars($commentaires) ?></td>
                         <td>
-                            <form action="traitement-livraison.php" method="POST">
-                                <input type="hidden" name="id" value="<?php echo htmlspecialchars($idCommande); ?>">
+                            <form action="traitement-de-livraison.php" method="POST">
+                                <input type="hidden" name="id" value="<?= htmlspecialchars($commande['id']) ?>">
                                 <input type="hidden" name="action" value="Livrée">
                                 <button type="submit">Livrée</button>
                             </form>
-
-
-                            <form action="traitement-livraison.php" method="POST">
-                                <input type="hidden" name="id" value="<?php echo htmlspecialchars($idCommande); ?>">
+                            <form action="traitement-de-livraison.php" method="POST">
+                                <input type="hidden" name="id" value="<?= htmlspecialchars($commande['id']) ?>">
                                 <input type="hidden" name="action" value="Abandonnée">
                                 <button type="submit">Abandonnée</button>
                             </form>
@@ -130,19 +139,13 @@ if (isset($donnees["commandes"])) {
                     <?php
                 }
 
-
-                if (!$Commande) {
-                    ?>
-                    <tr>
-                        <td colspan="6">Il n'y a pas de commande en attente de livraison.</td>
-                    </tr>
-                    <?php
+                if (!$trouve) {
+                    echo '<tr><td colspan="7">Il n\'y a pas de commande en attente de livraison.</td></tr>';
                 }
                 ?>
             </tbody>
         </table>
     </div>
-
 
     <footer>
         <div class="logo-pied-page">
@@ -167,9 +170,14 @@ if (isset($donnees["commandes"])) {
         <p style="margin-top:2rem;color:#C9B896;">© 2026 EVEIL Paris. Tous droits réservés.</p>
     </footer>
 
-
 </body>
 </html>
+
+
+
+
+
+
 
 
 

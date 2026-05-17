@@ -1,4 +1,12 @@
 <?php
+session_start();
+
+
+if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'client') {
+    header("Location: connexion.php");
+    exit;
+}
+
 if (!isset($_GET["commande"]) || !isset($_GET["client"])) {
     die("Les informations ne sont pas complètes.");
 }
@@ -25,7 +33,7 @@ $email = $_GET["client"];
             <ul class="liens-nav">
                 <li><a href="index.php">ACCUEIL</a></li>
                 <li><a href="profil.php">PROFIL</a></li>
-                <li><a href="deconnexion.html" class="bouton-inscription">DECONNEXION</a></li>
+                <li><a href="deconnexion.php" class="bouton-inscription">DECONNEXION</a></li>
             </ul>
         </div>
    </nav>
@@ -71,3 +79,4 @@ $email = $_GET["client"];
 
 </body>
 </html>
+

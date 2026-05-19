@@ -6,36 +6,41 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'client') {
     exit;
 }
 
-if (!isset($_POST["commande_id"]) ||!isset($_POST["client_email"]) ||!isset($_POST["note_livraison"]) || !isset($_POST["note_produits"])
-) {
+if (!isset($_POST["commande_id"]) || !isset($_POST["client_email"]) || !isset($_POST["note_livraison"]) || !isset($_POST["note_produits"])) { // regarde si toutes les infos existent 
     die("Il n'y a pas toutes les informations nécessaires.");
 }
 
-$Identifiant = $_POST["commande_id"];
-$Email = $_POST["client_email"];
-$NoteLivraison = $_POST["note_livraison"];
-$NoteProduits = $_POST["note_produits"];
+// on prend les données
+$commande_id = $_POST["commande_id"];
+$client_email = $_POST["client_email"];
+$note_livraison = $_POST["note_livraison"];
+$note_produits = $_POST["note_produits"];
 
-$contenu = file_get_contents("note.json");
-$donnees = json_decode($contenu, true);
-
-if (!isset($donnees["notes"])) {
-    $donnees["notes"] = array();
+if ($client_email !== $_SESSION['user']['email']) { // est ce que commande du client connecté
+    die("Vous ne pouvez pas noter cette commande.");
 }
 
-$Note = array(
-    "commande_id" => $Identifiant,
-    "client_email" => $Email,
-    "note_livraison" => $NoteLivraison,
-    "note_produits" => $NoteProduits
-);
+if (file_exists("note.json")) { // vérifie si json existe  
+    $donnees = json_decode(file_get_contents("note.json"), true); // lit fichier et transforme en tableau
+} 
+else{
+    $donnees = ["notes" => []]; // on crée un tableau vide
+}
 
-$donnees["notes"][] = $Note;
+if (!isset($donnees["notes"])) {
+    $donnees["notes"] = [];
+}
 
-file_put_contents("note.json", json_encode($donnees, JSON_PRETTY_PRINT));
+foreach ($donnees["notes"] as $note) { // on parcourt le tableau 
+    if ( isset($note["commande_id"]) && $note["commande_id"] == $commande_id && isset($note["client_email"]) && $note["client_email"] == $client_email ) { // si client déjà noter on peut pas continuer 
+        die("Vous avez déjà noté cette commande.");
+    }
+}
+
+$donnees["notes"][] = ["commande_id" => $commande_id, "client_email" => $client_email, "note_livraison" => $note_livraison, "note_produits" => $note_produits ]; // on ajoute les infos dans le tableau 
+
+file_put_contents("note.json", json_encode($donnees, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)); // on met dans le json 
 
 header("Location: merci.php");
 exit;
-
 ?>
-

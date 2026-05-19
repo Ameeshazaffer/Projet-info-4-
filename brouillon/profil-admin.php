@@ -153,7 +153,7 @@ if (isset($user["role"])) {
 
 <script>
 async function Bloquer(id, estBloque) { // fonction pour bloquer l'utilisateur et donc ensuite le 
-    var action;
+    const action;
     if (estBloque === "oui") { // si bloquer il faut débloquer
         action = "debloquer";
     } 
@@ -168,8 +168,8 @@ async function Bloquer(id, estBloque) { // fonction pour bloquer l'utilisateur e
         }
         );
         const resultat = await reponse.json(); // la réponse est envoyé dans un json
-        var bouton = document.getElementById("bouton-bloquer"); 
-        var message = document.getElementById("message-admin");
+        const bouton = document.getElementById("bouton-bloquer"); 
+        const message = document.getElementById("message-admin");
         
         if (resultat.succes) { // si on a true l'action marche 
             if (action === "bloquer") { // on chnage le bouton 

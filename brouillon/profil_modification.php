@@ -11,7 +11,7 @@ if (!isset($_SESSION['user'])) {
 $donnees_recup = json_decode(file_get_contents("php://input"), true); // récupère les infos envoyés par fetch et transforme en tableau php 
 
 if (!isset($donnees_recup["nom"]) || !isset($donnees_recup["prenom"]) || !isset($donnees_recup["telephone"]) || !isset($donnees_recup["adresse"])) { // vérifie que toutes les données récupérées
-    echo json_encode([ "succes" => false, "message" => "Données incomplètes."]); envoie le message d'erreur au json
+    echo json_encode([ "succes" => false, "message" => "Données incomplètes."]); // envoie le message d'erreur au json
     exit;
 }
 // prend les informations recupérées et enlève les espaces inutiles

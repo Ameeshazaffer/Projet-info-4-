@@ -194,6 +194,8 @@ if (file_exists("commandes.json")) {
         <p style="margin-top:2rem;color:#C9B896;">© 2026 EVEIL Paris. Tous droits réservés.</p>
     </footer>
 
+<script>
+var anciens = {}; // anciennes informations gardés si on veut annuler l’action
 
 
 </body>

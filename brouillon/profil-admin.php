@@ -151,6 +151,58 @@ if (isset($user["role"])) {
         <p style="margin-top:2rem;color:#C9B896;">© 2026 EVEIL Paris. Tous droits réservés.</p>
     </footer>
 
+<script>
+async function Bloquer(id, estBloque) { // fonction pour bloquer l'utilisateur et donc ensuite le 
+    var action;
+    if (estBloque === "oui") { // si bloquer il faut débloquer
+        action = "debloquer";
+    } 
+    else {
+        action = "bloquer"; // et inversement 
+    }
+    try {
+        const reponse = await fetch("desactiver_compte.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/json"}, // on va utiliser des données json
+            body: JSON.stringify({ id: id, action: action }) // transforme le javscript en json pour le php
+        }
+        );
+        const resultat = await reponse.json(); // la réponse est envoyé dans un json
+        var bouton = document.getElementById("bouton-bloquer"); 
+        var message = document.getElementById("message-admin");
+        
+        if (resultat.succes) { // si on a true l'action marche 
+            if (action === "bloquer") { // on chnage le bouton 
+                bouton.textContent = "Débloquer le compte";
+                bouton.onclick = function() {
+                    Bloquer(id, "oui");
+                };
+                message.textContent = "Compte bloqué/désactivé avec succès. Les commandes déjà payées continuent normalement.";
+                message.style.color = "red";
+            } else {
+                bouton.textContent = "Bloquer/Désactiver le compte";
+                bouton.onclick = function() {
+                    Bloquer(id, "non");
+                };
+
+
+                message.textContent = "Le compte a été débloqué avec succès.";
+                message.style.color = "green";
+            }
+        } else {
+            message.textContent = resultat.message; // si pas marché met un message d'erreur
+            message.style.color = "red";
+        }
+
+
+    } 
+    catch (e) {
+        document.getElementById("message-admin").textContent = "Erreur avec fetch."; // message d'erreur à cause de problème avec fetch 
+        document.getElementById("message-admin").style.color = "red";
+    }
+}
+    
+</script>
 
 </body>
 </html>

@@ -197,7 +197,7 @@ if (file_exists("commandes.json")) {
 <script>
 var anciens = {}; // anciennes informations gardés si on veut annuler l’action
 
-function activerlamodification() {
+function activerlamodification() { // pour pouvoir modifier
     var champs = ["nom", "prenom", "telephone", "adresse"]; // on met les infos que on a besoin dans un tableau
     champs.forEach(function(champ) { // vient prendre chaque infos du tableau 
         var cellule = document.getElementById("i" + champ); // prend le html avce l'identifiant
@@ -209,6 +209,20 @@ function activerlamodification() {
     document.getElementById("bouton-valider").style.display = "inline-block"; // on affiche le bouton valider 
     document.getElementById("bouton-annuler").style.display = "inline-block"; // pareil pour annuler
     document.getElementById("message-retour").textContent = ""; // enlève le message d'avant donc si mise à jour 
+}
+
+
+function annulerlamodification() { // pour annuler la modification
+    var champs = ["nom", "prenom", "telephone", "adresse"];
+    
+    champs.forEach(function(champ) {
+        document.getElementById("i" + champ).textContent = anciens[champ]; // on remet juste les anciennes infos vu que on annule
+    }
+    );
+    document.getElementById("bouton-modifier").style.display = "inline-block"; // on met le bouton modifier
+    document.getElementById("bouton-valider").style.display = "none";
+    document.getElementById("bouton-annuler").style.display = "none";
+    document.getElementById("message-retour").textContent = "";
 }
 
 

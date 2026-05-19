@@ -114,8 +114,8 @@ if (isset($user["role"])) {
         <div class="actions-admin">
             <h2>Actions de l'administrateur</h2>
             <div class="actions-admin-boutons">
-                <button type="button" id="bouton-bloquer" onclick="toggleBloquer(<?php echo $id; ?>, '<?php echo (isset($user['bloque']) && $user['bloque'] === 'oui') ? 'oui' : 'non'; ?>')">
-                <?php echo (isset($user['bloque']) && $user['bloque'] === 'oui') ? 'Débloquer le compte' : 'Bloquer/Désactiver le compte'; ?> </button>
+                <button type="button" id="bouton-bloquer" onclick="Bloquer(<?php echo $id; ?>, '<?php echo (isset($user['bloque']) && $user['bloque'] === 'oui') ? 'oui' : 'non'; ?>')"> // appelle la fonction Bloquer si on appuie dessus ave comme pararmètre l'identifiant et si bloquer ou pas 
+                <?php echo (isset($user['bloque']) && $user['bloque'] === 'oui') ? 'Débloquer le compte' : 'Bloquer/Désactiver le compte'; ?> </button> // si bloquer mettre débloquer et si pas bloquer mettre bloquer 
                 <button type="button">Passer en Premium</button>
                 <button type="button">Passer en VIP</button>
                 <button type="button">Faire une remise de 10%</button>

@@ -195,12 +195,12 @@ if (file_exists("commandes.json")) {
     </footer>
 
 <script>
-var anciens = {}; // anciennes informations gardés si on veut annuler l’action
+const anciens = {}; // anciennes informations gardés si on veut annuler l’action
 
 function fairelamodification() { // pour pouvoir modifier
-    var champs = ["nom", "prenom", "telephone", "adresse"]; // on met les infos que on a besoin dans un tableau
+    const champs = ["nom", "prenom", "telephone", "adresse"]; // on met les infos que on a besoin dans un tableau
     champs.forEach(function(champ) { // vient prendre chaque infos du tableau 
-        var cellule = document.getElementById("i" + champ); // prend le html avce l'identifiant
+        const cellule = document.getElementById("i" + champ); // prend le html avce l'identifiant
         anciens[champ] = cellule.textContent; // on met les infos du texte html ( anciennes infos ) dans l'objet
         cellule.innerHTML = '<input type="text" id="input-' + champ + '" value="' + cellule.textContent + '">'; // modifie le contenu du html et met la valeur déjà présente dans le champ 
     }
@@ -213,7 +213,7 @@ function fairelamodification() { // pour pouvoir modifier
 
 
 function annulerlamodification() { // pour annuler la modification
-    var champs = ["nom", "prenom", "telephone", "adresse"];
+    const champs = ["nom", "prenom", "telephone", "adresse"];
     
     champs.forEach(function(champ) {
         document.getElementById("i" + champ).textContent = anciens[champ]; // on remet juste les anciennes infos vu que on annule
@@ -226,13 +226,13 @@ function annulerlamodification() { // pour annuler la modification
 }
 
 async function envoyerModifications() { // pour envoyer les modifications fait et attend la réponse
-    var donnees = { 
+    const donnees = { 
         nom: document.getElementById("input-nom").value.trim(), 
         prenom: document.getElementById("input-prenom").value.trim(), 
         telephone: document.getElementById("input-telephone").value.trim(),
         adresse: document.getElementById("input-adresse").value.trim()
     }; // cherche l'info avec un identifiant par exmeple inpu-telephone, récupère la valeur écrite et enlève les espaces
-    var message = document.getElementById("message-retour");
+    const message = document.getElementById("message-retour");
     if (donnees.nom === "" || donnees.prenom === "" || donnees.telephone === "" || donnees.adresse === "") {
         message.textContent = "Tous les champs doivent être remplis."; // si un endroit est vide affiche un message
         message.style.color = "red";
@@ -254,7 +254,7 @@ async function envoyerModifications() { // pour envoyer les modifications fait e
         );
         const resultat = await reponse.json(); // javascript prend la réponse et met en objet
         if (resultat.succes) { // si réponse bonne alors on fait les modifications
-            var champs = ["nom", "prenom", "telephone", "adresse"];
+            const champs = ["nom", "prenom", "telephone", "adresse"];
             champs.forEach(function(champ) {
                 document.getElementById("i" + champ).textContent = donnees[champ]; // met le nouveau texte tapé 
             }

@@ -6,24 +6,25 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'livreur') {
     exit;
 }
 
-$donnees    = json_decode(file_get_contents("commandes.json"), true);
+$donnees = json_decode(file_get_contents("commandes.json"), true);
 $commandes = array();
 if (isset($donnees["commandes"])) {
     $commandes = $donnees["commandes"];
 }
 
-$donnees2     = json_decode(file_get_contents("utilisateurs.json"), true);
+$donnees2 = json_decode(file_get_contents("utilisateurs.json"), true);
 $utilisateurs = array();
 if (isset($donnees2["utilisateurs"])) {
     $utilisateurs = $donnees2["utilisateurs"];
 }
 
-// on cré un tableau associatif email => utilisateur pour retrouver facilement
+// on cré un tableau associatif email : utilisateur pour retrouver facilement
 $utilisateurs_par_email = [];
 foreach ($utilisateurs as $u) {
     $utilisateurs_par_email[$u['email']] = $u;
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -33,7 +34,7 @@ foreach ($utilisateurs as $u) {
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-
+    
     <nav>
         <div class="conteneur-nav">
             <div class="logo-nav">
@@ -49,7 +50,6 @@ foreach ($utilisateurs as $u) {
 
     <div class="liv">
         <h1>COMMANDES À LIVRER</h1>
-
         <table>
             <thead>
                 <tr>
@@ -65,58 +65,56 @@ foreach ($utilisateurs as $u) {
             <tbody>
                 <?php
                 $trouve = false;
-
                 foreach ($commandes as $commande) {
                     if (!isset($commande["statut"]) || $commande["statut"] != "Payée") {
                         continue;
                     }
-
                     $trouve = true;
-
-                    // Retrouver le client via son email
+                    // Retrouver le client avec son email
                     if (isset($commande['email'])) {
                         $email = $commande['email'];
-                    } else {
+                    } 
+                    else {
                         $email = "";
                     }
-
                     if (isset($utilisateurs_par_email[$email])) {
                         $client = $utilisateurs_par_email[$email];
-                    } else {
+                    } 
+                    else {
                         $client = array();
                     }
-
                     if (isset($client['adresse'])) {
                         $adresse = $client['adresse'];
-                    } else {
+                    } 
+                    else {
                         $adresse = "";
                     }
-
                     if (isset($client['etage'])) {
                         $etage = $client['etage'];
-                    } else {
+                    } 
+                    else {
                         $etage = "";
                     }
-
                     if (isset($client['code_interphone'])) {
                         $code_interphone = $client['code_interphone'];
-                    } else {
+                    } 
+                    else {
                         $code_interphone = "";
                     }
-
                     if (isset($client['telephone'])) {
                         $telephone = $client['telephone'];
-                    } else {
+                    } 
+                    else {
                         $telephone = "";
                     }
-
                     if (isset($commande['commentaires'])) {
                         $commentaires = $commande['commentaires'];
-                    } else {
+                    } 
+                    else {
                         $commentaires = "";
                     }
                     ?>
-                    <tr>
+                    <tr id="ligne-<?= htmlspecialchars($commande['id']) ?>">
                         <td><?= htmlspecialchars($commande['id']) ?></td>
                         <td><?= htmlspecialchars($adresse) ?></td>
                         <td><?= htmlspecialchars($etage) ?></td>
@@ -124,16 +122,8 @@ foreach ($utilisateurs as $u) {
                         <td><?= htmlspecialchars($telephone) ?></td>
                         <td><?= htmlspecialchars($commentaires) ?></td>
                         <td>
-                            <form action="traitement-de-livraison.php" method="POST">
-                                <input type="hidden" name="id" value="<?= htmlspecialchars($commande['id']) ?>">
-                                <input type="hidden" name="action" value="Livrée">
-                                <button type="submit">Livrée</button>
-                            </form>
-                            <form action="traitement-de-livraison.php" method="POST">
-                                <input type="hidden" name="id" value="<?= htmlspecialchars($commande['id']) ?>">
-                                <input type="hidden" name="action" value="Abandonnée">
-                                <button type="submit">Abandonnée</button>
-                            </form>
+                        <button type="button" onclick="Livraison('<?= htmlspecialchars($commande['id']) ?>', 'Livrée')"> Livrée </button>
+                        <button type="button" onclick="Livraison('<?= htmlspecialchars($commande['id']) ?>', 'Abandonnée')"> Abandonnée </button>
                         </td>
                     </tr>
                     <?php
@@ -146,6 +136,7 @@ foreach ($utilisateurs as $u) {
             </tbody>
         </table>
     </div>
+
 
     <footer>
         <div class="logo-pied-page">
@@ -169,6 +160,9 @@ foreach ($utilisateurs as $u) {
         </div>
         <p style="margin-top:2rem;color:#C9B896;">© 2026 EVEIL Paris. Tous droits réservés.</p>
     </footer>
+
+
+
 
 </body>
 </html>

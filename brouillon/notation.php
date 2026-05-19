@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-
 if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'client') {
     header("Location: connexion.php");
     exit;
@@ -14,6 +13,7 @@ if (!isset($_GET["commande"]) || !isset($_GET["client"])) {
 $identifiant = $_GET["commande"];
 $email = $_GET["client"];
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -38,18 +38,20 @@ $email = $_GET["client"];
         </div>
    </nav>
 
+
     <div class="ins">
         <h1>MON AVIS</h1>
+
 
         <form action="traitement-de-notation.php" method="post" class="connexion">
             <input type="hidden" name="commande_id" value="<?php echo htmlspecialchars($identifiant); ?>">
             <input type="hidden" name="client_email" value="<?php echo htmlspecialchars($email); ?>">
 
+
             <div class="section-notation">
                 <h2>Livraison</h2>
                 <p>Pour une meilleure expérience, mettez une note sur 5 de votre livraison.</p>
-
-                <select name="note_livraison" required>
+                    <select name="note_livraison" required>
                     <option value="">Choisir une note</option>
                     <option value="1">⭐</option>
                     <option value="2">⭐⭐</option>
@@ -62,7 +64,6 @@ $email = $_GET["client"];
             <div class="section-notation">
                 <h2>Produits reçus</h2>
                 <p>Pour une meilleure expérience, mettez une note sur 5 des produits reçus.</p>
-
                 <select name="note_produits" required>
                     <option value="">Choisir une note</option>
                     <option value="1">⭐</option>
@@ -77,6 +78,6 @@ $email = $_GET["client"];
         </form>
     </div>
 
+
 </body>
 </html>
-

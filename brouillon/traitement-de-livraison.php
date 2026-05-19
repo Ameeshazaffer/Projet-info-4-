@@ -1,48 +1,52 @@
 <?php
 session_start();
+header("Content-Type: application/json");
+
 
 if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'livreur') {
-    header("Location: connexion.php");
+    echo json_encode([ "succes" => false, "message" => "Non autorisé."]);
     exit;
 }
 
-if (!isset($_POST["id"]) || !isset($_POST["action"])) { // on regarde si les données reçues par le form existent 
-    die("Les données ne sont pas complètes.");
+$donnees_recup = json_decode(file_get_contents("php://input"), true); // récupère json et transforme en tableau 
+
+
+if (!isset($donnees_recup["id"]) || !isset($donnees_recup["action"])) { // si identifiant ou action existe pas dans le tableau 
+    echo json_encode(["succes" => false, "message" => "Données incomplètes."]);
+    exit;
 }
 
+$identifiant = $donnees_recup["id"];
+$action = $donnees_recup["action"];
 
-$identifiant = $_POST["id"]; // on renomme les données du form 
-$action = $_POST["action"];
+
+if ($action !== "Livrée" && $action !== "Abandonnée") { // si l'action n'est ni livré ni abandonné pas possible de continuer
+    echo json_encode(["succes" => false, "message" => "Action incorrecte."]);
+    exit;
+}
 
 $contenu = file_get_contents("commandes.json");
-$donnees = json_decode($contenu, true);
+$donnees = json_decode($contenu, true); // transforme en tableau les commandes 
 
+$trouve = false;
 
-if (isset($donnees["commandes"])) {
-
-    foreach ($donnees["commandes"] as $index => $commande) { // parcourt le tableau de commande avec l'aide de l'index et donc la position de la commande dans le tableau 
-
-        // vérifie si on est sur la bonne commande
-        if (isset($commande["id"]) && $commande["id"] == $identifiant) {
-
-            
-            if ($action == "Livrée") { // si l'action envoyé est livrée ça modifie le statut dans le json
-                $donnees["commandes"][$index]["statut"] = "Livrée"; // va sur les données des commandes et sur la position du tbaleau et ensuite vers le statut de cette commande
-            }
-            else { // pareil pour l'action abandonné
-                if ($action == "Abandonnée") {
-                    $donnees["commandes"][$index]["statut"] = "Abandonnée";
-                }
-            }
-        }
+foreach ($donnees["commandes"] as $index => $commande) { // parcourt le tableau créé
+    if ($commande["id"] == $identifiant) { // on cherche l'identifiant pour trouve la commande 
+        $donnees["commandes"][$index]["statut"] = $action; // si l'action est livrée met et pareil pour abandon
+        $trouve = true;
+        break;
     }
 }
 
 
-file_put_contents("commandes.json", json_encode($donnees, JSON_PRETTY_PRINT)); // envoie dans le fichier json
-
-// une fois modifier revient à la page de livraison.php
-header("Location: livraison.php");
-exit;
+if ($trouve) {
+    file_put_contents("commandes.json", json_encode($donnees, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));// on met le tableau en json et on écrit dans le fichier json des commandes
+    echo json_encode(["succes" => true, "action" => $action ]);
+} 
+else{
+    echo json_encode([ "succes" => false, "message" => "Commande introuvable."]);
+}
 ?>
+
+
 

@@ -225,8 +225,58 @@ function annulerlamodification() { // pour annuler la modification
     document.getElementById("message-retour").textContent = "";
 }
 
+async function envoyerModifications() { // pour envoyer les modifications fait et attend la réponse
+    var donnees = { 
+        nom: document.getElementById("input-nom").value.trim(), 
+        prenom: document.getElementById("input-prenom").value.trim(), 
+        telephone: document.getElementById("input-telephone").value.trim(),
+        adresse: document.getElementById("input-adresse").value.trim()
+    }; // cherche l'info avec un identifiant par exmeple inpu-telephone, récupère la valeur écrite et enlève les espaces
+    var message = document.getElementById("message-retour");
+    if (donnees.nom === "" || donnees.prenom === "" || donnees.telephone === "" || donnees.adresse === "") {
+        message.textContent = "Tous les champs doivent être remplis."; // si un endroit est vide affiche un message
+        message.style.color = "red";
+        return;
+    }
+    if (!/^[0-9]{10}$/.test(donnees.telephone)) { // si différent de 10 chiffres affiche message d'erreur
+        message.textContent = "Le téléphone doit contenir exactement 10 chiffres.";
+        message.style.color = "red";
+        return; 
+    }
+    try {
+        const reponse = await fetch("profil_modification.php", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json" // montre que on envoie des infos en json
+            },
+            body: JSON.stringify(donnees) // transforme le javascript en json
+        }
+        );
+        const resultat = await reponse.json(); // javascript prend la réponse et met en objet
+        if (resultat.succes) { // si réponse bonne alors on fait les modifications
+            var champs = ["nom", "prenom", "telephone", "adresse"];
+            champs.forEach(function(champ) {
+                document.getElementById("i" + champ).textContent = donnees[champ]; // met le nouveau texte tapé 
+            }
+            );
+            document.getElementById("bouton-modifier").style.display = "inline-block"; // on remet si on veut modifier de nouveau
+            document.getElementById("bouton-valider").style.display = "none";
+            document.getElementById("bouton-annuler").style.display = "none";
 
-
+            message.textContent = resultat.message;
+            message.style.color = "green";
+        } 
+        else{ // si réponse pas bonne alors message d'erreur
+            msg.textContent = resultat.message;
+            msg.style.color = "red";
+        }
+    } 
+    catch (e) { // si fetch arrête on met un autre message
+        msg.textContent = "Erreur avec fetch.";
+        msg.style.color = "red";
+    }
+}
+</script>
 
 </body>
 </html>

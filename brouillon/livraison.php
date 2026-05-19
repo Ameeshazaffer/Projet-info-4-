@@ -161,6 +161,29 @@ foreach ($utilisateurs as $u) {
         <p style="margin-top:2rem;color:#C9B896;">© 2026 EVEIL Paris. Tous droits réservés.</p>
     </footer>
 
+ <script>
+        async function Livraison(idCommande, action) { // on prend l'identifiant et l'action donc livré ou abandonnée
+    try {
+        const reponse = await fetch("traitement-de-livraison.php", {
+            method: "POST",
+            headers: { "Content-Type": "application/json"}, // données en json
+            body: JSON.stringify({ id: idCommande, action: action }) // transformation du java en json
+        }
+        );
+        const resultat = await reponse.json(); //  
+        
+        if (resultat.succes) { // si on a true qui est repondu alors l'action a marché
+            document.getElementById("ligne-" + idCommande).remove(); // donc on enlève la ligne du tableau
+        } else {
+            alert("Erreur : " + resultat.message); // sinon on met un message d'erreur
+        }
+        
+    } 
+    catch (e){
+        alert("Erreur avec fetch.");
+    }
+}
+</script>
 
 
 

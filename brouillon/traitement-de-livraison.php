@@ -29,7 +29,7 @@ if ($action !== "Livrée" && $action !== "Abandonnée") { // si l'action n'est n
 $contenu = file_get_contents("commandes.json");
 $donnees = json_decode($contenu, true); // transforme en tableau les commandes 
 
-$trouve = false;
+$trouve = false; // on voit si la commande a été trouvée ou pas
 
 foreach ($donnees["commandes"] as $index => $commande) { // parcourt le tableau créé
     if ($commande["id"] == $identifiant) { // on cherche l'identifiant pour trouve la commande 

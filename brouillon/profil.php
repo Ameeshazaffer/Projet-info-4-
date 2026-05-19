@@ -197,11 +197,11 @@ if (file_exists("commandes.json")) {
 <script>
 var anciens = {}; // anciennes informations gardés si on veut annuler l’action
 
-function activerlamodification() { // pour pouvoir modifier
+function fairelamodification() { // pour pouvoir modifier
     var champs = ["nom", "prenom", "telephone", "adresse"]; // on met les infos que on a besoin dans un tableau
     champs.forEach(function(champ) { // vient prendre chaque infos du tableau 
         var cellule = document.getElementById("i" + champ); // prend le html avce l'identifiant
-        anciens[champ] = cellule.textContent; on met les infos du texte html ( anciennes infos ) dans l'objet
+        anciens[champ] = cellule.textContent; // on met les infos du texte html ( anciennes infos ) dans l'objet
         cellule.innerHTML = '<input type="text" id="input-' + champ + '" value="' + cellule.textContent + '">'; // modifie le contenu du html et met la valeur déjà présente dans le champ 
     }
     );
@@ -267,13 +267,13 @@ async function envoyerModifications() { // pour envoyer les modifications fait e
             message.style.color = "green";
         } 
         else{ // si réponse pas bonne alors message d'erreur
-            msg.textContent = resultat.message;
-            msg.style.color = "red";
+            message.textContent = resultat.message;
+            message.style.color = "red";
         }
     } 
     catch (e) { // si fetch arrête on met un autre message
-        msg.textContent = "Erreur avec fetch.";
-        msg.style.color = "red";
+        message.textContent = "Erreur avec fetch.";
+        message.style.color = "red";
     }
 }
 </script>

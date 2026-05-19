@@ -197,6 +197,22 @@ if (file_exists("commandes.json")) {
 <script>
 var anciens = {}; // anciennes informations gardés si on veut annuler l’action
 
+function activerlamodification() {
+    var champs = ["nom", "prenom", "telephone", "adresse"]; // on met les infos que on a besoin dans un tableau
+    champs.forEach(function(champ) { // vient prendre chaque infos du tableau 
+        var cellule = document.getElementById("i" + champ); // prend le html avce l'identifiant
+        anciens[champ] = cellule.textContent; on met les infos du texte html ( anciennes infos ) dans l'objet
+        cellule.innerHTML = '<input type="text" id="input-' + champ + '" value="' + cellule.textContent + '">'; // modifie le contenu du html et met la valeur déjà présente dans le champ 
+    }
+    );
+    document.getElementById("bouton-modifier").style.display = "none"; // on cache le bouton modifier
+    document.getElementById("bouton-valider").style.display = "inline-block"; // on affiche le bouton valider 
+    document.getElementById("bouton-annuler").style.display = "inline-block"; // pareil pour annuler
+    document.getElementById("message-retour").textContent = ""; // enlève le message d'avant donc si mise à jour 
+}
+
+
+
 
 </body>
 </html>

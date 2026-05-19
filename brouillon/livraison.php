@@ -170,7 +170,7 @@ foreach ($utilisateurs as $u) {
             body: JSON.stringify({ id: idCommande, action: action }) // transformation du java en json
         }
         );
-        const resultat = await reponse.json(); //  
+        const resultat = await reponse.json();
         
         if (resultat.succes) { // si on a true qui est repondu alors l'action a marché
             document.getElementById("ligne-" + idCommande).remove(); // donc on enlève la ligne du tableau

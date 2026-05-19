@@ -1,27 +1,22 @@
 <?php
 session_start();
 
-
 if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'administrateur') {
     header("Location: connexion.php");
     exit;
 }
 
-
 $contenu = file_get_contents("utilisateurs.json"); // lit le fichier json
 $donnees = json_decode($contenu, true); // met en tableau php
-
 
 $utilisateurs = array(); // cré tableau vide
 if (isset($donnees["utilisateurs"])) {
     $utilisateurs = $donnees["utilisateurs"];
 }
 
-
 if (!isset($_GET["id"])) { // regarde si l'index qui est dans l'URL de l'utilisateur existe ( et qui est le positionnement de l'utilsateur dans le tableau)
     die("Aucun utilisateur sélectionné.");
 }
-
 
 $id = $_GET["id"];
 
@@ -29,6 +24,7 @@ $id = $_GET["id"];
 if (!isset($utilisateurs[$id])) {
     die("Utilisateur introuvable.");
 }
+
 $user = $utilisateurs[$id]; // on nomme chaque éléments du tableau pour que plus simple lorsque on veut afficher les éléments dans le tableau
 if (isset($user["nom"])) {
     $nom = $user["nom"];
@@ -85,15 +81,9 @@ if (isset($user["role"])) {
         </div>
    </nav>
 
-
-
-
     <div class="att">
         <h1>PROFIL DE L'UTILISATEUR</h1>
-
-
-
-
+        
         <table class="liv">
             <tr>
                 <th colspan="2">INFORMATIONS</th>
@@ -121,12 +111,10 @@ if (isset($user["role"])) {
         </table>
 
 
-
-
         <div class="actions-admin">
             <h2>Actions de l'administrateur</h2>
             <div class="actions-admin-boutons">
-                <button type="button" id="btn-bloquer" onclick="toggleBloquer(<?php echo $id; ?>, '<?php echo (isset($user['bloque']) && $user['bloque'] === 'oui') ? 'oui' : 'non'; ?>')">
+                <button type="button" id="bouton-bloquer" onclick="toggleBloquer(<?php echo $id; ?>, '<?php echo (isset($user['bloque']) && $user['bloque'] === 'oui') ? 'oui' : 'non'; ?>')">
                 <?php echo (isset($user['bloque']) && $user['bloque'] === 'oui') ? 'Débloquer le compte' : 'Bloquer/Désactiver le compte'; ?> </button>
                 <button type="button">Passer en Premium</button>
                 <button type="button">Passer en VIP</button>

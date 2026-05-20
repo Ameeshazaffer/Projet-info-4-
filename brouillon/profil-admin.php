@@ -153,13 +153,7 @@ if (isset($user["role"])) {
 
 <script>
 async function Bloquer(id, estBloque) { // fonction pour bloquer l'utilisateur et donc ensuite le 
-    const action;
-    if (estBloque === "oui") { // si bloquer il faut débloquer
-        action = "debloquer";
-    } 
-    else {
-        action = "bloquer"; // et inversement 
-    }
+    const action = estBloque === "oui" ? "debloquer" : "bloquer";
     try {
         const reponse = await fetch("desactiver_compte.php", {
             method: "POST",

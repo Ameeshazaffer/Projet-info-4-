@@ -19,7 +19,7 @@ session_start();
                 <div class="paris-logo-nav">PARIS</div>
             </div>
             <ul class="liens-nav">
-                <li><a href="index.html">ACCUEIL</a></li>
+                <li><a href="index.php">ACCUEIL</a></li>
                 <?php if (isset($_SESSION['user'])): ?>
                     <li><a href="profil.php" class="bouton-inscription">PROFIL</a></li>
                     <?php if (!empty($_SESSION['panier'])): ?>
@@ -32,7 +32,7 @@ session_start();
                         </li>
                     <?php endif; ?>
                 <?php else: ?>
-                    <li><a href="connexion.html" class="bouton-inscription">CONNEXION</a></li>
+                    <li><a href="connexion.php" class="bouton-inscription">CONNEXION</a></li>
                 <?php endif; ?>
             </ul>
         </div>
@@ -62,23 +62,23 @@ session_start();
         <aside class="sidebar">
             <div class="bloc-filtre">
                 <h3>Catégories</h3>
-                <label class="option-filtre"><input type="checkbox"> <span>Entrées</span></label>
-                <label class="option-filtre"><input type="checkbox"> <span>Plats</span></label>
-                <label class="option-filtre"><input type="checkbox"> <span>Desserts</span></label>
+                <label class="option-filtre"><input type="checkbox" value="entree"> <span>Entrées</span></label>
+                <label class="option-filtre"><input type="checkbox" value="plat"> <span>Plats</span></label>
+                <label class="option-filtre"><input type="checkbox" value="dessert"> <span>Desserts</span></label>
             </div>
             <div class="bloc-filtre">
                 <h3>Type de plat</h3>
-                <label class="option-filtre"><input type="checkbox"> <span>Viande</span></label>
-                <label class="option-filtre"><input type="checkbox"> <span>Poisson</span></label>
-                <label class="option-filtre"><input type="checkbox"> <span>Végétarien</span></label>
-                <label class="option-filtre"><input type="checkbox"> <span>Vegan</span></label>
+                <label class="option-filtre"><input type="checkbox" value="viande"> <span>Viande</span></label>
+                <label class="option-filtre"><input type="checkbox" value="poisson"> <span>Poisson</span></label>
+                <label class="option-filtre"><input type="checkbox" value="vegetarien"> <span>Végétarien</span></label>
+                <label class="option-filtre"><input type="checkbox" value="vegan"> <span>Vegan</span></label>
             </div>
             <div class="bloc-filtre">
                 <h3>Allergènes</h3>
-                <label class="option-filtre"><input type="checkbox"> <span>Sans gluten</span></label>
-                <label class="option-filtre"><input type="checkbox"> <span>Sans lactose</span></label>
-                <label class="option-filtre"><input type="checkbox"> <span>Sans fruits à coque</span></label>
-                <label class="option-filtre"><input type="checkbox"> <span>Sans œuf</span></label>
+                <label class="option-filtre"><input type="checkbox" value="sans-gluten"> <span>Sans gluten</span></label>
+                <label class="option-filtre"><input type="checkbox" value="sans-lactose"> <span>Sans lactose</span></label>
+                <label class="option-filtre"><input type="checkbox" value="sans-fruits-a-coque"> <span>Sans fruits à coque</span></label>
+                <label class="option-filtre"><input type="checkbox" value="sans-oeuf"> <span>Sans œuf</span></label>
             </div>
         </aside>
 
@@ -420,5 +420,6 @@ session_start();
         <p style="margin-top:2rem;color:#C9B896;">© 2026 EVEIL Paris. Tous droits réservés.</p>
     </footer>
 
+    <script src="filtres.js"></script>
 </body>
 </html>

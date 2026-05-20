@@ -1,0 +1,462 @@
+{
+    "commandes": [
+        {
+            "id": 1,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
+                {
+                    "nom": "Carpaccio de Bœuf Cipriani",
+                    "prix": 38,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 38,
+            "date": "05\/04\/2026 12:03",
+            "statut": "En attente de paiement",
+            "paiement": "Non payé"
+        },
+        {
+            "id": 2,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
+                {
+                    "nom": "Soupe VGE",
+                    "prix": 45,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 45,
+            "date": "05\/04\/2026 12:03",
+            "statut": "En attente de paiement",
+            "paiement": "Non payé"
+        },
+        {
+            "id": 3,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
+                {
+                    "nom": "Huîtres et Perles de Tapioca",
+                    "prix": 52,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 52,
+            "date": "05\/04\/2026 12:05",
+            "statut": "En attente de paiement",
+            "paiement": "Non payé"
+        },
+        {
+            "id": 4,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
+                {
+                    "nom": "Soupe VGE",
+                    "prix": 45,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 45,
+            "date": "05\/04\/2026 13:14",
+            "statut": "En attente de paiement",
+            "paiement": "Non payé"
+        },
+        {
+            "id": 5,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
+                {
+                    "nom": "Carpaccio de Bœuf Cipriani",
+                    "prix": 38,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 38,
+            "date": "05\/04\/2026 13:14",
+            "statut": "En attente de paiement",
+            "paiement": "Non payé"
+        },
+        {
+            "id": 6,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
+                {
+                    "nom": "Ravioli Langoustine & Foie Gras",
+                    "prix": 58,
+                    "quantite": 1
+                },
+                {
+                    "nom": "Sphère Chocolat Cœur Coulant",
+                    "prix": 22,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 80,
+            "date": "05\/04\/2026 13:28",
+            "statut": "En attente de paiement",
+            "paiement": "Non payé"
+        },
+        {
+            "id": 7,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
+                {
+                    "nom": "Risotto au Safran",
+                    "prix": 48,
+                    "quantite": 1
+                },
+                {
+                    "nom": "Huîtres et Perles de Tapioca",
+                    "prix": 52,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 100,
+            "date": "05\/04\/2026 14:31",
+            "statut": "Livrée",
+            "paiement": "Payé"
+        },
+        {
+            "id": 8,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
+                {
+                    "nom": "Tarte Citron Meringuée",
+                    "prix": 20,
+                    "quantite": 1
+                },
+                {
+                    "nom": "Ravioli Langoustine & Foie Gras",
+                    "prix": 58,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 78,
+            "date": "05\/04\/2026 14:38",
+            "statut": "En attente de paiement",
+            "paiement": "Non payé"
+        },
+        {
+            "id": 9,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
+                {
+                    "nom": "Carpaccio de Bœuf Cipriani",
+                    "prix": 38,
+                    "quantite": 3
+                },
+                {
+                    "nom": "Risotto au Safran",
+                    "prix": 48,
+                    "quantite": 2
+                },
+                {
+                    "nom": "Fleur Vanille",
+                    "prix": 24,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 234,
+            "date": "05\/04\/2026 17:31",
+            "statut": "Payée",
+            "paiement": "Payé",
+            "total_deja_paye": 110
+        },
+        {
+            "id": 10,
+            "email": "chef@eveil.fr",
+            "produits": [
+                {
+                    "nom": "Ravioli Langoustine & Foie Gras",
+                    "prix": 58,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 58,
+            "date": "05\/04\/2026 19:45",
+            "statut": "En préparation",
+            "paiement": "Payé"
+        },
+        {
+            "id": 11,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
+                {
+                    "nom": "Ravioli Langoustine & Foie Gras",
+                    "prix": 58,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 58,
+            "date": "05\/04\/2026 20:43",
+            "statut": "En préparation",
+            "paiement": "Payé"
+        },
+        {
+            "id": 12,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
+                {
+                    "nom": "Salade Gourmande Noma",
+                    "prix": 42,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 42,
+            "date": "05\/04\/2026 20:51",
+            "statut": "En préparation",
+            "paiement": "Payé"
+        },
+        {
+            "id": 13,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
+                {
+                    "nom": "Salade Gourmande Noma",
+                    "prix": 42,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 42,
+            "date": "05\/04\/2026 21:07",
+            "statut": "En préparation",
+            "paiement": "Payé"
+        },
+        {
+            "id": 14,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
+                {
+                    "nom": "Huîtres et Perles de Tapioca",
+                    "prix": 52,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 52,
+            "date": "20\/05\/2026 21:19",
+            "statut": "En attente de paiement",
+            "paiement": "Non payé"
+        },
+        {
+            "id": 15,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
+                {
+                    "nom": "Poularde de Bresse en Vessie",
+                    "prix": 75,
+                    "quantite": 1
+                },
+                {
+                    "nom": "Beef Wellington",
+                    "prix": 68,
+                    "quantite": 1
+                },
+                {
+                    "nom": "Salade Gourmande Noma",
+                    "prix": 42,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 185,
+            "date": "20\/05\/2026 21:27",
+            "statut": "En préparation",
+            "paiement": "Payé"
+        },
+        {
+            "id": 16,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
+                {
+                    "nom": "Ravioli Langoustine & Foie Gras",
+                    "prix": 58,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 58,
+            "date": "20\/05\/2026 21:50",
+            "statut": "En attente de paiement",
+            "paiement": "Non payé"
+        },
+        {
+            "id": 17,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
+                {
+                    "nom": "Carpaccio de Bœuf Cipriani",
+                    "prix": 38,
+                    "quantite": 3
+                },
+                {
+                    "nom": "Risotto au Safran",
+                    "prix": 48,
+                    "quantite": 2
+                },
+                {
+                    "nom": "Fleur Vanille",
+                    "prix": 24,
+                    "quantite": 1
+                },
+                {
+                    "nom": "Salade Gourmande Noma",
+                    "prix": 42,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 276,
+            "date": "20\/05\/2026 22:00",
+            "statut": "En attente de paiement",
+            "paiement": "Non payé"
+        },
+        {
+            "id": 18,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
+                {
+                    "nom": "Carpaccio de Bœuf Cipriani",
+                    "prix": 38,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 38,
+            "date": "20\/05\/2026 22:42",
+            "statut": "En préparation",
+            "paiement": "Payé"
+        },
+        {
+            "id": 19,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
+                {
+                    "nom": "Carpaccio de Bœuf Cipriani",
+                    "prix": 38,
+                    "quantite": 3
+                },
+                {
+                    "nom": "Risotto au Safran",
+                    "prix": 48,
+                    "quantite": 2
+                },
+                {
+                    "nom": "Fleur Vanille",
+                    "prix": 24,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 234,
+            "date": "20\/05\/2026 22:43",
+            "statut": "En attente de paiement",
+            "paiement": "Non payé"
+        },
+        {
+            "id": 20,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
+                {
+                    "nom": "Carpaccio de Bœuf Cipriani",
+                    "prix": 38,
+                    "quantite": 3
+                },
+                {
+                    "nom": "Risotto au Safran",
+                    "prix": 48,
+                    "quantite": 2
+                },
+                {
+                    "nom": "Fleur Vanille",
+                    "prix": 24,
+                    "quantite": 1
+                },
+                {
+                    "nom": "Beef Wellington",
+                    "prix": 68,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 302,
+            "date": "20\/05\/2026 22:44",
+            "statut": "En attente de paiement",
+            "paiement": "Non payé"
+        },
+        {
+            "id": 21,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
+                {
+                    "nom": "Beef Wellington",
+                    "prix": 68,
+                    "quantite": 1
+                },
+                {
+                    "nom": "Ravioli Langoustine & Foie Gras",
+                    "prix": 58,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 126,
+            "date": "20\/05\/2026 22:53",
+            "statut": "Payée",
+            "paiement": "Payé",
+            "total_deja_paye": 68
+        },
+        {
+            "id": 22,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
+                {
+                    "nom": "Beef Wellington",
+                    "prix": 68,
+                    "quantite": 1
+                },
+                {
+                    "nom": "Fleur Vanille",
+                    "prix": 24,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 92,
+            "date": "20\/05\/2026 22:54",
+            "statut": "En attente de paiement",
+            "paiement": "Non payé"
+        },
+        {
+            "id": 23,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
+                {
+                    "nom": "Beef Wellington",
+                    "prix": 68,
+                    "quantite": 1
+                },
+                {
+                    "nom": "Salade Gourmande Noma",
+                    "prix": 42,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 110,
+            "date": "20\/05\/2026 22:59",
+            "statut": "En attente de paiement",
+            "paiement": "Non payé"
+        },
+        {
+            "id": 24,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
+                {
+                    "nom": "Ravioli Langoustine & Foie Gras",
+                    "prix": 58,
+                    "quantite": 1
+                },
+                {
+                    "nom": "Tarte Citron Meringuée",
+                    "prix": 20,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 78,
+            "total_deja_paye": 58,
+            "date": "21\/05\/2026 00:30",
+            "statut": "Payée",
+            "paiement": "Payé"
+        }
+    ]
+}

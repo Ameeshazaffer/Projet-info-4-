@@ -12,13 +12,14 @@ $commandes = $donneesCommandes["commandes"] ?? [];
 $donneesUtilisateurs = json_decode(file_get_contents("utilisateurs.json"), true);
 $livreurs = [];
 if (isset($donneesUtilisateurs["utilisateurs"])) {
-    foreach ($donneesUtilisateurs["utilisateurs"] as $u) {
-        if (($u['role'] ?? '') === 'livreur') {
-            $livreurs[] = $u;
+    foreach ($donneesUtilisateurs["utilisateurs"] as $unUtilisateur) {
+        if (($unUtilisateur['role'] ?? '') === 'livreur') {
+            $livreurs[] = $unUtilisateur;
         }
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -46,10 +47,8 @@ if (isset($donneesUtilisateurs["utilisateurs"])) {
     <h1>ESPACE RESTAURATEUR</h1>
     <h2>Liste des commandes</h2>
 
-    <div id="notification-statut" style="padding: 1rem; margin-bottom: 1rem; font-weight: bold; text-align: center;"></div>
-
     <form method="GET" action="restaurateur.php">
-        <select name="statut" class="select-box">
+        <select name="statut" class="selection">
             <option value="tous">Tous les statuts</option>
             <option value="payée" <?= ($_GET['statut'] ?? '') === 'payée' ? 'selected' : '' ?>>Payée</option>
             <option value="en préparation" <?= ($_GET['statut'] ?? '') === 'en préparation' ? 'selected' : '' ?>>En préparation</option>
@@ -61,7 +60,7 @@ if (isset($donneesUtilisateurs["utilisateurs"])) {
     </form>
 
     <div class="liv">
-        <table>
+        <table id="liste-commandes">
             <thead>
                 <tr>
                     <th>N° commande</th>
@@ -86,16 +85,18 @@ if (isset($donneesUtilisateurs["utilisateurs"])) {
                     $idCmd = htmlspecialchars($commande['id']);
                     $statutCmd = htmlspecialchars($commande['statut']);
                     ?>
+                    
                     <tr id="ligne-commande-<?= $idCmd ?>">
                         <td><?= $idCmd ?></td>
                         <td><?= htmlspecialchars($commande['date']) ?></td>
                         <td class="cellule-statut"><?= $statutCmd ?></td>
-                        <td><?= htmlspecialchars($commande['paiement'] ?? 'Non payé') ?></td>
+                        <td><?= htmlspecialchars($commande['paiement'] ?? 'Payée') ?></td>
                         <td><?= htmlspecialchars($commande['prix_total'] ?? $commande['prix'] ?? '') ?>€</td>
+                        
                         <td class="cellule-actions">
-                            <?php if ($statutCmd === 'payée'): ?>
-                                <button class="btn-statut btn-preparer" data-id="<?= $idCmd ?>" data-action="preparer">En préparation</button>
-                            <?php elseif ($statutCmd === 'en préparation'): ?>
+                             <?php if ($statutCmd === 'payée'): ?>
+                                <button class="btn-statut btn-preparer" onclick="gererStatut(this, <?= $idCmd ?>, 'preparer')">En préparation</button>
+                             <?php elseif ($statutCmd === 'en préparation'): ?>
                                 <div class="zone-assignation">
                                     <select class="select-livreur" id="select-livreur-<?= $idCmd ?>">
                                         <option value="">-- Choisir un livreur --</option>
@@ -105,14 +106,16 @@ if (isset($donneesUtilisateurs["utilisateurs"])) {
                                             </option>
                                         <?php endforeach; ?>
                                     </select>
-                                    <button class="btn-statut btn-prete" data-id="<?= $idCmd ?>" data-action="prete">Prête & Assigner</button>
+                                    <button class="btn-statut btn-prete" onclick="gererStatut(this, <?= $idCmd ?>, 'prete')">Prête & Assigner</button>
                                 </div>
                             <?php else: ?>
                                 <span style="color: gray; font-style: italic;">Aucune action requise</span>
                             <?php endif; ?>
                         </td>
+                        
                         <td><a href="detail-commande.php?id=<?= $idCmd ?>">Voir le détail</a></td>
                     </tr>
+                    
                     <?php
                 }
 
@@ -127,10 +130,25 @@ if (isset($donneesUtilisateurs["utilisateurs"])) {
 
 <footer>
     <div class="logo-pied-page">
-        <div class="texte-logo-pied-page">✧ÉVEIL✧</div>
+        <div class="texte-logo-pied-page">✧ÉVEIL✦</div>
         <div class="paris-logo-pied-page">PARIS</div>
         <div class="slogan-logo-pied-page">Éveillez vos papilles gustatives.</div>
     </div>
+    <div class="infos-pied-page">
+        <div class="section-pied-page">
+            <h3>ADRESSE</h3>
+            <p>123 Avenue des Champs-Élysées<br>75008 Paris, France</p>
+        </div>
+        <div class="section-pied-page">
+            <h3>HORAIRES</h3>
+            <p>Mardi - Samedi<br>12h00 - 14h30 | 19h00 - 22h30<br>Fermé Dimanche & Lundi</p>
+        </div>
+        <div class="section-pied-page">
+            <h3>CONTACT</h3>
+            <p>Tél: +33 1 23 45 67 89<br>Email: contact@eveilparis.fr</p>
+        </div>
+    </div>
+    <p style="margin-top:2rem;color:#C9B896;">© 2026 EVEIL Paris. Tous droits réservés.</p>
 </footer>
 
 </body>

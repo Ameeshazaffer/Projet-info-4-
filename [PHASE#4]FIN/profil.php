@@ -27,9 +27,18 @@ foreach ($commandes as $commande) {
     }
 }
 
-$vip     = $user["vip"]     ?? "non";
-$premium = $user["premium"] ?? "non";
-$remise  = $user["remise"]  ?? 0;
+$donneesUtilisateurs = json_decode(file_get_contents("utilisateurs.json"), true);
+$vip     = "non";
+$premium = "non";
+$remise  = 0;
+foreach ($donneesUtilisateurs["utilisateurs"] as $u) {
+    if ($u["email"] === $user["email"]) {
+        $vip     = $u["vip"]     ?? "non";
+        $premium = $u["premium"] ?? "non";
+        $remise  = $u["remise"]  ?? 0;
+        break;
+    }
+}
 
 function commande_deja_notee($idCommande, $emailClient) {
     if (!file_exists("note.json")) return false;

@@ -14,6 +14,18 @@ if ($commande_id > 0 && file_exists("commandes.json")) {
                 $c['paiement'] = "Payé";
                 $c['statut'] = "Payée";
                 $c['total_deja_paye'] = $c['prix_total'];
+                 // Retirer la remise après paiement
+                if (isset($c['remise_appliquee']) && $c['remise_appliquee'] > 0) {
+                    $donneesUsers = json_decode(file_get_contents("utilisateurs.json"), true);
+                    foreach ($donneesUsers["utilisateurs"] as &$u) {
+                        if ($u["email"] === $c["email"]) {
+                            $u["remise"] = 0;
+                            break;
+                        }
+                    }
+                    unset($u);
+                    file_put_contents("utilisateurs.json", json_encode($donneesUsers, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+                }
             } else {
                 $c['paiement'] = "Non payé";
                 $c['statut'] = "En attente";

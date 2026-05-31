@@ -3,20 +3,14 @@ session_start();
 header("Content-Type: application/json");
 
 if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'administrateur') {
-    echo json_encode([
-        "succes" => false,
-        "message" => "Accès refusé."
-    ]);
+    echo json_encode(["succes" => false,"message" => "Accès refusé."]);
     exit;
 }
 
 $donnees_recues = json_decode(file_get_contents("php://input"), true);
 
 if (!isset($donnees_recues["id"]) || !isset($donnees_recues["action"])) {
-    echo json_encode([
-        "succes" => false,
-        "message" => "Données incomplètes."
-    ]);
+    echo json_encode(["succes" => false,"message" => "Données incomplètes."]);
     exit;
 }
 
@@ -24,20 +18,14 @@ $id = intval($donnees_recues["id"]);
 $action = $donnees_recues["action"];
 
 if (!file_exists("utilisateurs.json")) {
-    echo json_encode([
-        "succes" => false,
-        "message" => "Fichier utilisateurs introuvable."
-    ]);
+    echo json_encode(["succes" => false,"message" => "Fichier utilisateurs introuvable."]);
     exit;
 }
 
 $donnees = json_decode(file_get_contents("utilisateurs.json"), true);
 
 if (!isset($donnees["utilisateurs"][$id])) {
-    echo json_encode([
-        "succes" => false,
-        "message" => "Utilisateur introuvable."
-    ]);
+    echo json_encode(["succes" => false,"message" => "Utilisateur introuvable."]);
     exit;
 }
 
@@ -52,11 +40,9 @@ elseif ($action === "vip") {
 
         $donnees["utilisateurs"][$id]["vip"] = "non";
 
-    } else {
-
+    } 
+    else {
         $donnees["utilisateurs"][$id]["vip"] = "oui";
-
-        // retire premium
         $donnees["utilisateurs"][$id]["premium"] = "non";
     }
 }
@@ -67,11 +53,10 @@ elseif ($action === "premium") {
 
         $donnees["utilisateurs"][$id]["premium"] = "non";
 
-    } else {
+    } 
+    else {
 
         $donnees["utilisateurs"][$id]["premium"] = "oui";
-
-        // retire VIP
         $donnees["utilisateurs"][$id]["vip"] = "non";
     }
 }
@@ -79,16 +64,14 @@ elseif ($action === "premium") {
 elseif ($action === "remise") {
     if (($donnees["utilisateurs"][$id]["remise"] ?? 0) == 10) {
         $donnees["utilisateurs"][$id]["remise"] = 0;
-    } else {
+    } 
+    else {
         $donnees["utilisateurs"][$id]["remise"] = 10;
     }
 }
 
 else {
-    echo json_encode([
-        "succes" => false,
-        "message" => "Action inconnue."
-    ]);
+    echo json_encode(["succes" => false,"message" => "Action inconnue."]);
     exit;
 }
 

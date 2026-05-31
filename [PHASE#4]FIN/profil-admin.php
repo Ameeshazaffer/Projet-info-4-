@@ -39,7 +39,8 @@ $remise  = $user["remise"]  ?? 0;
         </div>
         <ul class="liens-nav">
             <li><a href="index.php">ACCUEIL</a></li>
-            <li><a href="administrateur.php">ESPACE ADMIN</a></li>
+            <li><a href="profil.php">PROFIL</a></li>
+            <li><a href="administrateur.php">ESPACE</a></li>
             <li><a href="deconnexion.php" class="bouton-inscription">DÉCONNEXION</a></li>
         </ul>
     </div>

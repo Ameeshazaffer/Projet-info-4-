@@ -156,14 +156,30 @@ $remise = $user["remise"] ?? 0;
 </div>
 
 <footer>
-    <div class="logo-pied-page">
-        <div class="texte-logo-pied-page">✧ÉVEIL✧</div>
-        <div class="paris-logo-pied-page">PARIS</div>
-        <div class="slogan-logo-pied-page">Éveillez vos papilles gustatives.</div>
-    </div>
-</footer>
+        <div class="logo-pied-page">
+            <div class="texte-logo-pied-page">✧ÉVEIL✧</div>
+            <div class="paris-logo-pied-page">PARIS</div>
+            <div class="slogan-logo-pied-page">Éveillez vos papilles gustatives.</div>
+        </div>
+        <div class="infos-pied-page">
+            <div class="section-pied-page">
+                <h3>ADRESSE</h3>
+                <p>123 Avenue des Champs-Élysées<br>75008 Paris, France</p>
+            </div>
+            <div class="section-pied-page">
+                <h3>HORAIRES</h3>
+                <p>Mardi - Samedi<br>12h00 - 14h30 | 19h00 - 22h30<br>Fermé Dimanche & Lundi</p>
+            </div>
+            <div class="section-pied-page">
+                <h3>CONTACT</h3>
+                <p>Tél: +33 1 23 45 67 89<br>Email: contact@eveilparis.fr</p>
+            </div>
+        </div>
+        <p style="margin-top:2rem;color:#C9B896;">© 2026 EVEIL Paris. Tous droits réservés.</p>
+    </footer>
 
 <script src="admin.js"></script>
 
 </body>
 </html>
+

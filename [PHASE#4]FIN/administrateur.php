@@ -8,10 +8,8 @@ if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'administrateur')
 
 $donnees = json_decode(file_get_contents("utilisateurs.json"), true);
 $utilisateurs = $donnees["utilisateurs"] ?? [];
-
 $filtre = $_GET["role"] ?? "tous";
 ?>
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -20,7 +18,6 @@ $filtre = $_GET["role"] ?? "tous";
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link id="chgmode" rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
 <nav>
@@ -29,13 +26,11 @@ $filtre = $_GET["role"] ?? "tous";
             <div class="texte-logo-nav">✦ÉVEIL✦</div>
             <div class="paris-logo-nav">PARIS</div>
         </div>
-
         <ul class="liens-nav">
             <li><a href="index.php">ACCUEIL</a></li>
             <li><a href="profil.php">PROFIL</a></li>
             <li><a href="administrateur.php">ESPACE</a></li>
             <li><a href="deconnexion.php" class="bouton-inscription">DÉCONNEXION</a></li>
-
             <li><button id="btnchgmode" type="button">🌙</button></li>
         </ul>
     </div>
@@ -48,19 +43,18 @@ $filtre = $_GET["role"] ?? "tous";
     <div class="select-container">
         <form method="GET" action="administrateur.php">
             <select name="role" class="select-box">
-                <option value="tous" <?= $filtre === "tous" ? "selected" : "" ?>>Tous</option>
-                <option value="client" <?= $filtre === "client" ? "selected" : "" ?>>Clients</option>
-                <option value="administrateur" <?= $filtre === "administrateur" ? "selected" : "" ?>>Administrateurs</option>
-                <option value="livreur" <?= $filtre === "livreur" ? "selected" : "" ?>>Livreurs</option>
-                <option value="restaurateur" <?= $filtre === "restaurateur" ? "selected" : "" ?>>Restaurateurs</option>
+                <option value="tous"          <?= $filtre === "tous"          ? "selected" : "" ?>>Tous</option>
+                <option value="client"        <?= $filtre === "client"        ? "selected" : "" ?>>Clients</option>
+                <option value="administrateur"<?= $filtre === "administrateur"? "selected" : "" ?>>Administrateurs</option>
+                <option value="livreur"       <?= $filtre === "livreur"       ? "selected" : "" ?>>Livreurs</option>
+                <option value="restaurateur"  <?= $filtre === "restaurateur"  ? "selected" : "" ?>>Restaurateurs</option>
             </select>
-
             <button type="submit" class="bouton-inscription">Filtrer</button>
         </form>
     </div>
 
     <div class="liv" style="width:100%; overflow-x:auto;">
-    <table style="width:100%; table-layout:fixed;">
+        <table style="width:100%; table-layout:fixed;">
             <thead>
                 <tr>
                     <th>Nom</th>
@@ -68,61 +62,38 @@ $filtre = $_GET["role"] ?? "tous";
                     <th>Email</th>
                     <th>Rôle</th>
                     <th>Statut</th>
-                    <th>Avantage</th>
+                    <th>Avantages</th>
                     <th>Action</th>
                 </tr>
             </thead>
-
             <tbody>
             <?php
             $trouve = false;
-
             foreach ($utilisateurs as $index => $user) {
                 $role = $user["role"] ?? "client";
-
-                if ($filtre !== "tous" && $role !== $filtre) {
-                    continue;
-                }
-
+                if ($filtre !== "tous" && $role !== $filtre) continue;
                 $trouve = true;
-
-                $bloque = $user["bloque"] ?? "non";
-                $vip = $user["vip"] ?? "non";
+                $bloque  = $user["bloque"]  ?? "non";
+                $vip     = $user["vip"]     ?? "non";
                 $premium = $user["premium"] ?? "non";
-                $remise = $user["remise"] ?? 0;
+                $remise  = $user["remise"]  ?? 0;
             ?>
-
-                <tr id="ligne-<?= $index ?>">
-                    <td><?= htmlspecialchars($user["nom"] ?? "") ?></td>
-                    <td><?= htmlspecialchars($user["prenom"] ?? "") ?></td>
-                    <td style="word-break:break-word;">
-    <?= htmlspecialchars($user["email"] ?? "") ?>
-</td>
-                    <td><?= htmlspecialchars($role) ?></td>
-
-                    <td id="statut-<?= $index ?>">
-                        <?= $bloque === "oui" ? "Bloqué" : "Actif" ?>
-                    </td>
-
-                    <td id="avantage-<?= $index ?>">
-                        <td id="avantage-<?= $index ?>" style="text-align:center; font-size:0.9rem;">
-                            <div>VIP : <?= htmlspecialchars($vip) ?></div>
-                            <div>Premium : <?= htmlspecialchars($premium) ?></div>
-                            <div>Remise : <?= htmlspecialchars($remise) ?>%</div>
-</td>
-                    </td>
-
-                    <td>
-                        <a href="profil-admin.php?id=<?= $index ?>">Voir profil</a>
-                    </td>
-                </tr>
-
-            <?php } ?>
-
-            <?php if (!$trouve): ?>
                 <tr>
-                    <td colspan="7">Aucun utilisateur trouvé pour ce rôle.</td>
+                    <td><?= htmlspecialchars($user["nom"]   ?? "") ?></td>
+                    <td><?= htmlspecialchars($user["prenom"] ?? "") ?></td>
+                    <td style="word-break:break-word;"><?= htmlspecialchars($user["email"] ?? "") ?></td>
+                    <td><?= htmlspecialchars($role) ?></td>
+                    <td><?= $bloque === "oui" ? "Bloqué" : "Actif" ?></td>
+                    <td style="font-size:0.9rem;">
+                        VIP : <?= htmlspecialchars($vip) ?><br>
+                        Premium : <?= htmlspecialchars($premium) ?><br>
+                        Remise : <?= htmlspecialchars($remise) ?>%
+                    </td>
+                    <td><a href="profil-admin.php?id=<?= $index ?>">Voir profil</a></td>
                 </tr>
+            <?php } ?>
+            <?php if (!$trouve): ?>
+                <tr><td colspan="7">Aucun utilisateur trouvé pour ce rôle.</td></tr>
             <?php endif; ?>
             </tbody>
         </table>
@@ -135,26 +106,23 @@ $filtre = $_GET["role"] ?? "tous";
         <div class="paris-logo-pied-page">PARIS</div>
         <div class="slogan-logo-pied-page">Éveillez vos papilles gustatives.</div>
     </div>
-
     <div class="infos-pied-page">
         <div class="section-pied-page">
             <h3>ADRESSE</h3>
             <p>123 Avenue des Champs-Élysées<br>75008 Paris, France</p>
         </div>
-
         <div class="section-pied-page">
             <h3>HORAIRES</h3>
             <p>Mardi - Samedi<br>12h00 - 14h30 | 19h00 - 22h30<br>Fermé Dimanche & Lundi</p>
         </div>
-
         <div class="section-pied-page">
             <h3>CONTACT</h3>
             <p>Tél: +33 1 23 45 67 89<br>Email: contact@eveilparis.fr</p>
         </div>
     </div>
-
     <p style="margin-top:2rem;color:#C9B896;">© 2026 EVEIL Paris. Tous droits réservés.</p>
 </footer>
+
 <script src="mode.js"></script>
 </body>
 </html>

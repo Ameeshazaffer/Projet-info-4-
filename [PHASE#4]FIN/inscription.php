@@ -35,14 +35,14 @@
                     <h2>Informations personnelles</h2>
                     <input type="text" name="nom" placeholder="Nom" required>
                     <input type="text" name="prenom" placeholder="Prénom" required>
-                    <input type="tel" name="telephone" placeholder="Téléphone (ex: 0612345678)">
+                    <input type="tel" name="telephone" placeholder="Téléphone (ex: 0612345678)" required>
 
                     <div class="champ-avec-compteur-email">
                         <input type="email" id="email" name="email" placeholder="Email" required>
                     </div>
 
                     <div class="champ-avec-compteur-mdp">
-                        <input type="password" id="mdp" name="mdp" placeholder="Mot de passe (max 8 car.)" required>
+                        <input type="password" id="mdp" name="mdp" placeholder="Mot de passe" required>
                         <span id="bouton-visibilite-mdp" class="oeil material-icons">visibility_off</span>
                     </div>
                 </div>

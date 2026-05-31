@@ -23,33 +23,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $panier  = $_SESSION['panier'];
 
     $total_avant_remise = array_sum(
-    array_map(fn($i) => $i['prix'] * $i['quantite'], $panier)
-);
+        array_map(fn($i) => $i['prix'] * $i['quantite'], $panier)
+    );
 
-$remise = 0;
+    $remise = 0;
 
-if (file_exists("utilisateurs.json")) {
-    $donneesUtilisateurs = json_decode(file_get_contents("utilisateurs.json"), true);
-
+    if (file_exists("utilisateurs.json")) {
+        $donneesUtilisateurs = json_decode(file_get_contents("utilisateurs.json"), true);
+        
     foreach ($donneesUtilisateurs["utilisateurs"] as $utilisateur) {
         if ($utilisateur["email"] === $user["email"]) {
             $remise = $utilisateur["remise"] ?? 0;
             break;
         }
     }
-}
+    }    
 
-$total = $total_avant_remise;
+    $total = $total_avant_remise;
 
-if ($remise == 10) {
-    $total = $total_avant_remise - ($total_avant_remise * 10 / 100);
-}
+    if ($remise == 10) {
+        $total = $total_avant_remise - ($total_avant_remise * 10 / 100);
+    }
 
     $fichier = "commandes.json";
 
-    $donnees = file_exists($fichier)
-        ? json_decode(file_get_contents($fichier), true)
-        : ["commandes" => []];
+    $donnees = file_exists($fichier) ? json_decode(file_get_contents($fichier), true) : ["commandes" => []];
 
     /*
     SI ON MODIFIE UNE COMMANDE EXISTANTE

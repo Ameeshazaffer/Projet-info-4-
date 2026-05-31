@@ -100,8 +100,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             "id" => $prochain_id,
             "email" => $email,
             "produits" => $panier,
+            "prix_avant_remise" => $total_avant_remise,
+            "remise_appliquee" => $remise,
             "prix_total" => $total,
-
             /*
             rien payé au début
             */
@@ -248,9 +249,19 @@ $control = md5(
                 <td><?= $ligne['prix'] * $ligne['quantite'] ?>€</td>
             </tr>
         <?php endforeach; ?>
+        <?php if (isset($commande['remise_appliquee']) && $commande['remise_appliquee'] > 0): ?>
+        <tr>
+            <td colspan="3">Prix avant remise</td>
+            <td><?= htmlspecialchars($commande['prix_avant_remise']) ?>€</td>
+        </tr>
+        <tr>
+            <td colspan="3">Remise (<?= $commande['remise_appliquee'] ?>%)</td>
+            <td>-<?= number_format($commande['prix_avant_remise'] * $commande['remise_appliquee'] / 100, 2) ?>€</td>
+        </tr>
+        <?php endif; ?>
         <tr>
             <th colspan="3">Prix total</th>
-            <th><?= htmlspecialchars($commande['prix_total']) ?>€</th>
+            <th><strong><?= htmlspecialchars($commande['prix_total']) ?>€</strong></th>
         </tr>
 
     </table>

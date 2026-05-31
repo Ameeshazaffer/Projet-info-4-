@@ -1,0 +1,148 @@
+{
+  "plat": [
+    {
+      "nom": "Soupe VGE",
+      "type": "entree",
+      "typeViande": "vegetarien",
+      "allergenes": ["gluten", "lactose"],
+      "prix": 45,
+      "image": "https://www.finedininglovers.fr/sites/default/files/styles/1_1_768x768/public/2025-02/soupe-vge-paul-bocuse-credit-aurelio-rodriguez.png.webp?itok=RJ8QrYsA",
+      "description": "Soupe aux truffes noires, signature de Paul Bocuse. Créée pour le président Valéry Giscard d'Estaing."
+    },
+    {
+      "nom": "Carpaccio de Bœuf Cipriani",
+      "type": "entree",
+      "typeViande": "viande",
+      "allergenes": [],
+      "prix": 38,
+      "image": "https://www.mangeonsbien.com/wp-content/uploads/2017/03/carpaccio-boeuf.jpg",
+      "description": "Création légendaire de Giuseppe Cipriani, fines tranches de bœuf avec sa sauce signature."
+    },
+    {
+      "nom": "Huîtres et Perles de Tapioca",
+      "type": "entree",
+      "typeViande": "poisson",
+      "allergenes": ["gluten"],
+      "prix": 52,
+      "image": "https://caviarspherika.com/cdn/shop/articles/Spherika-caviar-esturion-ostras-espuma_16x9_5ecd563d-31a8-4f49-9943-5ec87edc8623.jpg?v=1764665370&width=1500",
+      "description": "Huîtres et perles de tapioca au caviar, création raffinée d'Anne-Sophie Pic."
+    },
+    {
+      "nom": "Salade Gourmande Noma",
+      "type": "entree",
+      "typeViande": "vegan",
+      "allergenes": [],
+      "prix": 42,
+      "image": "https://cdn.prod.website-files.com/6578d4b10e69595f1123cd57/67efa64beb71a42ef524f05a_ham%20blue.jpg",
+      "description": "Salade gourmande façon Noma, par René Redzepi. Légumes du jardin et herbes sauvages."
+    },
+    {
+      "nom": "Ravioli Langoustine & Foie Gras",
+      "type": "entree",
+      "typeViande": "poisson",
+      "allergenes": ["gluten", "oeuf"],
+      "prix": 58,
+      "image": "https://www.carrefour.be/on/demandware.static/-/Sites-carrefour-be-recipes/default/dw688162a6/content/dam/carrefour/recettes/2019-11/RAVIOLES-DE-LANGOUSTINE.jpg",
+      "description": "Ravioli ouvert langoustine et foie gras, signature de Yannick Alléno."
+    },
+    {
+      "nom": "Beef Wellington",
+      "type": "plat",
+      "typeViande": "viande",
+      "allergenes": ["gluten", "oeuf"],
+      "prix": 68,
+      "image": "https://www.certifiedangusbeef.com/_next/image?q=75&url=https%3A%2F%2Fappetizing-cactus-7139e93734.media.strapiapp.com%2FUltimate_Beef_Wellington_1bad1b820f.jpeg&w=1920",
+      "description": "Signature de Gordon Ramsay. Filet de bœuf en croûte de champignons et pâte feuilletée."
+    },
+    {
+      "nom": "Poularde de Bresse en Vessie",
+      "type": "plat",
+      "typeViande": "viande",
+      "allergenes": ["lactose"],
+      "prix": 75,
+      "image": "https://www.arts-et-gastronomie.com/wp-content/webp-express/webp-images/uploads/2020/12/10_AG_HIVER102-600x600.jpg.webp",
+      "description": "Par Georges Blanc. Poularde tendre cuite à la vapeur dans sa vessie, tradition lyonnaise."
+    },
+    {
+      "nom": "Risotto au Safran",
+      "type": "plat",
+      "typeViande": "vegetarien",
+      "allergenes": ["lactose"],
+      "prix": 48,
+      "image": "https://epicime.com/img/cms/Recettes/Le%20risotto%20milanais%20au%20safran.jpg",
+      "description": "Risotto à la milanaise par Massimo Bottura. Riz Carnaroli, safran et parmesan."
+    },
+    {
+      "nom": "Homard Rôti Beurre Blanc",
+      "type": "plat",
+      "typeViande": "poisson",
+      "allergenes": ["lactose"],
+      "prix": 85,
+      "image": "https://media.houra.fr/images/widget/recette/gd_recette_2_FAV_homard_beurre_blanc.jpg",
+      "description": "Par Alain Ducasse. Homard rôti à la perfection, beurre blanc onctueux."
+    },
+    {
+      "nom": "Canard Laqué Gastronomique",
+      "type": "plat",
+      "typeViande": "viande",
+      "allergenes": [],
+      "prix": 62,
+      "image": "https://nouvellesgastronomiques.com/wp-content/uploads/2019/07/Recette-Canard-Laqu%C3%A9-Tha%C3%AF-sign%C3%A9-par-Nathalie-Nguyen.png",
+      "description": "Version modernisée par Heston Blumenthal. Peau croustillante, chair fondante."
+    },
+    {
+      "nom": "Turbot Sauce Hollandaise",
+      "type": "plat",
+      "typeViande": "poisson",
+      "allergenes": ["lactose", "oeuf"],
+      "prix": 78,
+      "image": "https://cache.marieclaire.fr/data/photo/w1000_ci/1bk/turbot-sauce-hollandaise-et-puree-aux-truffes.jpg",
+      "description": "Par Joël Robuchon. Turbot sauvage, sauce hollandaise moderne, légumes de saison."
+    },
+    {
+      "nom": "Sphère Chocolat Cœur Coulant",
+      "type": "dessert",
+      "typeViande": "vegetarien",
+      "allergenes": ["gluten", "lactose", "oeuf", "fruits_a_coque"],
+      "prix": 22,
+      "image": "https://www.baladeenroulotte.com/blog/wp-content/uploads/2014/05/dome-chocolat1-e1554137302190.jpg",
+      "description": "Par Cédric Grolet. Sphère de chocolat qui révèle un cœur coulant intense."
+    },
+    {
+      "nom": "Soufflé au Grand Marnier",
+      "type": "dessert",
+      "typeViande": "vegetarien",
+      "allergenes": ["gluten", "lactose", "oeuf"],
+      "prix": 18,
+      "image": "https://sucredorgeetpaindepices.fr/wp-content/uploads/2014/03/27-cuisine-Grand-Marnier-Souffl%C3%A9-Sucredorgeetpaindepices.over-blog.com-32.jpg",
+      "description": "Par Raymond Blanc. Soufflé aérien à l'orange, servi à la minute."
+    },
+    {
+      "nom": "Tarte Citron Meringuée",
+      "type": "dessert",
+      "typeViande": "vegetarien",
+      "allergenes": ["gluten", "lactose", "oeuf"],
+      "prix": 20,
+      "image": "https://odelices.ouest-france.fr/images/recettes/2013/tarte_au_citron_meringuee_pate_brisee.jpg.webp",
+      "description": "Par Pierre Hermé. Citron de Menton, meringue italienne, sablé breton."
+    },
+    {
+      "nom": "Panna Cotta Vanille Fraise",
+      "type": "dessert",
+      "typeViande": "vegetarien",
+      "allergenes": ["lactose"],
+      "prix": 19,
+      "image": "https://www.auxdelicesdupalais.net/wp-content/uploads/2024/04/panna-cotta-vanille-fraise-5.jpg",
+      "description": "Par Alain Ducasse. Douceur crémeuse à la vanille, coulis de fraises fraîches."
+    },
+    {
+      "nom": "Fleur Vanille",
+      "type": "dessert",
+      "typeViande": "vegetarien",
+      "allergenes": ["lactose"],
+      "prix": 24,
+      "image": "https://cedric-grolet.com/opera/5389-product_laptop2x/fleur-vanille-indiv22.jpg",
+      "description": "Par Cédric Grolet. Création florale délicate, vanille de Madagascar, notes subtiles et raffinées."
+    }
+  ]
+}

@@ -9,9 +9,7 @@ async function actionAdministrateur(id, action) {
     try {
         const reponse = await fetch("action_administrateur.php", {
             method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
+            headers: {"Content-Type": "application/json"},
             body: JSON.stringify({id: id, action: action})
         });
 
@@ -23,7 +21,8 @@ async function actionAdministrateur(id, action) {
 
             if (donnees.bloque === "oui") {
                 etatBloque.textContent = "Bloqué";
-            } else {
+            } 
+            else {
                 etatBloque.textContent = "Actif";
             }
 

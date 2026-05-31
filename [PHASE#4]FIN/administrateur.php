@@ -54,7 +54,16 @@ $filtre = $_GET["role"] ?? "tous";
     </div>
 
     <div class="liv" style="width:100%; overflow-x:auto;">
-        <table style="width:100%; table-layout:fixed;">
+        <table style="width:100%; table-layout:fixed; word-break:break-word;">
+    <colgroup>
+        <col style="width:12%">
+        <col style="width:12%">
+        <col style="width:20%">
+        <col style="width:15%">
+        <col style="width:10%">
+        <col style="width:20%">
+        <col style="width:11%">
+    </colgroup>
             <thead>
                 <tr>
                     <th>Nom</th>

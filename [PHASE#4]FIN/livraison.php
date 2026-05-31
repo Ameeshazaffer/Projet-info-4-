@@ -68,7 +68,7 @@ foreach ($utilisateurs as $u) {
                 <?php
                 $trouve = false;
                 foreach ($commandes as $commande) {
-                    if (!isset($commande["statut"]) || $commande["statut"] != "Payée") {
+                    if (!isset($commande["statut"]) || ($commande["statut"] !== "Prête" && $commande["statut"] !== "En livraison")) {
                         continue;
                     }
                     $trouve = true;

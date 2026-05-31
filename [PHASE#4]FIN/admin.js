@@ -1,4 +1,5 @@
 async function actionAdministrateur(id, action) {
+    
     const message = document.getElementById("message-admin");
     const etatBloque = document.getElementById("etat-bloque");
     const etatAvantages = document.getElementById("etat-avantages");
@@ -11,10 +12,7 @@ async function actionAdministrateur(id, action) {
             headers: {
                 "Content-Type": "application/json"
             },
-            body: JSON.stringify({
-                id: id,
-                action: action
-            })
+            body: JSON.stringify({id: id, action: action})
         });
 
         const donnees = await reponse.json();

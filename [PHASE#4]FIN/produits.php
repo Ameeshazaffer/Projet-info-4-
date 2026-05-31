@@ -1,6 +1,5 @@
 <?php
 session_start();
-require("verifier_blocage.php");
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -9,6 +8,7 @@ require("verifier_blocage.php");
     <title>EVEIL - Nos Produits</title>
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link id="chgmode" rel="stylesheet" href="stylessombres.css">
 </head>
 <body>
 
@@ -23,6 +23,7 @@ require("verifier_blocage.php");
                 <li><a href="index.php">ACCUEIL</a></li>
                 <?php if (isset($_SESSION['user'])): ?>
                     <li><a href="profil.php" class="bouton-inscription">PROFIL</a></li>
+                    <li><a href="deconnexion.php" class="bouton-inscription">DECONNEXION</a></li>
                     <?php if (!empty($_SESSION['panier'])): ?>
                         <li>
                             <form action="commande.php" method="post">
@@ -422,5 +423,6 @@ require("verifier_blocage.php");
     </footer>
 
     <script src="filtres.js"></script>
+    <script src="mode.js"></script>
 </body>
 </html>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-require("verifier_blocage.php");
+
 if (!isset($_SESSION['user'])) {
     header("Location: connexion.php");
     exit;
@@ -9,7 +9,7 @@ if (!isset($_SESSION['user'])) {
 $user = $_SESSION['user'];
 
 /*
-CREATION OU MODIFICATION COMMANDE
+CREATION / MODIFICATION COMMANDE
 */
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -22,42 +22,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email   = $user['email'];
     $panier  = $_SESSION['panier'];
 
-    $total_avant_remise = array_sum(
-    array_map(fn($i) => $i['prix'] * $i['quantite'], $panier)
-);
+    $total = array_sum(
+        array_map(fn($i) => $i['prix'] * $i['quantite'], $panier)
+    );
 
-$remise = 0;
-
-if (file_exists("utilisateurs.json")) {
-    $donneesUtilisateurs = json_decode(file_get_contents("utilisateurs.json"), true);
-
-    foreach ($donneesUtilisateurs["utilisateurs"] as $utilisateur) {
-        if ($utilisateur["email"] === $user["email"]) {
-            $remise = $utilisateur["remise"] ?? 0;
-            break;
-        }
-    }
-}
-
-$total = $total_avant_remise;
-
-if ($remise == 10) {
-    $total = $total_avant_remise - ($total_avant_remise * 10 / 100);
-}
-$remise = 0;
-
-$donneesUtilisateurs = json_decode(file_get_contents("utilisateurs.json"), true);
-
-foreach ($donneesUtilisateurs["utilisateurs"] as $utilisateur) {
-    if ($utilisateur["email"] === $user["email"]) {
-        $remise = $utilisateur["remise"] ?? 0;
-        break;
-    }
-}
-
-if ($remise == 10) {
-    $total = $total - ($total * 10 / 100);
-}
     $fichier = "commandes.json";
 
     $donnees = file_exists($fichier)
@@ -115,9 +83,7 @@ if ($remise == 10) {
             "id" => $prochain_id,
             "email" => $email,
             "produits" => $panier,
-            "prix_total_avant_remise" => $total_avant_remise,
-"remise" => $remise,
-"prix_total" => $total,
+            "prix_total" => $total,
 
             /*
             rien payé au début
@@ -196,11 +162,11 @@ $transaction =
 $montant = number_format($montant_a_payer, 2, '.', '');
 
 $retour =
-    'http://localhost' .
+    'http://' .
+    $_SERVER['HTTP_HOST'] .
     dirname($_SERVER['PHP_SELF']) .
     '/retour-paiement.php?commande_id=' .
     $commande['id'];
-
 $api_key = getAPIKey($vendeur);
 
 $control = md5(
@@ -221,6 +187,7 @@ $control = md5(
     <link href="https://fonts.googleapis.com/css2?family=Parisienne&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
+    <link id="chgmode" rel="stylesheet" href="stylessombres.css">
 </head>
 <body>
 
@@ -250,7 +217,7 @@ $control = md5(
     </p>
 
     <table>
-               <tr>
+        <tr>
             <th>Plat</th>
             <th>Quantité</th>
             <th>Prix unitaire</th>
@@ -264,22 +231,11 @@ $control = md5(
                 <td><?= $ligne['prix'] * $ligne['quantite'] ?>€</td>
             </tr>
         <?php endforeach; ?>
-        <?php if (isset($commande["remise"]) && $commande["remise"] > 0): ?>
-    <tr>
-        <td colspan="3">Prix avant remise</td>
-        <td><?= htmlspecialchars($commande["prix_total_avant_remise"]) ?>€</td>
-    </tr>
+        <tr>
+            <th colspan="3">Prix total</th>
+            <th><?= htmlspecialchars($commande['prix_total']) ?>€</th>
+        </tr>
 
-    <tr>
-        <td colspan="3">Remise</td>
-        <td>-<?= htmlspecialchars($commande["remise"]) ?>%</td>
-    </tr>
-<?php endif; ?>
-
-<tr>
-    <th colspan="3">Prix total</th>
-    <th><?= htmlspecialchars($commande["prix_total"]) ?>€</th>
-</tr>
     </table>
 
     <div style="display:flex;gap:2rem;margin-top:2rem;align-items:center;flex-wrap:wrap;">
@@ -308,5 +264,6 @@ $control = md5(
     </div>
 </div>
 
+<script src="mode.js"></script>
 </body>
 </html>

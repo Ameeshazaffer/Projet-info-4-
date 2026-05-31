@@ -30,16 +30,13 @@ if (!isset($donnees["utilisateurs"][$id])) {
 }
 
 if ($action === "bloquer") {
-
     $donnees["utilisateurs"][$id]["bloque"] = "oui";
 }
 
 elseif ($action === "vip") {
 
     if (($donnees["utilisateurs"][$id]["vip"] ?? "non") === "oui") {
-
         $donnees["utilisateurs"][$id]["vip"] = "non";
-
     } 
     else {
         $donnees["utilisateurs"][$id]["vip"] = "oui";
@@ -50,12 +47,10 @@ elseif ($action === "vip") {
 elseif ($action === "premium") {
 
     if (($donnees["utilisateurs"][$id]["premium"] ?? "non") === "oui") {
-
         $donnees["utilisateurs"][$id]["premium"] = "non";
 
     } 
     else {
-
         $donnees["utilisateurs"][$id]["premium"] = "oui";
         $donnees["utilisateurs"][$id]["vip"] = "non";
     }

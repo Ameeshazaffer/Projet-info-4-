@@ -1,0 +1,120 @@
+{
+    "commandes": [
+        {
+            "id": 1,
+            "email": "client@test.fr",
+            "produits": [
+                {
+                    "nom": "Carpaccio de Bœuf Cipriani",
+                    "prix": 38,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 38,
+            "date": "21\/05\/2026 10:00",
+            "statut": "En attente de paiement",
+            "paiement": "Non payé"
+        },
+        {
+            "id": 2,
+            "email": "client@test.fr",
+            "produits": [
+                {
+                    "nom": "Soupe VGE",
+                    "prix": 45,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 45,
+            "date": "21\/05\/2026 10:05",
+            "statut": "Prête",
+            "paiement": "Payé",
+            "livreur_assigne": "alexandra.vasquez@gmail.com"
+        },
+        {
+            "id": 3,
+            "email": "client@test.fr",
+            "produits": [
+                {
+                    "nom": "Risotto au Safran",
+                    "prix": 48,
+                    "quantite": 1
+                },
+                {
+                    "nom": "Fleur Vanille",
+                    "prix": 24,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 72,
+            "date": "21\/05\/2026 10:10",
+            "statut": "Prête",
+            "paiement": "Payé",
+            "livreur_assigne": "alexandra.vasquez@gmail.com"
+        },
+        {
+            "id": 4,
+            "email": "client@test.fr",
+            "produits": [
+                {
+                    "nom": "Beef Wellington",
+                    "prix": 68,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 68,
+            "date": "21\/05\/2026 10:15",
+            "statut": "Prête",
+            "paiement": "Payé",
+            "livreur_assigne": "livreur@eveil.fr"
+        },
+        {
+            "id": 5,
+            "email": "client@test.fr",
+            "produits": [
+                {
+                    "nom": "Tarte Citron Meringuée",
+                    "prix": 20,
+                    "quantite": 2
+                }
+            ],
+            "prix_total": 40,
+            "date": "21\/05\/2026 10:20",
+            "statut": "En livraison",
+            "paiement": "Payé",
+            "livreur_assigne": "livreur@eveil.fr"
+        },
+        {
+            "id": 6,
+            "email": "client@test.fr",
+            "produits": [
+                {
+                    "nom": "Huîtres et Perles de Tapioca",
+                    "prix": 52,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 52,
+            "date": "21\/05\/2026 10:25",
+            "statut": "Livrée",
+            "paiement": "Payé",
+            "livreur_assigne": "livreur@eveil.fr"
+        },
+        {
+            "id": 7,
+            "email": "nafisa.muhammad@hotmail.com",
+            "produits": [
+                {
+                    "nom": "Turbot Sauce Hollandaise",
+                    "prix": 78,
+                    "quantite": 1
+                }
+            ],
+            "prix_total": 78,
+            "total_deja_paye": 0,
+            "date": "21\/05\/2026 01:05",
+            "statut": "En attente de paiement",
+            "paiement": "Non payé"
+        }
+    ]
+}

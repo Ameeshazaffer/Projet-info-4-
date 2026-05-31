@@ -79,12 +79,7 @@ const compteurPrenom = document.getElementById("compteur-prenom");
 
     
     telephone.addEventListener("input", () => {
-        telephone.value = telephone.value.replace(/[^0-9]/g, "");
-
-        if (telephone.value.length > 10) {
-            telephone.value = telephone.value.substring(0, 10);
-        }
-    });
+    telephone.value = telephone.value.replace(/[^0-9]/g, "").substring(0, 10);});
 
     boutonModifier.addEventListener("click", activerModification);
     boutonAnnuler.addEventListener("click", annulerModification);

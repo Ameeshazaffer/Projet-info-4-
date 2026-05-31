@@ -1,7 +1,5 @@
 <?php
-
 session_start();
-require("verifier_blocage.php");
 
 if (!isset($_SESSION['user']) || $_SESSION['user']['role'] !== 'administrateur') {
     header("Location: connexion.php");
@@ -61,8 +59,8 @@ $filtre = $_GET["role"] ?? "tous";
         </form>
     </div>
 
-    <div class="liv">
-        <table>
+    <div class="liv" style="width:100%; overflow-x:auto;">
+    <table style="width:100%; table-layout:fixed;">
             <thead>
                 <tr>
                     <th>Nom</th>
@@ -97,28 +95,22 @@ $filtre = $_GET["role"] ?? "tous";
                 <tr id="ligne-<?= $index ?>">
                     <td><?= htmlspecialchars($user["nom"] ?? "") ?></td>
                     <td><?= htmlspecialchars($user["prenom"] ?? "") ?></td>
-                    <td><?= htmlspecialchars($user["email"] ?? "") ?></td>
+                    <td style="word-break:break-word;">
+    <?= htmlspecialchars($user["email"] ?? "") ?>
+</td>
                     <td><?= htmlspecialchars($role) ?></td>
 
                     <td id="statut-<?= $index ?>">
                         <?= $bloque === "oui" ? "Bloqué" : "Actif" ?>
                     </td>
 
-                    <td id="avantage-<?= $index ?>" style="text-align:center;">
-
-    <div style="margin-bottom:6px;">
-        VIP : <?= htmlspecialchars($vip) ?>
-    </div>
-
-    <div style="margin-bottom:6px;">
-        Premium : <?= htmlspecialchars($premium) ?>
-    </div>
-
-    <div>
-        Remise : <?= htmlspecialchars($remise) ?>%
-    </div>
-
+                    <td id="avantage-<?= $index ?>">
+                        <td id="avantage-<?= $index ?>" style="text-align:center; font-size:0.9rem;">
+                            <div>VIP : <?= htmlspecialchars($vip) ?></div>
+                            <div>Premium : <?= htmlspecialchars($premium) ?></div>
+                            <div>Remise : <?= htmlspecialchars($remise) ?>%</div>
 </td>
+                    </td>
 
                     <td>
                         <a href="profil-admin.php?id=<?= $index ?>">Voir profil</a>
